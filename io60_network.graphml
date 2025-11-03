@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+
+  <!-- Node attributes -->
+  <key id="name" for="node" attr.name="name" attr.type="string"/>
+  <key id="markers" for="node" attr.name="markers" attr.type="string"/>
+  <key id="cell_type" for="node" attr.name="cell_type" attr.type="string"/>
+  <key id="lineage" for="node" attr.name="lineage" attr.type="string"/>
+  <key id="color" for="node" attr.name="color" attr.type="string"/>
+  <key id="size" for="node" attr.name="size" attr.type="double"/>
+  <key id="frequency" for="node" attr.name="frequency" attr.type="string"/>
+  <key id="prognostic_importance" for="node" attr.name="prognostic_importance" attr.type="string"/>
+
+  <!-- Edge attributes -->
+  <key id="interaction_type" for="edge" attr.name="interaction_type" attr.type="string"/>
+  <key id="mechanism" for="edge" attr.name="mechanism" attr.type="string"/>
+  <key id="weight" for="edge" attr.name="weight" attr.type="double"/>
+  <key id="edge_color" for="edge" attr.name="edge_color" attr.type="string"/>
+  <key id="line_style" for="edge" attr.name="line_style" attr.type="string"/>
+  <key id="clinical_relevance" for="edge" attr.name="clinical_relevance" attr.type="string"/>
+  <key id="spatial_requirement" for="edge" attr.name="spatial_requirement" attr.type="string"/>
+
+  <graph id="IO60_Network" edgedefault="directed">
+
+    <!-- T CELL NODES -->
+    <node id="CD4_Th">
+      <data key="name">CD4+ Helper T cells</data>
+      <data key="markers">CD3+, CD4+</data>
+      <data key="cell_type">T_cell</data>
+      <data key="lineage">lymphoid</data>
+      <data key="color">#4472C4</data>
+      <data key="size">20.0</data>
+      <data key="frequency">high</data>
+      <data key="prognostic_importance">high</data>
+    </node>
+
+    <node id="CD8_CTL">
+      <data key="name">CD8+ Cytotoxic T cells</data>
+      <data key="markers">CD3+, CD8+</data>
+      <data key="cell_type">T_cell</data>
+      <data key="lineage">lymphoid</data>
+      <data key="color">#4472C4</data>
+      <data key="size">22.0</data>
+      <data key="frequency">high</data>
+      <data key="prognostic_importance">very_high</data>
+    </node>
+
+    <node id="Treg">
+      <data key="name">Regulatory T cells</data>
+      <data key="markers">CD3+, CD4+, FOXP3+</data>
+      <data key="cell_type">T_cell</data>
+      <data key="lineage">lymphoid</data>
+      <data key="color">#5B9BD5</data>
+      <data key="size">15.0</data>
+      <data key="frequency">medium</data>
+      <data key="prognostic_importance">high_negative</data>
+    </node>
+
+    <node id="Tex_prog">
+      <data key="name">Progenitor Exhausted T cells</data>
+      <data key="markers">TCF-1+, PD-1+, TIM-3-, CXCR5+</data>
+      <data key="cell_type">T_cell</data>
+      <data key="lineage">lymphoid</data>
+      <data key="color">#7030A0</data>
+      <data key="size">16.0</data>
+      <data key="frequency">medium</data>
+      <data key="prognostic_importance">high_positive</data>
+    </node>
+
+    <node id="Tex_term">
+      <data key="name">Terminally Exhausted T cells</data>
+      <data key="markers">TOX+, PD-1high, TIM-3+, LAG-3+, CD39high</data>
+      <data key="cell_type">T_cell</data>
+      <data key="lineage">lymphoid</data>
+      <data key="color">#3B2F5E</data>
+      <data key="size">14.0</data>
+      <data key="frequency">medium</data>
+      <data key="prognostic_importance">negative</data>
+    </node>
+
+    <node id="Memory_T">
+      <data key="name">Memory T cells</data>
+      <data key="markers">CD45RO+, TCF-1+, CD127+</data>
+      <data key="cell_type">T_cell</data>
+      <data key="lineage">lymphoid</data>
+      <data key="color">#6BA4D6</data>
+      <data key="size">18.0</data>
+      <data key="frequency">high</data>
+      <data key="prognostic_importance">high_positive</data>
+    </node>
+
+    <node id="Tfh">
+      <data key="name">Follicular Helper T cells</data>
+      <data key="markers">CD4+, CXCR5+, PD-1+, ICOS+, Bcl6+</data>
+      <data key="cell_type">T_cell</data>
+      <data key="lineage">lymphoid</data>
+      <data key="color">#4472C4</data>
+      <data key="size">14.0</data>
+      <data key="frequency">low</data>
+      <data key="prognostic_importance">high_positive</data>
+    </node>
+
+    <!-- B CELL NODES -->
+    <node id="B_cell">
+      <data key="name">B cells</data>
+      <data key="markers">CD20+, CD79a+, IgD+</data>
+      <data key="cell_type">B_cell</data>
+      <data key="lineage">lymphoid</data>
+      <data key="color">#9E67E3</data>
+      <data key="size">16.0</data>
+      <data key="frequency">medium</data>
+      <data key="prognostic_importance">high_positive</data>
+    </node>
+
+    <node id="Plasma_cell">
+      <data key="name">Plasma cells</data>
+      <data key="markers">CD38high, CD20low, CD138+, CD27+</data>
+      <data key="cell_type">B_cell</data>
+      <data key="lineage">lymphoid</data>
+      <data key="color">#B591E8</data>
+      <data key="size">14.0</data>
+      <data key="frequency">low</data>
+      <data key="prognostic_importance">high_positive</data>
+    </node>
+
+    <node id="Memory_B">
+      <data key="name">Memory B cells</data>
+      <data key="markers">CD20+, CD27+, IgD-, class-switched</data>
+      <data key="cell_type">B_cell</data>
+      <data key="lineage">lymphoid</data>
+      <data key="color">#AA82E3</data>
+      <data key="size">15.0</data>
+      <data key="frequency">medium</data>
+      <data key="prognostic_importance">positive</data>
+    </node>
+
+    <!-- NK CELL NODE -->
+    <node id="NK_cell">
+      <data key="name">NK cells</data>
+      <data key="markers">CD56+, CD3-</data>
+      <data key="cell_type">NK_cell</data>
+      <data key="lineage">lymphoid</data>
+      <data key="color">#E74C3C</data>
+      <data key="size">17.0</data>
+      <data key="frequency">medium</data>
+      <data key="prognostic_importance">positive</data>
+    </node>
+
+    <!-- MYELOID NODES -->
+    <node id="Dendritic_cell">
+      <data key="name">Dendritic cells</data>
+      <data key="markers">CD11c+, HLA-DR+, DC-LAMP+</data>
+      <data key="cell_type">dendritic_cell</data>
+      <data key="lineage">myeloid</data>
+      <data key="color">#F39C12</data>
+      <data key="size">25.0</data>
+      <data key="frequency">low</data>
+      <data key="prognostic_importance">very_high_positive</data>
+    </node>
+
+    <node id="M1_Macrophage">
+      <data key="name">M1 Macrophages</data>
+      <data key="markers">CD68+, iNOS+, CD80high, HLA-DRhigh</data>
+      <data key="cell_type">macrophage</data>
+      <data key="lineage">myeloid</data>
+      <data key="color">#E67E22</data>
+      <data key="size">20.0</data>
+      <data key="frequency">medium</data>
+      <data key="prognostic_importance">high_positive</data>
+    </node>
+
+    <node id="M2_Macrophage">
+      <data key="name">M2 Macrophages</data>
+      <data key="markers">CD68+, CD163+, CD206+, HLA-DRlow</data>
+      <data key="cell_type">macrophage</data>
+      <data key="lineage">myeloid</data>
+      <data key="color">#D35400</data>
+      <data key="size">22.0</data>
+      <data key="frequency">high</data>
+      <data key="prognostic_importance">high_negative</data>
+    </node>
+
+    <node id="Neutrophil">
+      <data key="name">Neutrophils</data>
+      <data key="markers">CD11b+, CD66+, MPO+</data>
+      <data key="cell_type">neutrophil</data>
+      <data key="lineage">myeloid</data>
+      <data key="color">#F4A460</data>
+      <data key="size">15.0</data>
+      <data key="frequency">variable</data>
+      <data key="prognostic_importance">context_dependent</data>
+    </node>
+
+    <node id="MDSC">
+      <data key="name">Myeloid-Derived Suppressor Cells</data>
+      <data key="markers">CD11b+, HLA-DRlow, CD33+</data>
+      <data key="cell_type">MDSC</data>
+      <data key="lineage">myeloid</data>
+      <data key="color">#8B4513</data>
+      <data key="size">16.0</data>
+      <data key="frequency">high_in_tumors</data>
+      <data key="prognostic_importance">high_negative</data>
+    </node>
+
+    <!-- STROMAL AND TUMOR NODES -->
+    <node id="Tumor_cell">
+      <data key="name">Tumor cells</data>
+      <data key="markers">PanCK+, PD-L1+/-, MHC-I+/-</data>
+      <data key="cell_type">tumor</data>
+      <data key="lineage">epithelial</data>
+      <data key="color">#2C3E50</data>
+      <data key="size">30.0</data>
+      <data key="frequency">very_high</data>
+      <data key="prognostic_importance">target</data>
+    </node>
+
+    <node id="CAF">
+      <data key="name">Cancer-Associated Fibroblasts</data>
+      <data key="markers">SMA+, podoplanin+/-</data>
+      <data key="cell_type">fibroblast</data>
+      <data key="lineage">stromal</data>
+      <data key="color">#95A5A6</data>
+      <data key="size">18.0</data>
+      <data key="frequency">high</data>
+      <data key="prognostic_importance">negative</data>
+    </node>
+
+    <node id="Endothelial">
+      <data key="name">Endothelial cells</data>
+      <data key="markers">CD31+</data>
+      <data key="cell_type">endothelial</data>
+      <data key="lineage">stromal</data>
+      <data key="color">#BDC3C7</data>
+      <data key="size">12.0</data>
+      <data key="frequency">medium</data>
+      <data key="prognostic_importance">context_dependent</data>
+    </node>
+
+    <!-- CHECKPOINT INHIBITORY EDGES (RED, DOTTED) -->
+
+    <!-- PD-1/PD-L1 Axis -->
+    <edge id="e1" source="CD8_CTL" target="Tumor_cell">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">PD-1/PD-L1: SHP-2 phosphatase inhibits TCR signaling, PI3K/Akt, MAPK</data>
+      <data key="weight">10.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">proximity</data>
+    </edge>
+
+    <edge id="e2" source="CD8_CTL" target="Dendritic_cell">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">PD-1/PD-L1: Regulates T cell activation on DCs</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e3" source="CD8_CTL" target="M2_Macrophage">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">PD-1/PD-L1: M2 macrophages express high PD-L1 to prevent effector function</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">proximity</data>
+    </edge>
+
+    <edge id="e4" source="Tex_term" target="Tumor_cell">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">PD-1/PD-L1: Exhausted T cells express high PD-1</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">tumor_core</data>
+    </edge>
+
+    <edge id="e5" source="CD4_Th" target="CD4_Th">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">PD-L1/PD-L1: Bidirectional signaling via STAT3, prevents activation</data>
+      <data key="weight">5.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">medium</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <!-- CTLA-4 Axis -->
+    <edge id="e6" source="CD4_Th" target="Dendritic_cell">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">CTLA-4/CD80-86: Outcompetes CD28 for binding, delivers inhibitory signals</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">lymphoid_organs</data>
+    </edge>
+
+    <edge id="e7" source="Treg" target="Dendritic_cell">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">CTLA-4 trans-endocytosis: Physical removal of CD80/86 from DCs</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e8" source="Treg" target="M1_Macrophage">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">CTLA-4 trans-endocytosis: Removes CD80/86 from macrophages</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <!-- LAG-3 Axis -->
+    <edge id="e9" source="CD8_CTL" target="Dendritic_cell">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">LAG-3/MHC-II: Higher affinity than CD4, inhibits proliferation and cytokines</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e10" source="CD4_Th" target="M2_Macrophage">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">LAG-3/MHC-II: Bidirectional signaling inhibits T cell and enhances macrophage survival</data>
+      <data key="weight">6.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">medium</data>
+      <data key="spatial_requirement">proximity</data>
+    </edge>
+
+    <edge id="e11" source="Treg" target="Dendritic_cell">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">LAG-3/MHC-II: Enhances Treg suppression and impairs DC maturation</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e12" source="CD8_CTL" target="Tumor_cell">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">LAG-3/MHC-II: Some tumors express MHC-II for LAG-3 interaction</data>
+      <data key="weight">5.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">medium</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <!-- VISTA Axis -->
+    <edge id="e13" source="M1_Macrophage" target="CD8_CTL">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">VISTA/PSGL-1: pH-dependent, maintains T cell quiescence</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">acidic_TME</data>
+    </edge>
+
+    <edge id="e14" source="M2_Macrophage" target="CD4_Th">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">VISTA/PSGL-1: Myeloid-to-T-cell inhibition, enhanced in acidic pH</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">acidic_TME</data>
+    </edge>
+
+    <edge id="e15" source="Dendritic_cell" target="CD8_CTL">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">VISTA: Limits DC maturation and promotes immunosuppressive phenotypes</data>
+      <data key="weight">6.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">medium</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <!-- TIM-3 Axis -->
+    <edge id="e16" source="Tex_term" target="MDSC">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">TIM-3/Galectin-9: Triggers calcium influx and T cell apoptosis</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">proximity</data>
+    </edge>
+
+    <edge id="e17" source="Tex_term" target="M2_Macrophage">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">TIM-3/Galectin-9: M2 macrophages produce Galectin-9</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">proximity</data>
+    </edge>
+
+    <!-- TIGIT Axis -->
+    <edge id="e18" source="CD8_CTL" target="Dendritic_cell">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">TIGIT/CD155: Promotes IL-10, decreases IL-12 from DCs</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e19" source="NK_cell" target="Tumor_cell">
+      <data key="interaction_type">checkpoint_inhibitory</data>
+      <data key="mechanism">TIGIT/CD155: Competes with CD226, inhibits NK cell activation</data>
+      <data key="weight">6.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">medium</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <!-- CO-STIMULATORY ACTIVATING EDGES (GREEN, SOLID) -->
+
+    <!-- CD28/CD80-86 Axis -->
+    <edge id="e20" source="CD4_Th" target="Dendritic_cell">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">CD28/CD80-86: Signal 2, activates PI3K/Akt, enhances IL-2, prevents anergy</data>
+      <data key="weight">10.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e21" source="CD8_CTL" target="Dendritic_cell">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">CD28/CD80-86: Essential for CD8+ T cell priming</data>
+      <data key="weight">10.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e22" source="CD4_Th" target="M1_Macrophage">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">CD28/CD80-86: Macrophages can provide co-stimulation</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">medium</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <!-- ICOS/ICOS-L Axis -->
+    <edge id="e23" source="Tfh" target="B_cell">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">ICOS/ICOS-L: Essential for germinal center formation and B cell activation</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">germinal_center</data>
+    </edge>
+
+    <edge id="e24" source="CD4_Th" target="Dendritic_cell">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">ICOS/ICOS-L: Activates PI3K/Akt, critical for anti-CTLA-4 efficacy</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e25" source="CD8_CTL" target="M1_Macrophage">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">ICOS/ICOS-L: Promotes memory CD8+ formation and reduces exhaustion</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <!-- OX40/OX40L Axis -->
+    <edge id="e26" source="CD4_Th" target="Dendritic_cell">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">OX40/OX40L: Sustained activation, memory formation, prevents apoptosis</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e27" source="CD8_CTL" target="Dendritic_cell">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">OX40/OX40L: Activates NF-κB and PI3K/Akt, reduces Treg function</data>
+      <data key="weight">7.5</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <!-- 4-1BB/4-1BBL Axis -->
+    <edge id="e28" source="CD8_CTL" target="Dendritic_cell">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">4-1BB/4-1BBL: Mitochondrial biogenesis, clonal expansion, prevents exhaustion</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e29" source="CD8_CTL" target="M1_Macrophage">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">4-1BB/4-1BBL: Can rescue T cell anergy</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <!-- CD40/CD40L Axis -->
+    <edge id="e30" source="CD4_Th" target="Dendritic_cell">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">CD40L/CD40: DC licensing, upregulates CD80/86, IL-12, cross-presentation</data>
+      <data key="weight">10.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e31" source="CD4_Th" target="M1_Macrophage">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">CD40L/CD40: Activates macrophages, induces IL-12</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e32" source="Tfh" target="B_cell">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">CD40L/CD40: Essential for germinal center, class switching, high-affinity antibodies</data>
+      <data key="weight">10.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">germinal_center</data>
+    </edge>
+
+    <!-- LFA-1/ICAM-1 Axis -->
+    <edge id="e33" source="CD8_CTL" target="Dendritic_cell">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">LFA-1/ICAM-1: Adhesion, mechanotransduction (>12 pN), potentiates activation</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e34" source="CD4_Th" target="CD8_CTL">
+      <data key="interaction_type">co_stimulatory</data>
+      <data key="mechanism">LFA-1/ICAM-1: CD8+ T cells promote CD4+ Th1 differentiation</data>
+      <data key="weight">6.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">medium</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <!-- CYTOKINE-MEDIATED EDGES (BLUE, DASHED) -->
+
+    <!-- IFN-γ -->
+    <edge id="e35" source="CD4_Th" target="M1_Macrophage">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IFN-γ: JAK/STAT1, M1 polarization, CXCL9/10, enhanced MHC-I/II</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e36" source="CD8_CTL" target="M1_Macrophage">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IFN-γ: Activates M1 macrophages, enhances antigen presentation</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e37" source="NK_cell" target="Dendritic_cell">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IFN-γ: Promotes DC Th1 differentiation</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e38" source="CD4_Th" target="Tumor_cell">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IFN-γ: Upregulates PD-L1 and IDO1 (adaptive resistance)</data>
+      <data key="weight">6.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <!-- IL-2 -->
+    <edge id="e39" source="CD4_Th" target="CD8_CTL">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-2: STAT5, T cell proliferation, CD8+ clonal expansion</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e40" source="CD4_Th" target="Treg">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-2: Essential for Treg survival and Foxp3 maintenance (paradoxical)</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e41" source="CD4_Th" target="NK_cell">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-2: NK cell activation and proliferation</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <!-- IL-10 (Immunosuppressive) -->
+    <edge id="e42" source="Treg" target="Dendritic_cell">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-10: Downregulates MHC-II, CD80, CD86, inhibits pro-inflammatory cytokines</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e43" source="M2_Macrophage" target="Dendritic_cell">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-10: Suppresses DC maturation and antigen presentation</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e44" source="Tumor_cell" target="CD8_CTL">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-10: Tumor-derived IL-10 suppresses T cell function</data>
+      <data key="weight">6.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">medium</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <!-- TGF-β (Immunosuppressive) -->
+    <edge id="e45" source="Treg" target="CD8_CTL">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">TGF-β: Inhibits CD8+ activation, suppresses IFN-γ via mitochondrial SMAD</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e46" source="M2_Macrophage" target="CD4_Th">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">TGF-β: Promotes Treg differentiation (with IL-2), inhibits Th1</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e47" source="CAF" target="CD8_CTL">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">TGF-β: CAF-derived TGF-β suppresses T cell responses</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <!-- IL-12 -->
+    <edge id="e48" source="Dendritic_cell" target="CD4_Th">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-12: STAT4, Th1 polarization, induces IFN-γ production</data>
+      <data key="weight">10.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e49" source="M1_Macrophage" target="CD8_CTL">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-12: Signal 3 for CD8+ activation, essential for anti-PD-1 efficacy</data>
+      <data key="weight">10.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e50" source="Dendritic_cell" target="NK_cell">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-12: NK cell activation and IFN-γ production</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <!-- IL-4 -->
+    <edge id="e51" source="CD4_Th" target="M2_Macrophage">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-4: STAT6, M2 polarization (with IL-13)</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e52" source="CD4_Th" target="B_cell">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-4: B cell IgE and IgG4 class switching</data>
+      <data key="weight">6.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">medium</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <!-- IL-6 -->
+    <edge id="e53" source="M2_Macrophage" target="B_cell">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-6: STAT3, B cell differentiation to plasma cells</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">medium</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e54" source="Tumor_cell" target="CD4_Th">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-6: Inhibits Treg differentiation, promotes Th17 (with TGF-β)</data>
+      <data key="weight">6.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">medium</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <!-- IL-15 -->
+    <edge id="e55" source="Dendritic_cell" target="Memory_T">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-15: STAT5, maintains CD8+ memory T cells</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <edge id="e56" source="M1_Macrophage" target="NK_cell">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-15: NK cell activation through STAT5</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">diffusible</data>
+    </edge>
+
+    <!-- IL-21 -->
+    <edge id="e57" source="Tfh" target="B_cell">
+      <data key="interaction_type">cytokine</data>
+      <data key="mechanism">IL-21: STAT3, germinal center B cell proliferation, antibody production</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#3498DB</data>
+      <data key="line_style">dashed</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">germinal_center</data>
+    </edge>
+
+    <!-- ANTIGEN PRESENTATION EDGES (GRAY, THICK) -->
+
+    <!-- MHC-I Presentation -->
+    <edge id="e58" source="Tumor_cell" target="CD8_CTL">
+      <data key="interaction_type">antigen_presentation</data>
+      <data key="mechanism">MHC-I/TCR: Tumor antigen presentation, target of immune response</data>
+      <data key="weight">10.0</data>
+      <data key="edge_color">#7F8C8D</data>
+      <data key="line_style">solid_thick</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e59" source="Dendritic_cell" target="CD8_CTL">
+      <data key="interaction_type">antigen_presentation</data>
+      <data key="mechanism">MHC-I/TCR: Standard endogenous antigen presentation</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#7F8C8D</data>
+      <data key="line_style">solid_thick</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <!-- MHC-II Presentation -->
+    <edge id="e60" source="Dendritic_cell" target="CD4_Th">
+      <data key="interaction_type">antigen_presentation</data>
+      <data key="mechanism">MHC-II/TCR: Exogenous antigen presentation with co-stimulation</data>
+      <data key="weight">10.0</data>
+      <data key="edge_color">#7F8C8D</data>
+      <data key="line_style">solid_thick</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e61" source="M1_Macrophage" target="CD4_Th">
+      <data key="interaction_type">antigen_presentation</data>
+      <data key="mechanism">MHC-II/TCR: Macrophages present antigens to CD4+ T cells</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#7F8C8D</data>
+      <data key="line_style">solid_thick</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e62" source="B_cell" target="CD4_Th">
+      <data key="interaction_type">antigen_presentation</data>
+      <data key="mechanism">MHC-II/TCR: B cells present to CD4+ T cells</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#7F8C8D</data>
+      <data key="line_style">solid_thick</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e63" source="B_cell" target="Tfh">
+      <data key="interaction_type">antigen_presentation</data>
+      <data key="mechanism">MHC-II/TCR: B cells present BCR-internalized antigens to Tfh for selection</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#7F8C8D</data>
+      <data key="line_style">solid_thick</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">germinal_center</data>
+    </edge>
+
+    <!-- Cross-Presentation -->
+    <edge id="e64" source="Dendritic_cell" target="CD8_CTL">
+      <data key="interaction_type">antigen_presentation</data>
+      <data key="mechanism">Cross-presentation: Exogenous antigens on MHC-I (cDC1 specialization)</data>
+      <data key="weight">10.0</data>
+      <data key="edge_color">#7F8C8D</data>
+      <data key="line_style">solid_thick</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <!-- CELLULAR KILLING EDGES (BLACK, BOLD) -->
+
+    <edge id="e65" source="CD8_CTL" target="Tumor_cell">
+      <data key="interaction_type">cytotoxic</data>
+      <data key="mechanism">Granzyme B, perforin, Fas-FasL: Direct tumor cell killing</data>
+      <data key="weight">10.0</data>
+      <data key="edge_color">#000000</data>
+      <data key="line_style">solid_bold</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">close_proximity_20um</data>
+    </edge>
+
+    <edge id="e66" source="NK_cell" target="Tumor_cell">
+      <data key="interaction_type">cytotoxic</data>
+      <data key="mechanism">Perforin/granzyme, ADCC, missing self recognition</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#000000</data>
+      <data key="line_style">solid_bold</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e67" source="CD8_CTL" target="Tumor_cell">
+      <data key="interaction_type">cytotoxic</data>
+      <data key="mechanism">IFN-γ-mediated cytostasis</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#000000</data>
+      <data key="line_style">solid_bold</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">proximity</data>
+    </edge>
+
+    <edge id="e68" source="Tfh" target="B_cell">
+      <data key="interaction_type">cytotoxic</data>
+      <data key="mechanism">Fas-FasL: Negative selection of low-affinity B cells in germinal centers</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#000000</data>
+      <data key="line_style">solid_bold</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">germinal_center</data>
+    </edge>
+
+    <!-- DIFFERENTIATION AND STATE TRANSITION EDGES (GRADIENT) -->
+
+    <edge id="e69" source="CD8_CTL" target="Memory_T">
+      <data key="interaction_type">differentiation</data>
+      <data key="mechanism">Effector to memory transition based on cytokine milieu</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#16A085</data>
+      <data key="line_style">gradient_arrow</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">systemic</data>
+    </edge>
+
+    <edge id="e70" source="CD8_CTL" target="Tex_prog">
+      <data key="interaction_type">differentiation</data>
+      <data key="mechanism">Chronic antigen exposure initiates exhaustion program</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#8E44AD</data>
+      <data key="line_style">gradient_arrow</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">tumor_microenvironment</data>
+    </edge>
+
+    <edge id="e71" source="Tex_prog" target="Tex_term">
+      <data key="interaction_type">differentiation</data>
+      <data key="mechanism">Progressive TOX accumulation, TCF-1 loss, terminal exhaustion</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#8E44AD</data>
+      <data key="line_style">gradient_arrow</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">tumor_core</data>
+    </edge>
+
+    <edge id="e72" source="M1_Macrophage" target="M2_Macrophage">
+      <data key="interaction_type">differentiation</data>
+      <data key="mechanism">M1 to M2 transition via IL-4, IL-10, TGF-β, hypoxia, lactate</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#E67E22</data>
+      <data key="line_style">bidirectional_dotted</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">tumor_microenvironment</data>
+    </edge>
+
+    <edge id="e73" source="M2_Macrophage" target="M1_Macrophage">
+      <data key="interaction_type">differentiation</data>
+      <data key="mechanism">M2 to M1 repolarization via TLR agonists, IFN-γ, PI3Kγ inhibition</data>
+      <data key="weight">6.0</data>
+      <data key="edge_color">#E67E22</data>
+      <data key="line_style">bidirectional_dotted</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">therapeutic</data>
+    </edge>
+
+    <edge id="e74" source="B_cell" target="Plasma_cell">
+      <data key="interaction_type">differentiation</data>
+      <data key="mechanism">Germinal center pathway: somatic hypermutation, affinity maturation</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#9E67E3</data>
+      <data key="line_style">gradient_arrow</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">germinal_center</data>
+    </edge>
+
+    <edge id="e75" source="B_cell" target="Memory_B">
+      <data key="interaction_type">differentiation</data>
+      <data key="mechanism">Germinal center output: memory B cell generation</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#9E67E3</data>
+      <data key="line_style">gradient_arrow</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">germinal_center</data>
+    </edge>
+
+    <!-- SPATIAL PROXIMITY EDGES -->
+
+    <edge id="e76" source="CD8_CTL" target="Tumor_cell">
+      <data key="interaction_type">spatial_proximity</data>
+      <data key="mechanism">CD8+ T cell within 20μm of tumor: Strong positive prognosis predictor</data>
+      <data key="weight">10.0</data>
+      <data key="edge_color">#27AE60</data>
+      <data key="line_style">solid_thick</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">less_than_20um</data>
+    </edge>
+
+    <edge id="e77" source="M2_Macrophage" target="Tumor_cell">
+      <data key="interaction_type">spatial_proximity</data>
+      <data key="mechanism">M2 macrophages form barriers in hypoxic cores protecting tumor cells</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">tumor_core_hypoxic</data>
+    </edge>
+
+    <edge id="e78" source="CAF" target="CD8_CTL">
+      <data key="interaction_type">spatial_barrier</data>
+      <data key="mechanism">CAFs create dense ECM barriers excluding T cells from tumor</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">invasive_margin</data>
+    </edge>
+
+    <edge id="e79" source="Treg" target="Tumor_cell">
+      <data key="interaction_type">spatial_proximity</data>
+      <data key="mechanism">Treg proximity to tumor cells: Unfavorable survival</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">close_proximity</data>
+    </edge>
+
+    <edge id="e80" source="CD8_CTL" target="M1_Macrophage">
+      <data key="interaction_type">spatial_proximity</data>
+      <data key="mechanism">CD8+ T cell and macrophage co-enrichment: Context-dependent</data>
+      <data key="weight">6.0</data>
+      <data key="edge_color">#F39C12</data>
+      <data key="line_style">solid</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">co_enrichment</data>
+    </edge>
+
+    <!-- MDSC SUPPRESSION EDGES -->
+
+    <edge id="e81" source="MDSC" target="CD8_CTL">
+      <data key="interaction_type">metabolic_suppression</data>
+      <data key="mechanism">Arginase-1 depletes L-arginine, iNOS produces NO, ROS/peroxynitrite</data>
+      <data key="weight">9.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">very_high</data>
+      <data key="spatial_requirement">proximity</data>
+    </edge>
+
+    <edge id="e82" source="MDSC" target="CD4_Th">
+      <data key="interaction_type">metabolic_suppression</data>
+      <data key="mechanism">IDO depletes tryptophan, PD-L1 expression, IL-10/TGF-β secretion</data>
+      <data key="weight">8.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">proximity</data>
+    </edge>
+
+    <edge id="e83" source="MDSC" target="Dendritic_cell">
+      <data key="interaction_type">suppression</data>
+      <data key="mechanism">MDSCs impair DC maturation and antigen presentation</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">contact</data>
+    </edge>
+
+    <edge id="e84" source="MDSC" target="Treg">
+      <data key="interaction_type">induction</data>
+      <data key="mechanism">MDSCs induce Treg differentiation via TGF-β</data>
+      <data key="weight">7.0</data>
+      <data key="edge_color">#E74C3C</data>
+      <data key="line_style">dotted</data>
+      <data key="clinical_relevance">high</data>
+      <data key="spatial_requirement">proximity</data>
+    </edge>
+
+  </graph>
+</graphml>

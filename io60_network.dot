@@ -1,0 +1,202 @@
+// IO60 Immune Cell Interaction Network
+// Graphviz DOT representation
+// Use: dot -Tpng io60_network.dot -o io60_network.png
+// Or: neato -Tpng io60_network.dot -o io60_network.png (for better layout)
+
+digraph IO60_Network {
+    // Graph properties
+    rankdir=TB;
+    concentrate=true;
+    splines=true;
+    overlap=false;
+
+    // Define node styles by lineage
+    node [fontname="Arial", fontsize=10];
+    edge [fontsize=8];
+
+    // LYMPHOID T CELLS (Blue palette)
+    subgraph cluster_tcells {
+        label="T Cells";
+        style=filled;
+        color=lightblue;
+
+        CD4_Th [label="CD4+ Helper T\n(CD3+CD4+)", shape=ellipse, fillcolor="#4472C4", style=filled, fontcolor=white];
+        CD8_CTL [label="CD8+ Cytotoxic T\n(CD3+CD8+)", shape=ellipse, fillcolor="#2F5496", style=filled, fontcolor=white];
+        Treg [label="Regulatory T\n(FOXP3+)", shape=ellipse, fillcolor="#5B9BD5", style=filled, fontcolor=white];
+        Tex_prog [label="Progenitor Exhausted\n(TCF-1+PD-1+)", shape=ellipse, fillcolor="#7030A0", style=filled, fontcolor=white];
+        Tex_term [label="Terminal Exhausted\n(TOX+TIM-3+)", shape=ellipse, fillcolor="#3B2F5E", style=filled, fontcolor=white];
+        Memory_T [label="Memory T\n(CD45RO+)", shape=ellipse, fillcolor="#6BA4D6", style=filled, fontcolor=white];
+        Tfh [label="Tfh\n(CXCR5+ICOS+)", shape=ellipse, fillcolor="#4472C4", style=filled, fontcolor=white];
+    }
+
+    // B CELLS (Purple palette)
+    subgraph cluster_bcells {
+        label="B Cells";
+        style=filled;
+        color=lavender;
+
+        B_cell [label="B cells\n(CD20+CD79a+)", shape=box, fillcolor="#9E67E3", style=filled, fontcolor=white];
+        Plasma_cell [label="Plasma cells\n(CD38high)", shape=box, fillcolor="#B591E8", style=filled, fontcolor=white];
+        Memory_B [label="Memory B\n(CD27+)", shape=box, fillcolor="#AA82E3", style=filled, fontcolor=white];
+    }
+
+    // NK CELLS (Red)
+    NK_cell [label="NK cells\n(CD56+CD3-)", shape=diamond, fillcolor="#E74C3C", style=filled, fontcolor=white];
+
+    // MYELOID CELLS (Orange palette) - Central hub position
+    subgraph cluster_myeloid {
+        label="Myeloid Cells";
+        style=filled;
+        color=lightyellow;
+
+        Dendritic_cell [label="Dendritic cells\n(CD11c+HLA-DR+)\n***CENTRAL HUB***", shape=hexagon, fillcolor="#F39C12", style="filled,bold", fontcolor=white, penwidth=3];
+        M1_Macrophage [label="M1 Macrophages\n(CD68+iNOS+)", shape=octagon, fillcolor="#E67E22", style=filled, fontcolor=white];
+        M2_Macrophage [label="M2 Macrophages\n(CD68+CD163+CD206+)", shape=octagon, fillcolor="#D35400", style=filled, fontcolor=white];
+        MDSC [label="MDSCs\n(CD11b+HLA-DRlow)", shape=octagon, fillcolor="#8B4513", style=filled, fontcolor=white];
+        Neutrophil [label="Neutrophils\n(CD11b+CD66+)", shape=octagon, fillcolor="#F4A460", style=filled, fontcolor=white];
+    }
+
+    // TUMOR AND STROMA (Gray palette)
+    subgraph cluster_stroma {
+        label="Tumor & Stroma";
+        style=filled;
+        color=lightgray;
+
+        Tumor_cell [label="Tumor cells\n(PanCK+)", shape=square, fillcolor="#2C3E50", style=filled, fontcolor=white, penwidth=2];
+        CAF [label="CAFs\n(SMA+)", shape=box, fillcolor="#95A5A6", style=filled, fontcolor=white];
+        Endothelial [label="Endothelial\n(CD31+)", shape=box, fillcolor="#BDC3C7", style=filled, fontcolor=black];
+    }
+
+    // CHECKPOINT INHIBITORY EDGES (Red, dashed)
+    // PD-1/PD-L1
+    CD8_CTL -> Tumor_cell [label="PD-1/PD-L1", color=red, style=dashed, penwidth=3, arrowhead=tee];
+    CD8_CTL -> Dendritic_cell [label="PD-1/PD-L1", color=red, style=dashed, penwidth=2, arrowhead=tee];
+    CD8_CTL -> M2_Macrophage [label="PD-1/PD-L1", color=red, style=dashed, penwidth=2, arrowhead=tee];
+    Tex_term -> Tumor_cell [label="PD-1/PD-L1", color=red, style=dashed, penwidth=3, arrowhead=tee];
+
+    // CTLA-4
+    CD4_Th -> Dendritic_cell [label="CTLA-4/CD80-86", color=red, style=dashed, penwidth=2, arrowhead=tee];
+    Treg -> Dendritic_cell [label="CTLA-4 trans-endo", color=red, style=dashed, penwidth=2, arrowhead=tee];
+
+    // LAG-3
+    CD8_CTL -> Dendritic_cell [label="LAG-3/MHC-II", color=red, style=dashed, arrowhead=tee];
+    Treg -> Dendritic_cell [label="LAG-3/MHC-II", color=red, style=dashed, arrowhead=tee];
+
+    // VISTA
+    M1_Macrophage -> CD8_CTL [label="VISTA/PSGL-1", color=red, style=dashed, arrowhead=tee];
+    M2_Macrophage -> CD4_Th [label="VISTA/PSGL-1", color=red, style=dashed, arrowhead=tee];
+
+    // TIM-3
+    Tex_term -> MDSC [label="TIM-3/Gal-9", color=red, style=dashed, penwidth=2, arrowhead=tee];
+    Tex_term -> M2_Macrophage [label="TIM-3/Gal-9", color=red, style=dashed, arrowhead=tee];
+
+    // TIGIT
+    CD8_CTL -> Dendritic_cell [label="TIGIT/CD155", color=red, style=dashed, arrowhead=tee];
+    NK_cell -> Tumor_cell [label="TIGIT/CD155", color=red, style=dashed, arrowhead=tee];
+
+    // CO-STIMULATORY EDGES (Green, solid)
+    // CD28
+    CD4_Th -> Dendritic_cell [label="CD28/CD80-86", color=green, style=solid, penwidth=3, arrowhead=normal];
+    CD8_CTL -> Dendritic_cell [label="CD28/CD80-86", color=green, style=solid, penwidth=3, arrowhead=normal];
+
+    // ICOS
+    Tfh -> B_cell [label="ICOS/ICOS-L", color=green, style=solid, penwidth=2, arrowhead=normal];
+    CD4_Th -> Dendritic_cell [label="ICOS/ICOS-L", color=green, style=solid, penwidth=2, arrowhead=normal];
+
+    // OX40
+    CD4_Th -> Dendritic_cell [label="OX40/OX40L", color=green, style=solid, arrowhead=normal];
+    CD8_CTL -> Dendritic_cell [label="OX40/OX40L", color=green, style=solid, arrowhead=normal];
+
+    // 4-1BB
+    CD8_CTL -> Dendritic_cell [label="4-1BB/4-1BBL", color=green, style=solid, penwidth=2, arrowhead=normal];
+
+    // CD40
+    CD4_Th -> Dendritic_cell [label="CD40L/CD40\nDC licensing", color=green, style=solid, penwidth=3, arrowhead=normal];
+    Tfh -> B_cell [label="CD40L/CD40\nGC formation", color=green, style=solid, penwidth=3, arrowhead=normal];
+    CD4_Th -> M1_Macrophage [label="CD40L/CD40", color=green, style=solid, penwidth=2, arrowhead=normal];
+
+    // CYTOKINE EDGES (Blue, dashed)
+    // IFN-γ
+    CD4_Th -> M1_Macrophage [label="IFN-γ", color=blue, style=dashed, penwidth=2, arrowhead=normal];
+    CD8_CTL -> M1_Macrophage [label="IFN-γ", color=blue, style=dashed, penwidth=2, arrowhead=normal];
+    NK_cell -> Dendritic_cell [label="IFN-γ", color=blue, style=dashed, arrowhead=normal];
+
+    // IL-2
+    CD4_Th -> CD8_CTL [label="IL-2", color=blue, style=dashed, penwidth=2, arrowhead=normal];
+    CD4_Th -> Treg [label="IL-2", color=blue, style=dashed, penwidth=2, arrowhead=normal];
+    CD4_Th -> NK_cell [label="IL-2", color=blue, style=dashed, arrowhead=normal];
+
+    // IL-12
+    Dendritic_cell -> CD4_Th [label="IL-12", color=blue, style=dashed, penwidth=2, arrowhead=normal];
+    M1_Macrophage -> CD8_CTL [label="IL-12", color=blue, style=dashed, penwidth=2, arrowhead=normal];
+    Dendritic_cell -> NK_cell [label="IL-12", color=blue, style=dashed, arrowhead=normal];
+
+    // IL-10 (suppressive)
+    Treg -> Dendritic_cell [label="IL-10", color=darkblue, style=dashed, arrowhead=tee];
+    M2_Macrophage -> Dendritic_cell [label="IL-10", color=darkblue, style=dashed, arrowhead=tee];
+
+    // TGF-β (suppressive)
+    Treg -> CD8_CTL [label="TGF-β", color=darkblue, style=dashed, penwidth=2, arrowhead=tee];
+    M2_Macrophage -> CD4_Th [label="TGF-β", color=darkblue, style=dashed, arrowhead=tee];
+    CAF -> CD8_CTL [label="TGF-β", color=darkblue, style=dashed, arrowhead=tee];
+
+    // IL-21
+    Tfh -> B_cell [label="IL-21", color=blue, style=dashed, penwidth=2, arrowhead=normal];
+
+    // IL-15
+    Dendritic_cell -> Memory_T [label="IL-15", color=blue, style=dashed, arrowhead=normal];
+    M1_Macrophage -> NK_cell [label="IL-15", color=blue, style=dashed, arrowhead=normal];
+
+    // ANTIGEN PRESENTATION EDGES (Gray, thick)
+    // MHC-I
+    Tumor_cell -> CD8_CTL [label="MHC-I/TCR\nTumor Ag", color=gray, style=solid, penwidth=4, arrowhead=normal];
+
+    // Cross-presentation
+    Dendritic_cell -> CD8_CTL [label="Cross-pres\nMHC-I", color=gray, style=solid, penwidth=4, arrowhead=normal];
+
+    // MHC-II
+    Dendritic_cell -> CD4_Th [label="MHC-II/TCR", color=gray, style=solid, penwidth=3, arrowhead=normal];
+    M1_Macrophage -> CD4_Th [label="MHC-II/TCR", color=gray, style=solid, penwidth=2, arrowhead=normal];
+    B_cell -> CD4_Th [label="MHC-II/TCR", color=gray, style=solid, penwidth=2, arrowhead=normal];
+    B_cell -> Tfh [label="MHC-II/TCR\nGC selection", color=gray, style=solid, penwidth=3, arrowhead=normal];
+
+    // CYTOTOXIC EDGES (Black, bold)
+    CD8_CTL -> Tumor_cell [label="GranzB/Perforin\nKILLING", color=black, style=solid, penwidth=5, arrowhead=vee];
+    NK_cell -> Tumor_cell [label="Perforin/ADCC\nKILLING", color=black, style=solid, penwidth=4, arrowhead=vee];
+
+    // DIFFERENTIATION EDGES (Special colors, arrows)
+    CD8_CTL -> Memory_T [label="→ Memory", color=teal, style=bold, arrowhead=open];
+    CD8_CTL -> Tex_prog [label="→ Exhaustion", color=purple, style=bold, arrowhead=open];
+    Tex_prog -> Tex_term [label="→ Terminal", color=purple, style=bold, penwidth=2, arrowhead=open];
+    M1_Macrophage -> M2_Macrophage [label="polarization", color=orange, style=dotted, dir=both, arrowhead=open, arrowtail=open];
+    B_cell -> Plasma_cell [label="→ Plasma", color=purple, style=bold, arrowhead=open];
+    B_cell -> Memory_B [label="→ Memory", color=purple, style=bold, arrowhead=open];
+
+    // MDSC SUPPRESSION (Red, dotted)
+    MDSC -> CD8_CTL [label="ARG1/iNOS/ROS", color=red, style=dotted, penwidth=2, arrowhead=tee];
+    MDSC -> CD4_Th [label="IDO/PD-L1", color=red, style=dotted, penwidth=2, arrowhead=tee];
+    MDSC -> Dendritic_cell [label="impairs DC", color=red, style=dotted, arrowhead=tee];
+    MDSC -> Treg [label="induces Treg", color=red, style=dotted, arrowhead=normal];
+
+    // SPATIAL BARRIERS
+    CAF -> CD8_CTL [label="ECM barrier\nEXCLUSION", color=red, style=solid, penwidth=3, arrowhead=tee];
+    M2_Macrophage -> Tumor_cell [label="Physical barrier", color=red, style=solid, penwidth=2, arrowhead=normal];
+
+    // Legend
+    {
+        rank=sink;
+        legend [shape=none, margin=0, label=<
+            <table border="0" cellborder="1" cellspacing="0" cellpadding="4">
+                <tr><td colspan="2" bgcolor="lightgray"><b>Edge Legend</b></td></tr>
+                <tr><td>Red dashed</td><td>Checkpoint inhibition</td></tr>
+                <tr><td>Green solid</td><td>Co-stimulation</td></tr>
+                <tr><td>Blue dashed</td><td>Cytokines</td></tr>
+                <tr><td>Gray thick</td><td>Antigen presentation</td></tr>
+                <tr><td>Black bold</td><td>Cytotoxic killing</td></tr>
+                <tr><td>Purple/Teal</td><td>Differentiation</td></tr>
+                <tr><td colspan="2" bgcolor="lightgray"><b>Hub</b></td></tr>
+                <tr><td colspan="2">Dendritic cells (central)</td></tr>
+            </table>
+        >];
+    }
+}

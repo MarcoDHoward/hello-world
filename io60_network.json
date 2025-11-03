@@ -1,0 +1,723 @@
+{
+  "network_name": "IO60 Immune Cell Interaction Network",
+  "description": "Comprehensive immune cell interaction network based on the IO60 immunohistochemistry panel from Akoya Biosciences",
+  "metadata": {
+    "panel": "PhenoCode Discovery IO60 Human Protein Panel",
+    "manufacturer": "Akoya Biosciences",
+    "launch_date": "November 2024",
+    "markers": 60,
+    "major_cell_types": 15,
+    "interaction_count": "100+",
+    "checkpoint_coverage": "85%",
+    "immune_population_coverage": "90%"
+  },
+  "nodes": {
+    "T_cells": [
+      {
+        "id": "CD4_Th",
+        "name": "CD4+ Helper T cells",
+        "markers": ["CD3+", "CD4+"],
+        "lineage": "lymphoid",
+        "frequency": "high",
+        "prognostic_importance": "high",
+        "functions": ["antigen recognition", "CD4+ help", "cytokine production", "B cell help", "macrophage activation"]
+      },
+      {
+        "id": "CD8_CTL",
+        "name": "CD8+ Cytotoxic T cells",
+        "markers": ["CD3+", "CD8+", "GranzymeB+/- (activated)"],
+        "lineage": "lymphoid",
+        "frequency": "high",
+        "prognostic_importance": "very_high_positive",
+        "functions": ["tumor killing", "antigen recognition via MHC-I", "IFN-γ production", "cytotoxicity"],
+        "spatial_significance": "Proximity <20μm to tumor = strong positive prognosis"
+      },
+      {
+        "id": "Treg",
+        "name": "Regulatory T cells",
+        "markers": ["CD3+", "CD4+", "FOXP3+"],
+        "lineage": "lymphoid",
+        "frequency": "medium",
+        "prognostic_importance": "high_negative",
+        "functions": ["immunosuppression", "CTLA-4 trans-endocytosis", "IL-10 and TGF-β secretion", "prevents autoimmunity"]
+      },
+      {
+        "id": "Tex_prog",
+        "name": "Progenitor Exhausted T cells",
+        "markers": ["TCF-1+", "PD-1+", "TIM-3-", "CXCR5+", "CD127+"],
+        "lineage": "lymphoid",
+        "frequency": "medium",
+        "prognostic_importance": "high_positive",
+        "functions": ["self-renewal", "responds to checkpoint blockade", "can differentiate to effectors"],
+        "therapy_relevance": "Best responders to anti-PD-1 therapy"
+      },
+      {
+        "id": "Tex_term",
+        "name": "Terminally Exhausted T cells",
+        "markers": ["TOX+", "PD-1high", "TIM-3+", "LAG-3+", "CD39high", "TIGIT+"],
+        "lineage": "lymphoid",
+        "frequency": "medium",
+        "prognostic_importance": "negative",
+        "functions": ["limited cytotoxicity", "poor proliferation", "epigenetically fixed"],
+        "therapy_relevance": "Poor response to checkpoint blockade"
+      },
+      {
+        "id": "Memory_T",
+        "name": "Memory T cells",
+        "markers": ["CD45RO+", "TCF-1+", "CD127+"],
+        "lineage": "lymphoid",
+        "frequency": "high",
+        "prognostic_importance": "high_positive",
+        "functions": ["long-lived immunity", "rapid recall response", "maintained by IL-15"]
+      },
+      {
+        "id": "Tfh",
+        "name": "Follicular Helper T cells",
+        "markers": ["CD4+", "CXCR5+", "PD-1+", "ICOS+", "Bcl6+"],
+        "lineage": "lymphoid",
+        "frequency": "low",
+        "prognostic_importance": "high_positive",
+        "functions": ["B cell help", "germinal center formation", "IL-21 production", "antibody affinity maturation"],
+        "location": "Germinal centers and tertiary lymphoid structures"
+      }
+    ],
+    "B_cells": [
+      {
+        "id": "B_cell",
+        "name": "B cells",
+        "markers": ["CD20+", "CD79a+", "IgD+"],
+        "lineage": "lymphoid",
+        "frequency": "medium",
+        "prognostic_importance": "high_positive",
+        "functions": ["antibody production", "antigen presentation", "germinal center reactions"]
+      },
+      {
+        "id": "Plasma_cell",
+        "name": "Plasma cells",
+        "markers": ["CD38high", "CD20low", "CD138+", "CD27+"],
+        "lineage": "lymphoid",
+        "frequency": "low",
+        "prognostic_importance": "high_positive",
+        "functions": ["high-affinity antibody secretion", "ADCC", "found in TLS"],
+        "mutations": "15-28 somatic mutations average"
+      },
+      {
+        "id": "Memory_B",
+        "name": "Memory B cells",
+        "markers": ["CD20+", "CD27+", "IgD-", "class-switched"],
+        "lineage": "lymphoid",
+        "frequency": "medium",
+        "prognostic_importance": "positive",
+        "functions": ["rapid secondary response", "class-switched antibodies"]
+      }
+    ],
+    "NK_cells": [
+      {
+        "id": "NK_cell",
+        "name": "NK cells",
+        "markers": ["CD56+", "CD3-"],
+        "lineage": "lymphoid",
+        "frequency": "medium",
+        "prognostic_importance": "positive",
+        "functions": ["innate cytotoxicity", "ADCC", "missing self recognition", "IFN-γ production"]
+      }
+    ],
+    "Myeloid_cells": [
+      {
+        "id": "Dendritic_cell",
+        "name": "Dendritic cells",
+        "markers": ["CD11c+", "HLA-DR+", "DC-LAMP+"],
+        "lineage": "myeloid",
+        "frequency": "low",
+        "prognostic_importance": "very_high_positive",
+        "functions": ["cross-presentation", "CD4 and CD8 T cell priming", "IL-12 production", "bridging innate and adaptive immunity"],
+        "network_role": "CENTRAL HUB - connects to all T cells, B cells, and NK cells"
+      },
+      {
+        "id": "M1_Macrophage",
+        "name": "M1 Macrophages",
+        "markers": ["CD68+", "iNOS+", "CD80high", "HLA-DRhigh"],
+        "lineage": "myeloid",
+        "frequency": "medium",
+        "prognostic_importance": "high_positive",
+        "functions": ["pro-inflammatory", "antigen presentation", "IL-12/TNF-α/IL-1β secretion", "anti-tumor", "glycolysis-dominant"],
+        "stimuli": "IFN-γ, LPS, TNF-α, GM-CSF"
+      },
+      {
+        "id": "M2_Macrophage",
+        "name": "M2 Macrophages (TAMs)",
+        "markers": ["CD68+", "CD163+", "CD206+", "HLA-DRlow", "Arginase-1+"],
+        "lineage": "myeloid",
+        "frequency": "high_in_tumors",
+        "prognostic_importance": "high_negative",
+        "functions": ["immunosuppression", "tissue repair", "angiogenesis", "tumor promotion", "OXPHOS-dominant"],
+        "stimuli": "IL-4, IL-10, TGF-β, hypoxia",
+        "spatial": "Predominate in hypoxic tumor cores, form barriers preventing CD8+ T cell infiltration"
+      },
+      {
+        "id": "MDSC",
+        "name": "Myeloid-Derived Suppressor Cells",
+        "markers": ["CD11b+", "HLA-DRlow", "CD33+", "CD15+ or CD14+"],
+        "lineage": "myeloid",
+        "frequency": "high_in_tumors",
+        "prognostic_importance": "high_negative",
+        "functions": ["ARG1 depletes L-arginine", "iNOS produces NO", "IDO depletes tryptophan", "ROS/peroxynitrite", "PD-L1 expression", "induces Tregs"],
+        "prevalence": "10-fold higher in cancer patients vs healthy",
+        "subtypes": ["PMN-MDSC (70-80%)", "M-MDSC (20-30%)"]
+      },
+      {
+        "id": "Neutrophil",
+        "name": "Neutrophils",
+        "markers": ["CD11b+", "CD66+", "MPO+"],
+        "lineage": "myeloid",
+        "frequency": "variable",
+        "prognostic_importance": "context_dependent",
+        "functions": ["phagocytosis", "NETs", "context-dependent anti-tumor or pro-tumor"]
+      }
+    ],
+    "Stroma_and_Tumor": [
+      {
+        "id": "Tumor_cell",
+        "name": "Tumor cells",
+        "markers": ["PanCK+", "PD-L1+/-", "MHC-I+/-"],
+        "lineage": "epithelial",
+        "frequency": "very_high",
+        "prognostic_importance": "target",
+        "functions": ["tumor antigen presentation", "immune evasion", "PD-L1 expression", "cytokine secretion"],
+        "evasion_mechanisms": "MHC-I downregulation, PD-L1 upregulation, immunosuppressive cytokines"
+      },
+      {
+        "id": "CAF",
+        "name": "Cancer-Associated Fibroblasts",
+        "markers": ["SMA+", "podoplanin+/-"],
+        "lineage": "stromal",
+        "frequency": "high",
+        "prognostic_importance": "negative",
+        "functions": ["ECM deposition", "physical barrier to T cells", "TGF-β secretion", "remodeling"],
+        "subtypes": ["myCAFs (barrier)", "iCAFs (inflammatory)", "apCAFs (antigen-presenting, positive)"]
+      },
+      {
+        "id": "Endothelial",
+        "name": "Endothelial cells",
+        "markers": ["CD31+"],
+        "lineage": "stromal",
+        "frequency": "medium",
+        "prognostic_importance": "context_dependent",
+        "functions": ["vasculature", "HEV in TLS", "lymphocyte trafficking"]
+      }
+    ]
+  },
+  "edge_types": {
+    "checkpoint_inhibitory": {
+      "color": "red",
+      "style": "dotted",
+      "description": "Immune checkpoint pathways that inhibit T cell and NK cell responses",
+      "clinical_relevance": "Targets of cancer immunotherapy",
+      "examples": [
+        {
+          "pathway": "PD-1/PD-L1",
+          "source": "CD8+ T cells, Exhausted T cells",
+          "target": "Tumor cells, DCs, M2 macrophages",
+          "mechanism": "SHP-2 phosphatase inhibits TCR signaling, PI3K/Akt, MAPK pathways",
+          "clinical_importance": "Primary target of checkpoint blockade therapy",
+          "weight": 10
+        },
+        {
+          "pathway": "CTLA-4/CD80-86",
+          "source": "Activated T cells, Tregs",
+          "target": "DCs, Macrophages",
+          "mechanism": "Outcompetes CD28, delivers inhibitory signals, Treg trans-endocytosis removes CD80/86",
+          "clinical_importance": "Second major checkpoint therapy target",
+          "weight": 9
+        },
+        {
+          "pathway": "LAG-3/MHC-II",
+          "source": "Activated CD4+/CD8+ T cells",
+          "target": "DCs, Macrophages, B cells, Tumor cells",
+          "mechanism": "Higher affinity than CD4, bidirectional signaling, inhibits T cell proliferation",
+          "clinical_importance": "Third-generation checkpoint target, often co-expressed with PD-1",
+          "weight": 7
+        },
+        {
+          "pathway": "VISTA/PSGL-1",
+          "source": "Myeloid cells",
+          "target": "T cells",
+          "mechanism": "pH-dependent binding, maintains T cell quiescence in acidic TME",
+          "clinical_importance": "Innate immune checkpoint, acidic tumor microenvironment",
+          "weight": 7
+        },
+        {
+          "pathway": "TIM-3/Galectin-9",
+          "source": "Exhausted T cells",
+          "target": "MDSCs, M2 macrophages",
+          "mechanism": "Calcium influx triggers T cell apoptosis",
+          "clinical_importance": "Second-wave exhaustion marker",
+          "weight": 8
+        },
+        {
+          "pathway": "TIGIT/CD155",
+          "source": "T cells, NK cells",
+          "target": "DCs, Tumor cells",
+          "mechanism": "Competes with CD226, promotes IL-10 and decreases IL-12 from DCs",
+          "clinical_importance": "NK cell and T cell inhibition",
+          "weight": 7
+        }
+      ]
+    },
+    "co_stimulatory": {
+      "color": "green",
+      "style": "solid",
+      "description": "Co-stimulatory pathways that activate immune responses",
+      "clinical_relevance": "Required for effective T cell priming and function",
+      "examples": [
+        {
+          "pathway": "CD28/CD80-86",
+          "source": "Naive T cells",
+          "target": "APCs (DCs, Macrophages, B cells)",
+          "mechanism": "Signal 2 for T cell activation, activates PI3K/Akt, enhances IL-2, prevents anergy",
+          "clinical_importance": "Foundational co-stimulation, absolutely required for naive T cell activation",
+          "weight": 10
+        },
+        {
+          "pathway": "ICOS/ICOS-L",
+          "source": "Activated T cells, Tfh cells",
+          "target": "B cells, DCs, Macrophages",
+          "mechanism": "PI3K/Akt activation, critical for germinal centers and anti-CTLA-4 efficacy",
+          "clinical_importance": "Predicts anti-CTLA-4 response, increases efficacy 4-5 fold",
+          "weight": 9
+        },
+        {
+          "pathway": "OX40/OX40L",
+          "source": "Activated T cells",
+          "target": "APCs",
+          "mechanism": "NF-κB and PI3K/Akt, sustained activation, memory formation, reduces Treg suppression",
+          "clinical_importance": "Memory generation, therapeutic agonist target",
+          "weight": 8
+        },
+        {
+          "pathway": "4-1BB/4-1BBL",
+          "source": "CD8+ T cells",
+          "target": "APCs",
+          "mechanism": "Mitochondrial biogenesis, clonal expansion, prevents exhaustion, rescues anergy",
+          "clinical_importance": "Superior to CD28 for CAR-T persistence",
+          "weight": 9
+        },
+        {
+          "pathway": "CD40L/CD40",
+          "source": "Activated CD4+ T cells",
+          "target": "DCs, Macrophages, B cells",
+          "mechanism": "DC licensing (upregulates CD80/86, IL-12, cross-presentation), germinal center formation",
+          "clinical_importance": "Essential for CD8+ T cell priming via DC licensing",
+          "weight": 10
+        },
+        {
+          "pathway": "LFA-1/ICAM-1",
+          "source": "T cells",
+          "target": "APCs, other T cells",
+          "mechanism": "Adhesion, mechanotransduction >12 pN potentiates activation, enhances TCR discrimination",
+          "clinical_importance": "Mechanobiology of T cell activation",
+          "weight": 7
+        }
+      ]
+    },
+    "cytokine": {
+      "color": "blue",
+      "style": "dashed",
+      "description": "Cytokine-mediated signaling creating diffusible communication",
+      "clinical_relevance": "Systemic and local immune regulation",
+      "examples": [
+        {
+          "cytokine": "IFN-γ",
+          "source": "Th1 cells, CD8+ T cells, NK cells",
+          "target": "Macrophages, DCs, Tumor cells",
+          "mechanism": "JAK/STAT1, M1 polarization, enhanced MHC-I/II, CXCL9/10 chemokines",
+          "effect": "Activating (can induce adaptive resistance via PD-L1/IDO1)",
+          "weight": 9
+        },
+        {
+          "cytokine": "IL-2",
+          "source": "Activated CD4+ T cells",
+          "target": "T cells, NK cells, Tregs",
+          "mechanism": "STAT5, proliferation, survival",
+          "effect": "Activating (but paradoxically maintains Tregs)",
+          "weight": 9
+        },
+        {
+          "cytokine": "IL-12",
+          "source": "DCs, M1 Macrophages",
+          "target": "T cells, NK cells",
+          "mechanism": "STAT4, Th1 polarization, IFN-γ production, Signal 3 for CD8+ activation",
+          "effect": "Activating, essential for anti-PD-1 efficacy",
+          "weight": 10
+        },
+        {
+          "cytokine": "IL-10",
+          "source": "Tregs, M2 Macrophages, Tumor cells",
+          "target": "DCs, Macrophages",
+          "mechanism": "Downregulates MHC-II, CD80, CD86, inhibits pro-inflammatory cytokines",
+          "effect": "Suppressive",
+          "weight": 8
+        },
+        {
+          "cytokine": "TGF-β",
+          "source": "Tregs, M2 Macrophages, CAFs, Tumor cells",
+          "target": "T cells, all immune cells",
+          "mechanism": "Inhibits CD8+ activation, suppresses IFN-γ via mitochondrial SMAD, promotes Treg differentiation",
+          "effect": "Suppressive (master immunosuppressive cytokine)",
+          "weight": 9
+        },
+        {
+          "cytokine": "IL-4",
+          "source": "Th2 cells",
+          "target": "Macrophages, B cells",
+          "mechanism": "STAT6, M2 polarization, IgE class switching",
+          "effect": "Th2/M2 promoting",
+          "weight": 7
+        },
+        {
+          "cytokine": "IL-6",
+          "source": "Macrophages, Tumor cells",
+          "target": "B cells, T cells",
+          "mechanism": "STAT3, B cell to plasma cell differentiation, Th17 promotion, inhibits Tregs",
+          "effect": "Pro-inflammatory, poor prognosis in cancer",
+          "weight": 6
+        },
+        {
+          "cytokine": "IL-15",
+          "source": "DCs, Macrophages",
+          "target": "Memory T cells, NK cells",
+          "mechanism": "STAT5, maintains CD8+ memory, NK activation",
+          "effect": "Activating, memory maintenance",
+          "weight": 8
+        },
+        {
+          "cytokine": "IL-21",
+          "source": "Tfh cells",
+          "target": "B cells",
+          "mechanism": "STAT3, germinal center B cell proliferation, antibody production",
+          "effect": "Activating, essential for humoral immunity",
+          "weight": 9
+        }
+      ]
+    },
+    "antigen_presentation": {
+      "color": "gray",
+      "style": "solid_thick",
+      "description": "Peptide-MHC/TCR interactions for antigen recognition",
+      "clinical_relevance": "Core of adaptive immunity, Signal 1",
+      "examples": [
+        {
+          "pathway": "MHC-I/TCR",
+          "source": "All nucleated cells, Tumor cells",
+          "target": "CD8+ T cells",
+          "mechanism": "Endogenous peptides (8-10 aa) from proteasome, presented with CD8 co-receptor binding",
+          "clinical_importance": "Tumor antigen recognition, immune surveillance",
+          "weight": 10
+        },
+        {
+          "pathway": "MHC-II/TCR",
+          "source": "APCs (DCs, Macrophages, B cells)",
+          "target": "CD4+ T cells",
+          "mechanism": "Exogenous peptides (13-25 aa) from endocytic pathway, presented with CD4 co-receptor binding",
+          "clinical_importance": "CD4+ T cell activation and differentiation",
+          "weight": 10
+        },
+        {
+          "pathway": "Cross-presentation",
+          "source": "cDC1 Dendritic cells (CD11c+)",
+          "target": "CD8+ T cells",
+          "mechanism": "Exogenous antigens presented on MHC-I via ER-phagosome or cytosolic pathway",
+          "clinical_importance": "Essential for anti-tumor and anti-viral CD8+ T cell responses",
+          "weight": 10
+        }
+      ]
+    },
+    "cytotoxic": {
+      "color": "black",
+      "style": "solid_bold",
+      "description": "Direct killing of target cells",
+      "clinical_relevance": "Effector mechanisms eliminating tumor cells",
+      "examples": [
+        {
+          "pathway": "Granzyme B/Perforin/Fas-FasL",
+          "source": "CD8+ CTLs",
+          "target": "Tumor cells",
+          "mechanism": "Perforin pores allow granzyme B entry, inducing apoptosis; Fas-FasL triggers death receptor pathway",
+          "clinical_importance": "Primary anti-tumor mechanism, <20μm proximity = strong positive prognosis",
+          "weight": 10
+        },
+        {
+          "pathway": "Perforin/Granzyme/ADCC",
+          "source": "NK cells",
+          "target": "Tumor cells",
+          "mechanism": "Missing self recognition (low MHC-I), ADCC via antibody binding, perforin/granzyme release",
+          "clinical_importance": "Innate anti-tumor immunity, backup when MHC-I lost",
+          "weight": 9
+        }
+      ]
+    },
+    "differentiation": {
+      "color": "variable",
+      "style": "gradient_arrow",
+      "description": "Cell state transitions and differentiation pathways",
+      "clinical_relevance": "Dynamic immune responses and exhaustion",
+      "examples": [
+        {
+          "pathway": "Effector to Memory",
+          "source": "Effector CD8+ T cells",
+          "target": "Memory T cells",
+          "mechanism": "Cytokine milieu (IL-15, IL-7), metabolic shift, TCF-1 maintenance",
+          "clinical_importance": "Long-lived immunity",
+          "weight": 8
+        },
+        {
+          "pathway": "Effector to Exhaustion",
+          "source": "Effector T cells",
+          "target": "Progenitor Exhausted T cells",
+          "mechanism": "Chronic antigen exposure, TOX induction, epigenetic remodeling",
+          "clinical_importance": "Tumor-induced dysfunction",
+          "weight": 8
+        },
+        {
+          "pathway": "Progenitor to Terminal Exhaustion",
+          "source": "Progenitor Exhausted",
+          "target": "Terminal Exhausted",
+          "mechanism": "Progressive TOX accumulation, TCF-1 loss, accumulation of inhibitory receptors",
+          "clinical_importance": "Irreversible exhaustion, poor therapy response",
+          "weight": 9
+        },
+        {
+          "pathway": "M1 ↔ M2 Polarization",
+          "source": "M1 or M2 Macrophages",
+          "target": "M2 or M1 Macrophages",
+          "mechanism": "Bidirectional plasticity via cytokine signals, metabolic reprogramming",
+          "clinical_importance": "Therapeutic repolarization target",
+          "weight": 7
+        },
+        {
+          "pathway": "B cell to Plasma cell",
+          "source": "B cells",
+          "target": "Plasma cells",
+          "mechanism": "Germinal center reactions, somatic hypermutation, affinity maturation",
+          "clinical_importance": "High-affinity tumor-reactive antibodies",
+          "weight": 9
+        }
+      ]
+    },
+    "spatial_proximity": {
+      "color": "green or red",
+      "style": "solid",
+      "description": "Physical proximity-based interactions and spatial barriers",
+      "clinical_relevance": "Spatial architecture predicts immunotherapy response",
+      "examples": [
+        {
+          "interaction": "CD8+ T cell - Tumor proximity",
+          "description": "CD8+ T cells within <20μm of tumor cells",
+          "effect": "Strong positive prognosis, required for effective killing",
+          "weight": 10,
+          "color": "green"
+        },
+        {
+          "interaction": "M2 macrophage barrier",
+          "description": "M2 macrophages form physical barriers protecting tumor cells in hypoxic cores",
+          "effect": "Prevents CD8+ T cell infiltration, negative prognosis",
+          "weight": 8,
+          "color": "red"
+        },
+        {
+          "interaction": "CAF ECM barrier",
+          "description": "CAFs create dense extracellular matrix excluding T cells",
+          "effect": "T cell exclusion, immune-cold phenotype",
+          "weight": 9,
+          "color": "red"
+        },
+        {
+          "interaction": "Treg-Tumor proximity",
+          "description": "Tregs in close proximity to tumor cells",
+          "effect": "Local immunosuppression, unfavorable survival in NSCLC",
+          "weight": 7,
+          "color": "red"
+        },
+        {
+          "interaction": "TLS clustering",
+          "description": "DCs, B cells, T cells, Plasma cells cluster in tertiary lymphoid structures",
+          "effect": "Local immunity hubs, predicts immunotherapy response independent of PD-L1",
+          "weight": 10,
+          "color": "green"
+        }
+      ]
+    },
+    "metabolic_suppression": {
+      "color": "red",
+      "style": "dotted",
+      "description": "MDSCs and metabolic barriers to T cell function",
+      "clinical_relevance": "Major mechanism of tumor immune evasion",
+      "examples": [
+        {
+          "mechanism": "Arginase-1 (ARG1)",
+          "source": "MDSCs, M2 Macrophages",
+          "target": "T cells",
+          "effect": "L-arginine depletion causes T cell dysfunction",
+          "weight": 9
+        },
+        {
+          "mechanism": "iNOS",
+          "source": "MDSCs",
+          "target": "T cells",
+          "effect": "Nitric oxide production suppresses T cell function",
+          "weight": 8
+        },
+        {
+          "mechanism": "IDO",
+          "source": "MDSCs, Tumor cells",
+          "target": "T cells",
+          "effect": "Tryptophan depletion, kynurenine production",
+          "weight": 8
+        },
+        {
+          "mechanism": "ROS/Peroxynitrite",
+          "source": "MDSCs",
+          "target": "T cells",
+          "effect": "Nitrates TCR and peptide-MHC, disrupts antigen recognition",
+          "weight": 7
+        }
+      ]
+    }
+  },
+  "network_features": {
+    "central_hub": {
+      "node": "Dendritic_cell",
+      "rationale": "DCs connect innate sensing to adaptive immunity, perform cross-presentation, license other APCs via CD40, prime both CD4+ and CD8+ T cells, and produce polarizing cytokines",
+      "connections": "All T cell types, B cells, NK cells, Macrophages"
+    },
+    "spatial_compartments": {
+      "tumor_core": {
+        "description": "250-500μm from tumor border, tumor cells directly juxtaposed with infiltrating immune cells",
+        "enriched_cells": ["Tumor cells", "Exhausted T cells (PD-1+LAG-3+TIM-3+)", "M2 macrophages", "MDSCs"],
+        "characteristics": "High checkpoint expression, chronic antigen exposure, hypoxia, immunosuppressive"
+      },
+      "invasive_margin": {
+        "description": "Front line of immune-tumor battle",
+        "enriched_cells": ["CD8+ T cells", "CD3+ T cells", "Mature DCs", "NK cells"],
+        "characteristics": "Higher density and function of effector cells, active immune responses, predicts prognosis"
+      },
+      "stroma": {
+        "description": "Surrounding connective tissue",
+        "enriched_cells": ["CAFs", "ECM", "Excluded T cells"],
+        "characteristics": "Physical barriers, distinct TCR repertoires, exclusion patterns"
+      },
+      "tertiary_lymphoid_structures": {
+        "description": "Organized lymphoid aggregates in tumors",
+        "structure": "B cell follicles (CD20+), T cell zones (CD4+/CD8+), Mature DCs (DC-LAMP+), HEVs (PNAd+)",
+        "enriched_cells": ["B cells", "Plasma cells", "Tfh cells", "DCs", "Memory T cells"],
+        "characteristics": "Germinal centers, CXCL13 high, predicts immunotherapy response independent of PD-L1"
+      }
+    },
+    "tumor_phenotypes": {
+      "hot_inflamed": {
+        "characteristics": "Extensive lymphocyte infiltration, high T cell density, elevated PD-L1, high TMB",
+        "immunoscore": "4 (high CD3+/CD8+ in core and periphery)",
+        "checkpoint_response": "Excellent response to checkpoint inhibitors",
+        "cells": "High CD8+ CTLs, activated T cells, M1 macrophages"
+      },
+      "cold_excluded": {
+        "characteristics": "CD8+ T cells trapped at margins, cannot penetrate tumor parenchyma",
+        "barriers": "CAF ECM barriers, M2 macrophage barriers",
+        "checkpoint_response": "Poor response",
+        "cells": "CD8+ at margins, CAFs, M2 macrophages in core"
+      },
+      "cold_desert": {
+        "characteristics": "Complete lack of CD8+ T cells in tumor and periphery",
+        "features": "Low mutational load, low MHC-I, low PD-L1",
+        "checkpoint_response": "No response",
+        "cells": "Sparse immune cells, no CD8+ infiltration"
+      }
+    },
+    "exhaustion_trajectory": {
+      "stage_1": {
+        "name": "Progenitor Exhausted 1 (Tex-prog1)",
+        "markers": "TCF-1high, PD-1int, TIM-3-, LAG-3-, CD127+, CXCR5+",
+        "location": "Lymphoid tissues",
+        "proliferation": "Quiescent",
+        "therapy_response": "Best responders to checkpoint blockade",
+        "self_renewal": "High"
+      },
+      "stage_2": {
+        "name": "Progenitor Exhausted 2 (Tex-prog2)",
+        "markers": "TCF-1+, PD-1high",
+        "location": "Blood-accessible regions",
+        "proliferation": "Frequently dividing",
+        "therapy_response": "Good response"
+      },
+      "stage_3": {
+        "name": "Intermediate Exhausted (Tex-int)",
+        "markers": "TCF-1-, PD-1high, CD39+, TIM-3low",
+        "location": "Tumor microenvironment and tissues",
+        "function": "Some effector activity and migration",
+        "therapy_response": "Moderate response"
+      },
+      "stage_4": {
+        "name": "Terminally Exhausted (Tex-term)",
+        "markers": "PD-1high, TIM-3high, LAG-3+, CD39high, TIGIT+, CD160+, TOX+",
+        "location": "Tumors",
+        "proliferation": "Minimal",
+        "cytotoxicity": "Limited",
+        "therapy_response": "Poor response",
+        "epigenetics": "Epigenetically fixed, ~6000 open chromatin regions distinguishing from effector/memory"
+      },
+      "master_regulator": {
+        "transcription_factor": "TOX",
+        "function": "Opens 4000-9000 chromatin regions at exhaustion loci, promotes PD-1/TIM-3/LAG-3/CD38 expression",
+        "opposing_factor": "TCF-1 (maintains stemness)"
+      }
+    },
+    "clinical_biomarkers": {
+      "immunoscore": {
+        "measurement": "Density of CD3+ and CD8+ T cells in tumor core and invasive margin",
+        "prediction": "Recurrence, metastasis, survival independent of TNM staging"
+      },
+      "CD8_proximity": {
+        "measurement": "<20μm distance from CD8+ T cell to tumor cell",
+        "prediction": "Better pathological response, disease-free survival, overall survival"
+      },
+      "TLS_presence": {
+        "measurement": "Presence of mature TLS with germinal centers",
+        "prediction": "Immunotherapy efficacy independent of PD-L1 expression"
+      },
+      "M1_M2_ratio": {
+        "measurement": "Ratio of M1 to M2 macrophages",
+        "prediction": "High M1/M2 ratio = better prognosis"
+      },
+      "Tex_prog_Tex_term_ratio": {
+        "measurement": "Ratio of progenitor to terminal exhausted T cells",
+        "prediction": "High Tex-prog = better checkpoint blockade response"
+      }
+    }
+  },
+  "io60_panel_cores": {
+    "immune_cell_typing": {
+      "markers": ["CD3e", "CD45", "CD68", "CD4", "CD8", "CD20", "CD56", "CD79a", "CD38", "CD14", "CD11c", "HLA-DR"],
+      "identified_populations": 15
+    },
+    "lymphocyte_profiling": {
+      "markers": ["FOXP3", "TOX", "TCF-1", "Granzyme B", "CD107", "CD45RO", "CXCR5", "ICOS", "Bcl6"],
+      "function": "Functional states, exhaustion, memory, Tfh"
+    },
+    "myeloid_profiling": {
+      "markers": ["iNOS", "CD163", "CD206", "CD11b", "CD66", "MPO", "CD33", "DC-LAMP"],
+      "function": "M1 vs M2 polarization, neutrophils, MDSCs, DC maturation"
+    },
+    "immune_activation": {
+      "markers": ["PD-1", "PD-L1", "LAG-3", "VISTA", "ICOS", "IFN-γ", "IDO1", "TIM-3", "TIGIT", "CD80", "CD86", "CD40"],
+      "function": "Checkpoint expression, activation states"
+    },
+    "proliferation": {
+      "markers": ["Ki67", "PCNA"],
+      "function": "Actively dividing cells"
+    },
+    "tissue_architecture": {
+      "markers": ["CD31", "SMA", "E-cadherin", "PanCK", "podoplanin"],
+      "function": "Vasculature, CAFs, epithelial cells, spatial context"
+    }
+  }
+}
