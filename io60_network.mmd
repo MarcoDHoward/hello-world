@@ -1,0 +1,94 @@
+graph TB
+    %% IO60 Immune Cell Interaction Network
+    %% Color coding: Blue=T cells, Purple=B cells, Red=NK, Orange=Myeloid, Gray=Tumor/Stroma
+
+    %% Define nodes with styling
+    CD4[CD4+ Helper T<br/>CD3+CD4+]:::tcell
+    CD8[CD8+ Cytotoxic T<br/>CD3+CD8+<br/>GranzymeB+]:::tcell
+    Treg[Regulatory T<br/>FOXP3+]:::treg
+    Tex_prog[Progenitor Exhausted<br/>TCF-1+ PD-1+]:::texh
+    Tex_term[Terminal Exhausted<br/>TOX+ TIM-3+ LAG-3+]:::texh
+    Memory[Memory T<br/>CD45RO+]:::tcell
+    Tfh[Tfh<br/>CXCR5+ ICOS+]:::tcell
+
+    Bcell[B cells<br/>CD20+ CD79a+]:::bcell
+    Plasma[Plasma cells<br/>CD38high]:::bcell
+
+    NK[NK cells<br/>CD56+ CD3-]:::nkcell
+
+    DC[DENDRITIC CELLS<br/>CD11c+ HLA-DR+<br/>*** CENTRAL HUB ***]:::dc
+    M1[M1 Macrophages<br/>CD68+ iNOS+]:::m1
+    M2[M2 Macrophages<br/>CD68+ CD163+ CD206+]:::m2
+    MDSC[MDSCs<br/>CD11b+ HLA-DRlow]:::mdsc
+
+    Tumor[Tumor cells<br/>PanCK+ PD-L1+]:::tumor
+    CAF[CAFs<br/>SMA+]:::stroma
+
+    %% CHECKPOINT INHIBITORY (red dashed)
+    CD8 -.PD-1/PD-L1<br/>inhibition.-> Tumor
+    CD8 -.PD-1/PD-L1.-> M2
+    Tex_term -.PD-1/PD-L1.-> Tumor
+    CD4 -.CTLA-4/CD80-86.-> DC
+    Treg -.CTLA-4<br/>trans-endo.-> DC
+    CD8 -.LAG-3/MHC-II.-> DC
+    M1 -.VISTA/PSGL-1.-> CD8
+    M2 -.VISTA.-> CD4
+    Tex_term -.TIM-3/Gal-9.-> MDSC
+
+    %% CO-STIMULATORY (green solid)
+    DC ==>|CD28/CD80-86<br/>Signal 2| CD4
+    DC ==>|CD28/CD80-86<br/>Signal 2| CD8
+    DC ==>|4-1BB/4-1BBL<br/>expansion| CD8
+    CD4 ==>|CD40L/CD40<br/>DC licensing| DC
+    Tfh ==>|CD40L/CD40<br/>GC formation| Bcell
+    Tfh ==>|ICOS/ICOS-L| Bcell
+
+    %% CYTOKINES (blue dashed)
+    CD4 -.->|IFN-γ<br/>M1 polarize| M1
+    CD8 -.->|IFN-γ| M1
+    DC -.->|IL-12<br/>Th1/Signal 3| CD4
+    M1 -.->|IL-12| CD8
+    CD4 -.->|IL-2| CD8
+    CD4 -.->|IL-2| Treg
+    Treg -.->|TGF-β<br/>suppress| CD8
+    M2 -.->|TGF-β<br/>suppress| CD4
+    Tfh -.->|IL-21<br/>GC support| Bcell
+    DC -.->|IL-15| Memory
+
+    %% ANTIGEN PRESENTATION (thick gray)
+    Tumor -->|MHC-I/TCR<br/>Tumor Ag| CD8
+    DC -->|Cross-presentation<br/>MHC-I| CD8
+    DC -->|MHC-II/TCR<br/>Signal 1| CD4
+    Bcell -->|MHC-II/TCR<br/>GC selection| Tfh
+
+    %% CYTOTOXIC KILLING (bold black)
+    CD8 ==>|Granzyme B<br/>Perforin<br/>KILLING| Tumor
+    NK ==>|Perforin<br/>ADCC| Tumor
+
+    %% DIFFERENTIATION (special arrows)
+    CD8 -.->|chronic Ag<br/>TOX induced| Tex_prog
+    Tex_prog -.->|progressive<br/>TCF-1 loss| Tex_term
+    CD8 -.->|memory| Memory
+    Bcell -.->|GC pathway| Plasma
+    M1 <-.->|plasticity| M2
+
+    %% MDSC SUPPRESSION (red dotted)
+    MDSC -.ARG1/iNOS/ROS<br/>metabolic.-> CD8
+    MDSC -.IDO/PD-L1.-> CD4
+
+    %% SPATIAL BARRIERS
+    CAF -.ECM barrier<br/>EXCLUSION.-> CD8
+    M2 -.Physical<br/>barrier.-> Tumor
+
+    %% Styling
+    classDef tcell fill:#4472C4,stroke:#2F5496,stroke-width:2px,color:#fff
+    classDef treg fill:#5B9BD5,stroke:#2F5496,stroke-width:2px,color:#fff
+    classDef texh fill:#7030A0,stroke:#3B2F5E,stroke-width:2px,color:#fff
+    classDef bcell fill:#9E67E3,stroke:#7030A0,stroke-width:2px,color:#fff
+    classDef nkcell fill:#E74C3C,stroke:#C0392B,stroke-width:2px,color:#fff
+    classDef dc fill:#F39C12,stroke:#D68910,stroke-width:4px,color:#fff,font-weight:bold
+    classDef m1 fill:#E67E22,stroke:#CA6F1E,stroke-width:2px,color:#fff
+    classDef m2 fill:#D35400,stroke:#A04000,stroke-width:2px,color:#fff
+    classDef mdsc fill:#8B4513,stroke:#654321,stroke-width:2px,color:#fff
+    classDef tumor fill:#2C3E50,stroke:#1C2833,stroke-width:3px,color:#fff
+    classDef stroma fill:#95A5A6,stroke:#7F8C8D,stroke-width:2px,color:#000

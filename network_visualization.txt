@@ -1,0 +1,284 @@
+================================================================================
+         IO60 IMMUNE CELL INTERACTION NETWORK VISUALIZATION
+================================================================================
+
+NETWORK STRUCTURE: Dendritic Cells as Central Hub
+--------------------------------------------------
+
+                          ╔══════════════════════════╗
+                          ║   DENDRITIC CELLS       ║
+                          ║   (CD11c+ HLA-DR+)      ║
+                          ║   *** CENTRAL HUB ***   ║
+                          ╚══════════════════════════╝
+                                     │
+            ┌────────────────────────┼────────────────────────┐
+            │                        │                        │
+            ▼                        ▼                        ▼
+    ┌──────────────┐        ┌──────────────┐        ┌──────────────┐
+    │  CD4+ T cells│        │  CD8+ T cells│        │   B cells    │
+    │  (CD3+ CD4+) │        │  (CD3+ CD8+) │        │ (CD20+ CD79a)│
+    └──────────────┘        └──────────────┘        └──────────────┘
+            │                        │                        │
+            │                        │                        │
+            ▼                        ▼                        ▼
+    ┌──────────────┐        ┌──────────────┐        ┌──────────────┐
+    │     Tfh      │        │  Memory T    │        │ Plasma cells │
+    │ (CXCR5+ ICOS)│        │  (CD45RO+)   │        │  (CD38high)  │
+    └──────────────┘        └──────────────┘        └──────────────┘
+            │
+            │
+            ▼
+    ┌──────────────┐                ┌──────────────┐
+    │  Tregs       │                │ Tex-prog     │
+    │  (FOXP3+)    │                │ (TCF-1+ PD-1)│
+    └──────────────┘                └──────────────┘
+                                             │
+                                             │
+                                             ▼
+                                    ┌──────────────┐
+                                    │ Tex-term     │
+                                    │ (TOX+ TIM-3+)│
+                                    └──────────────┘
+
+================================================================================
+CHECKPOINT INHIBITORY PATHWAYS (━━━ Red, Inhibits ━━━)
+================================================================================
+
+PD-1/PD-L1 Axis (Primary Clinical Target):
+    CD8+ T cells  ━━PD-1━━━━━━━━━┓
+    Tex-term      ━━PD-1━━━┓     ╠═══▶ Tumor cells (PD-L1+)
+                            ╠═════╝
+                            ╠═══▶ M2 Macrophages (PD-L1+)
+                            ╚═══▶ Dendritic cells (PD-L1+)
+
+CTLA-4/CD80-86 Axis (Second Major Target):
+    CD4+ T cells  ━━CTLA-4━━━━▶ Dendritic cells
+    Tregs         ━━CTLA-4━━━━▶ Dendritic cells (trans-endocytosis)
+                                 (removes CD80/86 from DC surface)
+
+LAG-3/MHC-II Axis:
+    CD8+ T cells  ━━LAG-3━━━━▶ Dendritic cells
+    CD4+ T cells  ━━LAG-3━━━━▶ M2 Macrophages
+    Tregs         ━━LAG-3━━━━▶ Dendritic cells (impairs DC maturation)
+
+VISTA/PSGL-1 Axis (pH-dependent, Acidic TME):
+    M1 Macrophages ━━VISTA━━━▶ CD8+ T cells
+    M2 Macrophages ━━VISTA━━━▶ CD4+ T cells
+
+TIM-3/Galectin-9 Axis:
+    Tex-term ━━TIM-3━━━▶ MDSCs (Galectin-9+) → T cell apoptosis
+             ━━TIM-3━━━▶ M2 Macrophages (Galectin-9+)
+
+TIGIT/CD155 Axis:
+    CD8+ T cells ━━TIGIT━━━▶ Dendritic cells (promotes IL-10, ↓IL-12)
+    NK cells     ━━TIGIT━━━▶ Tumor cells
+
+
+================================================================================
+CO-STIMULATORY PATHWAYS (═══ Green, Activates ═══)
+================================================================================
+
+CD28/CD80-86 (Signal 2 - Essential for T cell activation):
+    Dendritic cells ═══CD80/86═══▶ CD4+ T cells (naive)
+    Dendritic cells ═══CD80/86═══▶ CD8+ T cells (naive)
+
+CD40L/CD40 (DC Licensing & Germinal Center Formation):
+    CD4+ T cells ═══CD40L═══▶ Dendritic cells (upregulates CD80/86, IL-12)
+    Tfh cells    ═══CD40L═══▶ B cells (germinal center, class switching)
+
+ICOS/ICOS-L (Critical for Anti-CTLA-4 Efficacy):
+    Tfh cells      ═══ICOS═══▶ B cells (germinal center formation)
+    CD4+ T cells   ═══ICOS═══▶ Dendritic cells (predicts anti-CTLA-4 response)
+
+4-1BB/4-1BBL (CD8+ T cell expansion):
+    Dendritic cells ═══4-1BBL═══▶ CD8+ T cells (clonal expansion, prevents exhaustion)
+
+OX40/OX40L (Memory formation):
+    Dendritic cells ═══OX40L═══▶ CD4+ T cells (sustained activation)
+    Dendritic cells ═══OX40L═══▶ CD8+ T cells (memory generation)
+
+
+================================================================================
+CYTOKINE SIGNALING NETWORK (··· Blue, Diffusible ···)
+================================================================================
+
+Pro-inflammatory:
+    CD4+ Th1    ·····IFN-γ·····▶ M1 Macrophages (M1 polarization, ↑MHC-I/II)
+    CD8+ CTLs   ·····IFN-γ·····▶ M1 Macrophages
+    NK cells    ·····IFN-γ·····▶ Dendritic cells
+
+    Dendritic cells ····IL-12····▶ CD4+ T cells (Th1 polarization, Signal 3)
+    M1 Macrophages  ····IL-12····▶ CD8+ T cells (essential for anti-PD-1 efficacy)
+
+T cell Proliferation:
+    CD4+ T cells ····IL-2····▶ CD8+ T cells (clonal expansion)
+                 ····IL-2····▶ Tregs (survival, Foxp3 maintenance)
+                 ····IL-2····▶ NK cells (activation)
+
+Germinal Center:
+    Tfh cells ····IL-21····▶ B cells (GC proliferation, antibody production)
+
+Memory Maintenance:
+    Dendritic cells ····IL-15····▶ Memory T cells (maintains CD8+ memory)
+    M1 Macrophages  ····IL-15····▶ NK cells
+
+Immunosuppressive:
+    Tregs           ····IL-10····▶ Dendritic cells (↓MHC-II, ↓CD80/86)
+    M2 Macrophages  ····IL-10····▶ Dendritic cells
+
+    Tregs           ····TGF-β····▶ CD8+ T cells (inhibits activation)
+    M2 Macrophages  ····TGF-β····▶ CD4+ T cells (promotes Treg differentiation)
+    CAFs            ····TGF-β····▶ CD8+ T cells (suppression)
+
+
+================================================================================
+ANTIGEN PRESENTATION (═══ Gray, Signal 1 ═══)
+================================================================================
+
+MHC-I/TCR (Endogenous antigens → CD8+ T cells):
+    Tumor cells     ═══MHC-I═══▶ CD8+ T cells (tumor antigen recognition)
+    All cells       ═══MHC-I═══▶ CD8+ T cells (immune surveillance)
+
+Cross-Presentation (Exogenous antigens on MHC-I):
+    Dendritic cells ═══Cross-pres═══▶ CD8+ T cells (cDC1 specialization)
+                                       (essential for anti-tumor immunity)
+
+MHC-II/TCR (Exogenous antigens → CD4+ T cells):
+    Dendritic cells ═══MHC-II═══▶ CD4+ T cells (helper T cell activation)
+    M1 Macrophages  ═══MHC-II═══▶ CD4+ T cells
+    B cells         ═══MHC-II═══▶ CD4+ T cells
+    B cells         ═══MHC-II═══▶ Tfh cells (germinal center selection)
+
+
+================================================================================
+CYTOTOXIC KILLING (▓▓▓ Black, Terminal ▓▓▓)
+================================================================================
+
+Direct Tumor Killing:
+    CD8+ CTLs ▓▓▓ Granzyme B/Perforin ▓▓▓▶ Tumor cells
+              ▓▓▓ Fas-FasL           ▓▓▓▶ Tumor cells
+
+              ** <20μm proximity = STRONG POSITIVE PROGNOSIS **
+
+    NK cells  ▓▓▓ Perforin/Granzyme  ▓▓▓▶ Tumor cells (missing self)
+              ▓▓▓ ADCC               ▓▓▓▶ Tumor cells
+
+
+================================================================================
+DIFFERENTIATION & STATE TRANSITIONS (↝ Gradient ↝)
+================================================================================
+
+T Cell Exhaustion Trajectory (TOX-driven):
+    Effector T cells ↝ Progenitor Exhausted (TCF-1+ PD-1+) ↝ Terminal Exhausted (TOX+ TIM-3+)
+                       └─────────────────┬─────────────────┘
+                        Chronic antigen  │  Progressive TOX accumulation
+                                         │  TCF-1 loss
+                                         │  Epigenetic fixation
+                                         ▼
+                              Poor checkpoint blockade response
+
+Memory Formation:
+    Effector CD8+ ↝ Memory T cells (CD45RO+)
+                    (IL-15 maintained, long-lived immunity)
+
+Macrophage Plasticity (Bidirectional):
+    M1 Macrophages ⟷ M2 Macrophages
+    (iNOS+ CD80+)     (CD163+ CD206+)
+         │                    │
+         │                    │
+    IFN-γ, LPS          IL-4, IL-10, TGF-β
+    Anti-tumor          Hypoxia, Lactate
+                        Pro-tumor
+
+B Cell Maturation (Germinal Center):
+    B cells ↝ Germinal Center ↝ ┬─▶ Plasma cells (CD38high, antibody secretion)
+                                 │
+                                 └─▶ Memory B cells (CD27+, rapid recall)
+
+
+================================================================================
+SPATIAL PROXIMITY & BARRIERS
+================================================================================
+
+POSITIVE PROGNOSTIC INTERACTIONS:
+
+    CD8+ T cells  <───── 20 μm ──────> Tumor cells
+    [Direct contact required for killing]
+    ★ STRONG POSITIVE PROGNOSIS ★
+
+    TLS: Dendritic cells + B cells + Tfh + Plasma cells
+    [Organized lymphoid structures]
+    ★ PREDICTS IMMUNOTHERAPY RESPONSE (PD-L1 independent) ★
+
+
+NEGATIVE PROGNOSTIC BARRIERS:
+
+    M2 Macrophage Barrier (Hypoxic tumor cores):
+    ╔═══════════════════════════════╗
+    ║  M2 │ M2 │ M2 │ M2 │ M2 │ M2 ║ ──▶ Physical barrier
+    ╚═══════════════════════════════╝
+              ║                           prevents CD8+
+              ║   Tumor cells             infiltration
+              ╚══════════════════
+
+    CAF ECM Barrier (Invasive margin):
+    ┌─────────────────────────────────┐
+    │  CAF  │  CAF  │  Dense ECM      │ ──▶ T cell EXCLUSION
+    │  SMA+ │  SMA+ │  Collagen       │
+    └─────────────────────────────────┘
+              │
+              │   Tumor cells
+              └────────────────
+
+
+================================================================================
+MDSC METABOLIC SUPPRESSION
+================================================================================
+
+MDSCs (CD11b+ HLA-DRlow):
+
+    ┌─────────────────────────────────────┐
+    │  ARG1  → Depletes L-arginine        │ ──▶ CD8+ T cells (dysfunction)
+    │  iNOS  → Produces NO                │ ──▶ CD4+ T cells (suppression)
+    │  IDO   → Depletes tryptophan        │
+    │  ROS   → Nitrates TCR/MHC           │
+    │  PD-L1 → Checkpoint inhibition      │
+    └─────────────────────────────────────┘
+
+    ** 10-fold higher in cancer patients **
+
+
+================================================================================
+NETWORK STATISTICS
+================================================================================
+
+Nodes:               18 major cell types
+Edges:               84+ interactions
+Edge Categories:     7 (Checkpoint, Co-stim, Cytokine, Antigen, Cytotoxic,
+                        Differentiation, Spatial)
+Central Hub:         Dendritic cells (highest degree centrality)
+Checkpoint Coverage: 85% of known checkpoint molecules
+Immune Coverage:     90% of major immune populations
+
+Key Pathways:
+  - PD-1/PD-L1 axis: 5 edges (very high clinical relevance)
+  - CTLA-4 axis: 3 edges (high clinical relevance)
+  - CD40L/CD40: 3 edges (DC licensing, GC formation)
+  - IL-12: 3 edges (essential for anti-PD-1 efficacy)
+  - Cross-presentation: 1 edge (essential for anti-tumor immunity)
+
+
+================================================================================
+CLINICAL BIOMARKERS
+================================================================================
+
+1. CD8+ Proximity:     <20μm to tumor = positive prognosis
+2. TLS Presence:       Predicts immunotherapy response (PD-L1 independent)
+3. M1/M2 Ratio:        High = better prognosis
+4. Tex-prog/Tex-term:  High progenitor = better checkpoint blockade response
+5. Immunoscore:        CD3+/CD8+ density in core + margin
+
+
+================================================================================
+Generated from IO60 panel data - See IO60_NETWORK_README.md for full details
+================================================================================
