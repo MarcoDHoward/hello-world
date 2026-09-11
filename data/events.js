@@ -17,7 +17,7 @@
  *   support   ["Name", "Name"]            optional, light Archivo, one per line
  *   opener    "Name"                      optional, sits below the support pair
  *   tickets   "https://..."               optional; hides button when empty
- *   flyer     "assets/flyers/file.jpg"    optional; falls back to a tile
+ *   flyer     "brandassets/flyers/x.jpg" optional; falls back to a tile
  *   flyerAlt  "Flyer text"                optional; describes the image
  */
 
@@ -54,21 +54,24 @@ const MIRAGE_EVENTS = [
     support: ["Support One", "Marco Valencia"],
     opener: "Opener",
     tickets: "https://ra.co/events/0000000",
-    flyer: "assets/flyers/velvet-2026-11-07.jpg",
+    flyer: "brandassets/flyers/velvet-flyer-template.jpg",
     flyerAlt: "VELVET flyer. November 7 at The Speakeasy, 9:00PM to 1:00AM. Headliner Name, Support One, Marco Valencia, Opener. Trip hop and progressive.",
   },
   {
     series: "nocturne",
     edition: "NOCTURNE 004",
-    date: "2026-12-05",
+    date: "2026-11-21",
     doors: "10:00PM",
     close: "4:00AM",
     venue: "Monkey Loft",
     address: "Seattle",
-    headliner: "Headliner TBA",
-    support: ["Support act", "MIRAGE residents"],
+    headliner: "Headliner Name",
+    labels: ["Label", "Label", "Label"],
+    support: ["Support One", "Marco Valencia"],
+    opener: "Opener",
     tickets: "",
-    flyer: "",
+    flyer: "brandassets/flyers/nocturne-flyer-template.jpg",
+    flyerAlt: "NOCTURNE flyer. November 21 at Monkey Loft, 10:00PM to 4:00AM. Headliner Name, Support One, Marco Valencia, Opener. Progressive and techno.",
   },
   {
     series: "velvet",

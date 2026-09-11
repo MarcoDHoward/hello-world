@@ -134,6 +134,7 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: 0.28em;
   text-transform: uppercase;
   line-height: 1;
+  white-space: nowrap;
   cursor: pointer;
   transition: background-color 240ms var(--ease), color 240ms var(--ease);
 }

@@ -11,9 +11,11 @@ serve the folder as static files.
 ## Brand
 
 All brand rules live in [`brand.md`](brand.md): series, palettes, type,
-logo files, flyer layout and voice. Read it before touching anything
-visual or writing copy. Do not duplicate its contents here. If a brand
-decision changes, change `brand.md`, then bring the code in line with it.
+flyer layout and voice. Brand files (logos, flyer templates, colour
+tokens, a manifest) live in [`brandassets/`](brandassets/README.md).
+Read both before touching anything visual or writing copy. Do not
+duplicate their contents here. If a brand decision changes, change
+`brand.md` and `brandassets/tokens.css`, then bring the code in line.
 
 ## Layout
 
@@ -22,8 +24,8 @@ index.html        markup for all sections, plus the inline logo SVG
 css/styles.css    styles; palettes as custom properties at the top
 js/main.js        fills "Next event" and "Past" from the data file
 data/events.js    all event data (MIRAGE_EVENTS, MIRAGE_SERIES)
-assets/flyers/    flyer images referenced from events.js
-brand.md          brand reference
+brandassets/      logos, flyers, tokens.css, manifest.json (see its README)
+brand.md          brand rules
 README.md         how to add events, links, flyers and the logo
 ```
 

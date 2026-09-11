@@ -1,0 +1,114 @@
+{
+  "brand": "MIRAGE",
+  "oneLiner": "Melodic techno and progressive house in Seattle.",
+  "reference": "../brand.md",
+  "tokens": "tokens.css",
+  "rules": [
+    "Dark backgrounds only.",
+    "One accent colour per piece.",
+    "Michroma is a single weight. Never synthesize bold.",
+    "Archivo Black for headliner names and the date numeral only.",
+    "Cormorant Garamond italic for the Velvet series name and accents only.",
+    "Few words. No hype, no exclamation points, no emoji."
+  ],
+  "series": {
+    "velvet": {
+      "name": "VELVET",
+      "displayName": "Velvet",
+      "tagline": "Come in closer.",
+      "venue": "The Speakeasy",
+      "hours": "9:00PM – 1:00AM",
+      "sound": "Trip hop into progressive",
+      "soundTags": ["Trip hop", "Progressive"],
+      "seriesNameFont": "Cormorant Garamond italic",
+      "palette": {
+        "bg": "#0E070B", "wine": "#4A1A28", "rose": "#C98B7A",
+        "amber": "#E3A45A", "cream": "#EDE3D6", "reflect": "#7A4C4A"
+      },
+      "accent": "#E3A45A",
+      "text": "#EDE3D6"
+    },
+    "nocturne": {
+      "name": "NOCTURNE",
+      "displayName": "NOCTURNE",
+      "tagline": "Into the night.",
+      "venue": "Monkey Loft",
+      "hours": "10:00PM – 4:00AM",
+      "sound": "Progressive into techno",
+      "soundTags": ["Progressive", "Techno"],
+      "seriesNameFont": "Michroma",
+      "palette": {
+        "bg": "#05080E", "navy": "#15304A", "violet": "#6A5AE0",
+        "cyan": "#4FD8DC", "ice": "#E4EAF0", "reflect": "#3E5B78"
+      },
+      "accent": "#4FD8DC",
+      "text": "#E4EAF0"
+    },
+    "parent": {
+      "name": "MIRAGE",
+      "palette": {
+        "bg": "#0A0D12", "text": "#E4EAF0", "bar": "#E4EAF0",
+        "accent": "#9FB4C4", "reflect": "#6F8698"
+      },
+      "accent": "#9FB4C4",
+      "text": "#E4EAF0"
+    }
+  },
+  "fonts": [
+    { "family": "Michroma", "weights": [400], "use": "wordmark, nav, labels, times, Nocturne series name", "tracking": "0.28–0.40em on all caps" },
+    { "family": "Archivo Black", "weights": [400], "use": "headliner names, date numeral" },
+    { "family": "Archivo", "weights": [300, 400], "use": "300 support acts and openers; 400 body, label credits" },
+    { "family": "Cormorant Garamond", "weights": [400, 500], "style": "italic", "use": "Velvet series name and accents only" }
+  ],
+  "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@300;400&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Michroma&display=swap",
+  "assets": [
+    {
+      "path": "logos/mirage-logo-stacked.png",
+      "type": "logo", "lockup": "stacked", "colorway": "velvet",
+      "width": 1200, "height": 965, "alpha": true,
+      "use": "Primary lockup. Mark over wordmark. Social preview image."
+    },
+    {
+      "path": "logos/mirage-logo-horizontal.png",
+      "type": "logo", "lockup": "horizontal", "colorway": "velvet",
+      "width": 1200, "height": 269, "alpha": true,
+      "use": "Nav bars, headers, banners, flyer header row."
+    },
+    {
+      "path": "logos/mirage-icon-neutral.png",
+      "type": "icon", "lockup": "stacked", "colorway": "neutral",
+      "width": 1080, "height": 1080, "alpha": false, "background": "#0A0D12",
+      "use": "Instagram profile, favicon, touch icon."
+    },
+    {
+      "path": "logos/mirage-icon-velvet.png",
+      "type": "icon", "lockup": "stacked", "colorway": "velvet",
+      "width": 1080, "height": 1080, "alpha": false, "background": "#0E070B",
+      "use": "Velvet colourway square."
+    },
+    {
+      "path": "flyers/velvet-flyer-template.jpg",
+      "type": "flyer-template", "series": "velvet",
+      "width": 1080, "height": 1350, "ratio": "4:5",
+      "use": "Layout reference for Velvet flyers. Placeholder names. Amber shimmer column on the right."
+    },
+    {
+      "path": "flyers/nocturne-flyer-template.jpg",
+      "type": "flyer-template", "series": "nocturne",
+      "width": 1080, "height": 1350, "ratio": "4:5",
+      "use": "Layout reference for Nocturne flyers. Placeholder names. Navy light-trail background."
+    }
+  ],
+  "missing": [
+    "mirage-logo-stacked.svg", "mirage-logo-horizontal.svg", "mirage-mark.svg",
+    "mirage-icon-neutral.svg", "mirage-icon-velvet.svg",
+    "mirage-icon-nocturne.png", "mirage-icon-nocturne.svg"
+  ],
+  "flyerLayout": {
+    "canvas": "1080x1350, 4:5 portrait",
+    "header": "Three items on one top edge: date top-left (month in spaced Michroma caps over an Archivo Black two-digit numeral), venue centred (Michroma caps, time in Michroma beneath), logo lockup top-right (mark over MIRAGE wordmark).",
+    "lineup": "Starts about 30% down, left-aligned at an 11% margin. Series name, headliner in Archivo Black caps, label credits in parentheses tucked tight beneath in spaced Michroma caps, a large gap, support pair in Archivo 300 caps, a gap, opener.",
+    "footer": "Sound tags centred in spaced Michroma caps, joined with a middle dot.",
+    "background": "Series bg with a subtle textured field. Velvet: amber shimmer column. Nocturne: navy light trails. Large empty fields above and below the lineup block."
+  }
+}

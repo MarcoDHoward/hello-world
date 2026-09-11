@@ -12,7 +12,8 @@ index.html        markup for all six sections, plus the inline logo SVG
 css/styles.css    styles and the three palettes (parent, Velvet, Nocturne)
 js/main.js        fills "Next event" and "Past" from the data file
 data/events.js    all event data. Edit this to add or change events
-assets/flyers/    drop flyer images here
+brandassets/      logos, flyer templates, colour tokens. See its README
+brand.md          brand rules
 ```
 
 ## Adding an event
@@ -34,7 +35,7 @@ Order does not matter. The page sorts by date.
   support: ["Artist", "Artist"], // optional, one per line
   opener: "Artist",              // optional, sits below the support acts
   tickets: "https://ra.co/events/1234567", // optional. No link, no button.
-  flyer: "assets/flyers/nocturne-005.jpg", // optional. See below.
+  flyer: "brandassets/flyers/nocturne-2026-11-14.jpg", // optional. See below.
   flyerAlt: "NOCTURNE 005 flyer. Artist Name, Monkey Loft, 14 Nov.", // optional
 },
 ```
@@ -55,14 +56,14 @@ What happens automatically:
 
 ## Flyer images
 
-Put flyers in `assets/flyers/` and set the `flyer` field to that path.
+Put flyers in `brandassets/flyers/` and set the `flyer` field to that path.
 Tiles are 4:5, the Instagram portrait ratio, and images are cropped to
 cover. A JPEG around 800 by 1000 pixels is plenty.
 
 If `flyer` is empty the tile is drawn from the event data in the series
 palette, so the grid never looks broken while you wait on artwork.
-`assets/flyers/velvet-2026-11-07.jpg` is the sample flyer, wired to the
-sample VELVET 005 event.
+The two flyer templates in `brandassets/flyers/` are wired to the sample
+VELVET 005 and NOCTURNE 004 events.
 
 ## Ticket links
 
@@ -103,14 +104,13 @@ The form posts in a new tab so the site stays open.
 
 ## The logo
 
-Brand collateral lives in `assets/brand/`:
+Brand collateral lives in `brandassets/` and is indexed in
+`brandassets/README.md` and `brandassets/manifest.json`. The site uses:
 
 | File | Used for |
 |---|---|
-| `mirage-logo-stacked.png` | social preview (`og:image`) |
-| `mirage-logo-horizontal.png` | reference; nav uses the wordmark as text |
-| `mirage-icon-neutral.png` | favicon and Apple touch icon |
-| `mirage-icon-velvet.png` | reference; Velvet colourway |
+| `brandassets/logos/mirage-logo-stacked.png` | social preview (`og:image`) |
+| `brandassets/logos/mirage-icon-neutral.png` | favicon and Apple touch icon |
 
 The hero mark is an inline SVG in `index.html`, marked with an HTML
 comment. It is drawn from the geometry of the stacked logo so CSS can
@@ -127,7 +127,7 @@ The centre bar has `class="bar accent"`, and its reflection dashes have
 `class="reflect reflect--accent"`. Each bar carries a `--i` custom
 property and each reflection row a `--r`, which stagger the shimmer.
 
-When the SVG versions of the logos arrive, add them to `assets/brand/`
+When the SVG versions of the logos arrive, add them to `brandassets/logos/`
 and, if you want the hero to use the real file, paste `mirage-mark.svg`
 over the inline SVG keeping `class="mark"` on the root and the class
 names above on the shapes.

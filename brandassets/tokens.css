@@ -1,0 +1,46 @@
+/*
+ * MIRAGE design tokens.
+ * Source of truth for colour and type. Mirrors brand.md.
+ * css/styles.css in the site carries the same values; change them here
+ * first, then there.
+ */
+
+:root {
+  /* Parent / neutral */
+  --mirage-bg: #0A0D12;
+  --mirage-text: #E4EAF0;
+  --mirage-bar: #E4EAF0;
+  --mirage-accent: #9FB4C4;
+  --mirage-reflect: #6F8698;
+
+  /* Velvet */
+  --velvet-bg: #0E070B;
+  --velvet-wine: #4A1A28;
+  --velvet-rose: #C98B7A;
+  --velvet-amber: #E3A45A;      /* accent */
+  --velvet-cream: #EDE3D6;      /* text and bars */
+  --velvet-reflect: #7A4C4A;
+
+  /* Nocturne */
+  --nocturne-bg: #05080E;
+  --nocturne-navy: #15304A;
+  --nocturne-violet: #6A5AE0;
+  --nocturne-cyan: #4FD8DC;     /* accent */
+  --nocturne-ice: #E4EAF0;      /* text and bars */
+  --nocturne-reflect: #3E5B78;
+
+  /* Type. All Google Fonts. */
+  --font-brand: "Michroma", sans-serif;            /* wordmark, nav, labels, times, NOCTURNE */
+  --font-heavy: "Archivo Black", sans-serif;       /* headliner names, date numeral */
+  --font-body: "Archivo", sans-serif;              /* 400 body and label credits, 300 support and openers */
+  --font-velvet: "Cormorant Garamond", serif;      /* italic. Velvet series name and accents only */
+
+  --tracking-label: 0.32em;     /* 0.28 to 0.40em on all-caps Michroma labels */
+  --tracking-wordmark: 0.5em;
+
+  /* Flyer canvas */
+  --flyer-width: 1080px;
+  --flyer-height: 1350px;
+  --flyer-margin: 11%;          /* left margin of the lineup block */
+  --flyer-lineup-top: 30%;      /* where the lineup block starts */
+}

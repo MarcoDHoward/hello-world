@@ -2,6 +2,11 @@
 
 Seattle electronic music event brand. Parent brand with two series.
 
+**Files live in [`brandassets/`](brandassets/README.md).** Logos, flyer
+templates, `tokens.css` and a `manifest.json` that lists every asset with
+its size, colourway and use. Look there for anything visual; this file
+holds the rules.
+
 One-liner: **Melodic techno and progressive house in Seattle.**
 
 ## Series
@@ -48,14 +53,18 @@ Rule: dark backgrounds only. One accent color per piece.
 
 ## Logo files
 
+All in `brandassets/logos/`. Full index with sizes in
+`brandassets/manifest.json`.
+
 | File | Use |
 |---|---|
-| `mirage-logo-stacked.svg` | primary; mark over wordmark |
-| `mirage-logo-horizontal.svg` | nav bars, headers, banners |
-| `mirage-mark.svg` | mark alone, no wordmark |
-| `mirage-icon-neutral.png/.svg` | Instagram profile, favicon |
-| `mirage-icon-velvet.png/.svg` | Velvet colorway, square |
-| `mirage-icon-nocturne.png/.svg` | Nocturne colorway, square |
+| `mirage-logo-stacked.png` | primary; mark over wordmark |
+| `mirage-logo-horizontal.png` | nav bars, headers, banners |
+| `mirage-icon-neutral.png` | Instagram profile, favicon |
+| `mirage-icon-velvet.png` | Velvet colorway, square |
+
+Still to add: SVG versions of each, `mirage-mark.svg` (mark alone, no
+wordmark) and `mirage-icon-nocturne.png/.svg`.
 
 The mark is an **audio waveform with a shimmering reflection below** —
 a mirage of sound on water. The center bar is the accent color.
@@ -74,6 +83,8 @@ Minimum size: below ~32px the reflection merges — use the mark alone.
 The wordmark is illegible below ~90px; use `mirage-mark.svg` there.
 
 ## Flyer layout (for reference)
+
+Templates for both series are in `brandassets/flyers/`.
 
 4:5 portrait, 1080×1350. Three-part header row aligned to the same
 top edge: date top-left, venue centered, logo lockup top-right.
