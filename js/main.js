@@ -26,6 +26,17 @@
     weekday: "short", month: "short", day: "numeric", year: "numeric",
   });
   var shortDate = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric" });
+  var weekday = new Intl.DateTimeFormat("en-US", { weekday: "long" });
+  var monthYear = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" });
+
+  // Date as the flyers set it: weekday, then the numeral heavy, then month and year.
+  function dateBlock(d) {
+    return el("p", { class: "event__date" }, [
+      el("span", { class: "event__date-weekday", text: weekday.format(d) }),
+      el("span", { class: "event__date-numeral", text: String(d.getDate()) }),
+      el("span", { class: "event__date-month", text: monthYear.format(d) }),
+    ]);
+  }
 
   function el(tag, attrs, children) {
     var node = document.createElement(tag);
@@ -44,10 +55,10 @@
     return (typeof MIRAGE_SERIES !== "undefined" && MIRAGE_SERIES[key]) || { name: key.toUpperCase() };
   }
 
-  function metaItem(label, value) {
+  function metaItem(label, value, ddClass) {
     return el("div", null, [
       el("dt", { class: "label", text: label }),
-      el("dd", { text: value }),
+      el("dd", { class: ddClass || null, text: value }),
     ]);
   }
 
@@ -90,7 +101,7 @@
 
       var main = el("div", { class: "event__main" }, [
         el("p", { class: "event__edition", text: next.edition || series.name }),
-        el("p", { class: "event__date", text: longDate.format(next._date) }),
+        dateBlock(next._date),
         el("h2", { class: "event__headliner", text: next.headliner }),
         next.support && next.support.length
           ? el("ul", { class: "event__support", "aria-label": "Support" },
@@ -99,12 +110,12 @@
         series.tagline ? el("p", { class: "event__tagline", text: series.tagline }) : null,
       ]);
 
-      var hours = [next.doors, next.close].filter(Boolean).join(" to ");
+      var hours = [next.doors, next.close].filter(Boolean).join(" \u2013 ");
       var where = [next.venue, next.address].filter(Boolean).join(", ");
 
       var meta = el("dl", { class: "event__meta" }, [
         where ? metaItem("Venue", where) : null,
-        hours ? metaItem("Hours", hours) : null,
+        hours ? metaItem("Hours", hours, "time") : null,
         next.tickets
           ? el("div", { class: "event__cta" }, [
               el("dt", { class: "label", text: "Tickets" }),
@@ -118,7 +129,7 @@
       nextRoot.replaceChildren(main, meta);
 
       if (heroCta) {
-        heroCta.textContent = series.name + " · " + shortDate.format(next._date);
+        heroCta.textContent = series.name + " \u00b7 " + shortDate.format(next._date);
         heroCta.setAttribute("aria-label", "Next event: " + series.name + ", " + longDate.format(next._date));
       }
     }

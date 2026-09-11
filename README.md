@@ -25,8 +25,8 @@ Order does not matter. The page sorts by date.
   series: "nocturne",            // "velvet" or "nocturne". Picks the palette.
   edition: "NOCTURNE 005",       // short name shown above the date
   date: "2026-11-14",            // YYYY-MM-DD, Seattle local date
-  doors: "10pm",                 // display text only
-  close: "4am",
+  doors: "10:00PM",              // display text only, shown as "10:00PM – 4:00AM"
+  close: "4:00AM",
   venue: "Monkey Loft",
   address: "Seattle",            // optional
   headliner: "Artist Name",      // set in Archivo Black
@@ -94,24 +94,34 @@ The form posts in a new tab so the site stays open.
 
 ## The logo
 
-The waveform mark in the hero is an inline SVG in `index.html`, marked
-with an HTML comment. The version in this repo is a stand-in drawn to
-match the description of the real mark. To use the real file, paste the
-contents of `mirage-ig-velvet-wordmark.svg` in its place and keep:
+Brand collateral lives in `assets/brand/`:
 
-- `class="wordmark"` on the root `<svg>` so it sizes correctly
-- `fill="currentColor"` on the bars, so CSS colours the mark
-- `class="bar"` on each bar and a `--i` custom property counting up
-  from 0, if you want the slow shimmer on load
-- `class="reflection"` on the mirrored group for the reflection breathe
+| File | Used for |
+|---|---|
+| `mirage-logo-stacked.png` | social preview (`og:image`) |
+| `mirage-logo-horizontal.png` | reference; nav uses the wordmark as text |
+| `mirage-icon-neutral.png` | favicon and Apple touch icon |
+| `mirage-icon-velvet.png` | reference; Velvet colourway |
 
-If your SVG already contains the word MIRAGE, add `class="visually-hidden"`
-to the `<h1 class="hero__title">` so it stays for screen readers without
-doubling on screen, or delete it.
+The hero mark is an inline SVG in `index.html`, marked with an HTML
+comment. It is drawn from the geometry of the stacked logo so CSS can
+recolour it per series. It follows the class contract in `brand.md`:
 
-The mark takes its colour from the `color` on `.wordmark`. Set it to
-`var(--accent)` inside a `.theme-velvet` or `.theme-nocturne` block to
-recolour it per series.
+```css
+.bar     { fill: var(--bar); }
+.reflect { fill: var(--reflect); }
+.accent  { fill: var(--accent); }
+.word    { color: var(--word); }
+```
+
+The centre bar has `class="bar accent"`, and its reflection dashes have
+`class="reflect reflect--accent"`. Each bar carries a `--i` custom
+property and each reflection row a `--r`, which stagger the shimmer.
+
+When the SVG versions of the logos arrive, add them to `assets/brand/`
+and, if you want the hero to use the real file, paste `mirage-mark.svg`
+over the inline SVG keeping `class="mark"` on the root and the class
+names above on the shapes.
 
 ## Palettes
 
@@ -119,18 +129,22 @@ Defined once as custom properties at the top of `css/styles.css`. Add
 `theme-velvet` or `theme-nocturne` to any element and everything inside
 it, including buttons and labels, switches palette.
 
-| Series   | bg        | deep      | accent    | accent 2  | text      |
-| -------- | --------- | --------- | --------- | --------- | --------- |
-| Parent   | `#0A0D12` | `#05080E` | `#E4EAF0` | `#6A5AE0` | `#E4EAF0` |
-| Velvet   | `#0E070B` | `#4A1A28` | `#E3A45A` | `#C98B7A` | `#EDE3D6` |
-| Nocturne | `#05080E` | `#15304A` | `#4FD8DC` | `#6A5AE0` | `#E4EAF0` |
+| Series   | bg        | deep      | accent    | accent 2  | text      | bar       | reflect   |
+| -------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- |
+| Parent   | `#0A0D12` | `#05080E` | `#9FB4C4` | `#6A5AE0` | `#E4EAF0` | `#E4EAF0` | `#6F8698` |
+| Velvet   | `#0E070B` | `#4A1A28` | `#E3A45A` | `#C98B7A` | `#EDE3D6` | `#EDE3D6` | `#7A4C4A` |
+| Nocturne | `#05080E` | `#15304A` | `#4FD8DC` | `#6A5AE0` | `#E4EAF0` | `#E4EAF0` | `#3E5B78` |
+
+The source of truth for colours, type and voice is `brand.md`.
 
 ## Fonts
 
 Loaded from Google Fonts in the `<head>`. Michroma ships in one weight
 and `font-synthesis: none` on `body` stops browsers from faking a bold.
-Archivo Black is likewise a single weight, so headliner names use
-`font-weight: 400` with that family rather than `bold`.
+Archivo Black is likewise a single weight, so headliner names and the
+date numeral use `font-weight: 400` with that family rather than `bold`.
+Body copy is Archivo 400, support acts Archivo 300, times Michroma, and
+the Velvet series name Cormorant Garamond italic, as `brand.md` sets out.
 
 ## Motion
 
