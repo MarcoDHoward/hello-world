@@ -30,7 +30,9 @@ Order does not matter. The page sorts by date.
   venue: "Monkey Loft",
   address: "Seattle",            // optional
   headliner: "Artist Name",      // set in Archivo Black
-  support: ["Artist", "Artist"], // optional
+  labels: ["Label", "Label"],    // optional label credits under the headliner
+  support: ["Artist", "Artist"], // optional, one per line
+  opener: "Artist",              // optional, sits below the support acts
   tickets: "https://ra.co/events/1234567", // optional. No link, no button.
   flyer: "assets/flyers/nocturne-005.jpg", // optional. See below.
   flyerAlt: "NOCTURNE 005 flyer. Artist Name, Monkey Loft, 14 Nov.", // optional
@@ -40,7 +42,12 @@ Order does not matter. The page sorts by date.
 What happens automatically:
 
 - The earliest event dated today or later becomes the **Next event**
-  section and the hero button. The section takes that series' palette.
+  section and the hero button. The section takes that series' palette
+  and lays the lineup out the way the flyers do: month over a heavy
+  date numeral, series name, headliner, label credits, support acts,
+  opener. If the event has a `flyer`, the image sits beside the text.
+- The "Sound" line under the next event comes from `soundTags` on the
+  series in `MIRAGE_SERIES`, joined with a middle dot.
 - Every event dated before today goes to the **Past** grid, newest
   first, up to eight tiles.
 - If there is no upcoming event, the Next section says so and the hero
@@ -54,6 +61,8 @@ cover. A JPEG around 800 by 1000 pixels is plenty.
 
 If `flyer` is empty the tile is drawn from the event data in the series
 palette, so the grid never looks broken while you wait on artwork.
+`assets/flyers/velvet-2026-11-07.jpg` is the sample flyer, wired to the
+sample VELVET 005 event.
 
 ## Ticket links
 

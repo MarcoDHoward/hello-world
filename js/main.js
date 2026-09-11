@@ -27,14 +27,16 @@
   });
   var shortDate = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric" });
   var weekday = new Intl.DateTimeFormat("en-US", { weekday: "long" });
-  var monthYear = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" });
+  var monthName = new Intl.DateTimeFormat("en-US", { month: "long" });
 
-  // Date as the flyers set it: weekday, then the numeral heavy, then month and year.
+  // Date as the flyers set it: month in spaced caps over a heavy two-digit numeral.
   function dateBlock(d) {
+    var num = String(d.getDate());
+    if (num.length < 2) num = "0" + num;
     return el("p", { class: "event__date" }, [
-      el("span", { class: "event__date-weekday", text: weekday.format(d) }),
-      el("span", { class: "event__date-numeral", text: String(d.getDate()) }),
-      el("span", { class: "event__date-month", text: monthYear.format(d) }),
+      el("span", { class: "event__date-month label", text: monthName.format(d) }),
+      el("span", { class: "event__date-numeral", text: num }),
+      el("span", { class: "event__date-rest", text: weekday.format(d) + ", " + d.getFullYear() }),
     ]);
   }
 
@@ -100,22 +102,37 @@
       nextSection.classList.add("theme-" + next.series);
 
       var main = el("div", { class: "event__main" }, [
-        el("p", { class: "event__edition", text: next.edition || series.name }),
         dateBlock(next._date),
+        el("p", { class: "event__edition", text: next.edition || series.name }),
         el("h2", { class: "event__headliner", text: next.headliner }),
+        next.labels && next.labels.length
+          ? el("p", { class: "event__labels label", text: "(" + next.labels.join(" \u00b7 ") + ")" })
+          : null,
         next.support && next.support.length
           ? el("ul", { class: "event__support", "aria-label": "Support" },
               next.support.map(function (n) { return el("li", { text: n }); }))
           : null,
+        next.opener ? el("p", { class: "event__opener", text: next.opener }) : null,
         series.tagline ? el("p", { class: "event__tagline", text: series.tagline }) : null,
       ]);
+
+      var flyer = next.flyer
+        ? el("figure", { class: "event__flyer" }, [
+            el("img", { src: next.flyer, alt: next.flyerAlt || "", decoding: "async" }),
+          ])
+        : null;
 
       var hours = [next.doors, next.close].filter(Boolean).join(" \u2013 ");
       var where = [next.venue, next.address].filter(Boolean).join(", ");
 
+      var sound = series.soundTags && series.soundTags.length
+        ? series.soundTags.join(" \u00b7 ")
+        : series.sound;
+
       var meta = el("dl", { class: "event__meta" }, [
         where ? metaItem("Venue", where) : null,
         hours ? metaItem("Hours", hours, "time") : null,
+        sound ? metaItem("Sound", sound, "event__sound") : null,
         next.tickets
           ? el("div", { class: "event__cta" }, [
               el("dt", { class: "label", text: "Tickets" }),
@@ -126,7 +143,8 @@
           : null,
       ]);
 
-      nextRoot.replaceChildren(main, meta);
+      nextRoot.classList.toggle("event--has-flyer", !!flyer);
+      nextRoot.replaceChildren.apply(nextRoot, [main, flyer, meta].filter(Boolean));
 
       if (heroCta) {
         heroCta.textContent = series.name + " \u00b7 " + shortDate.format(next._date);

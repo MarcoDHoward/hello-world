@@ -13,7 +13,9 @@
  *   venue     "Monkey Loft"
  *   address   "Seattle"                   optional
  *   headliner "Name"                      set in Archivo Black
- *   support   ["Name", "Name"]            optional, light Archivo
+ *   labels    ["Label", "Label"]          optional label credits under the headliner
+ *   support   ["Name", "Name"]            optional, light Archivo, one per line
+ *   opener    "Name"                      optional, sits below the support pair
  *   tickets   "https://..."               optional; hides button when empty
  *   flyer     "assets/flyers/file.jpg"    optional; falls back to a tile
  *   flyerAlt  "Flyer text"                optional; describes the image
@@ -26,6 +28,7 @@ const MIRAGE_SERIES = {
     venue: "The Speakeasy",
     hours: "9:00PM – 1:00AM",
     sound: "Trip hop into progressive.",
+    soundTags: ["Trip hop", "Progressive"],
   },
   nocturne: {
     name: "NOCTURNE",
@@ -33,30 +36,34 @@ const MIRAGE_SERIES = {
     venue: "Monkey Loft",
     hours: "10:00PM – 4:00AM",
     sound: "Progressive into techno.",
+    soundTags: ["Progressive", "Techno"],
   },
 };
 
 const MIRAGE_EVENTS = [
   {
-    series: "nocturne",
-    edition: "NOCTURNE 004",
-    date: "2026-09-26",
-    doors: "10:00PM",
-    close: "4:00AM",
-    venue: "Monkey Loft",
-    address: "Seattle",
-    headliner: "Headliner TBA",
-    support: ["Support act", "Support act", "MIRAGE residents"],
-    tickets: "https://ra.co/events/0000000",
-    flyer: "",
-  },
-  {
     series: "velvet",
     edition: "VELVET 005",
-    date: "2026-10-17",
+    date: "2026-11-07",
     doors: "9:00PM",
     close: "1:00AM",
     venue: "The Speakeasy",
+    address: "Seattle",
+    headliner: "Headliner Name",
+    labels: ["Label", "Label", "Label"],
+    support: ["Support One", "Marco Valencia"],
+    opener: "Opener",
+    tickets: "https://ra.co/events/0000000",
+    flyer: "assets/flyers/velvet-2026-11-07.jpg",
+    flyerAlt: "VELVET flyer. November 7 at The Speakeasy, 9:00PM to 1:00AM. Headliner Name, Support One, Marco Valencia, Opener. Trip hop and progressive.",
+  },
+  {
+    series: "nocturne",
+    edition: "NOCTURNE 004",
+    date: "2026-12-05",
+    doors: "10:00PM",
+    close: "4:00AM",
+    venue: "Monkey Loft",
     address: "Seattle",
     headliner: "Headliner TBA",
     support: ["Support act", "MIRAGE residents"],
