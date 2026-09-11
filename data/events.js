@@ -1,0 +1,128 @@
+/*
+ * MIRAGE event data.
+ *
+ * Everything the site shows about events lives here. Add an object to
+ * MIRAGE_EVENTS and the page updates itself: the earliest upcoming date
+ * becomes "Next event" and anything in the past goes to the flyer grid.
+ *
+ * Field guide (see README.md for the full explanation):
+ *   series    "velvet" | "nocturne"       picks the palette
+ *   edition   "VELVET 004"                short edition name
+ *   date      "YYYY-MM-DD"                local Seattle date
+ *   doors     "9pm"   close "1am"         display strings, no parsing
+ *   venue     "Monkey Loft"
+ *   address   "Seattle"                   optional
+ *   headliner "Name"                      set in Archivo Black
+ *   support   ["Name", "Name"]            optional, light Archivo
+ *   tickets   "https://..."               optional; hides button when empty
+ *   flyer     "assets/flyers/file.jpg"    optional; falls back to a tile
+ *   flyerAlt  "Flyer text"                optional; describes the image
+ */
+
+const MIRAGE_SERIES = {
+  velvet: {
+    name: "VELVET",
+    tagline: "Come in closer.",
+    venue: "The Speakeasy",
+    hours: "9pm to 1am",
+    sound: "Trip hop into progressive.",
+  },
+  nocturne: {
+    name: "NOCTURNE",
+    tagline: "Into the night.",
+    venue: "Monkey Loft",
+    hours: "10pm to 4am",
+    sound: "Progressive into techno.",
+  },
+};
+
+const MIRAGE_EVENTS = [
+  {
+    series: "nocturne",
+    edition: "NOCTURNE 004",
+    date: "2026-09-26",
+    doors: "10pm",
+    close: "4am",
+    venue: "Monkey Loft",
+    address: "Seattle",
+    headliner: "Headliner TBA",
+    support: ["Support act", "Support act", "MIRAGE residents"],
+    tickets: "https://ra.co/events/0000000",
+    flyer: "",
+  },
+  {
+    series: "velvet",
+    edition: "VELVET 005",
+    date: "2026-10-17",
+    doors: "9pm",
+    close: "1am",
+    venue: "The Speakeasy",
+    address: "Seattle",
+    headliner: "Headliner TBA",
+    support: ["Support act", "MIRAGE residents"],
+    tickets: "",
+    flyer: "",
+  },
+  {
+    series: "velvet",
+    edition: "VELVET 004",
+    date: "2026-08-15",
+    doors: "9pm",
+    close: "1am",
+    venue: "The Speakeasy",
+    headliner: "Past headliner",
+    support: ["Support act"],
+    flyer: "",
+  },
+  {
+    series: "nocturne",
+    edition: "NOCTURNE 003",
+    date: "2026-07-25",
+    doors: "10pm",
+    close: "4am",
+    venue: "Monkey Loft",
+    headliner: "Past headliner",
+    support: ["Support act"],
+    flyer: "",
+  },
+  {
+    series: "velvet",
+    edition: "VELVET 003",
+    date: "2026-06-20",
+    doors: "9pm",
+    close: "1am",
+    venue: "The Speakeasy",
+    headliner: "Past headliner",
+    flyer: "",
+  },
+  {
+    series: "nocturne",
+    edition: "NOCTURNE 002",
+    date: "2026-05-23",
+    doors: "10pm",
+    close: "4am",
+    venue: "Monkey Loft",
+    headliner: "Past headliner",
+    flyer: "",
+  },
+  {
+    series: "velvet",
+    edition: "VELVET 002",
+    date: "2026-04-18",
+    doors: "9pm",
+    close: "1am",
+    venue: "The Speakeasy",
+    headliner: "Past headliner",
+    flyer: "",
+  },
+  {
+    series: "nocturne",
+    edition: "NOCTURNE 001",
+    date: "2026-03-21",
+    doors: "10pm",
+    close: "4am",
+    venue: "Monkey Loft",
+    headliner: "Past headliner",
+    flyer: "",
+  },
+];

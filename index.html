@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIRAGE — Seattle</title>
+  <meta name="description" content="MIRAGE. Melodic techno and progressive house in Seattle. Two series: VELVET and NOCTURNE.">
+  <meta name="theme-color" content="#0A0D12">
+  <meta property="og:title" content="MIRAGE">
+  <meta property="og:description" content="Melodic techno and progressive house in Seattle.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@300;400&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Michroma&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="site-header__brand" href="#top">MIRAGE</a>
+    <nav class="site-header__nav" aria-label="Sections">
+      <a href="#next">Next</a>
+      <a href="#series">Series</a>
+      <a href="#past">Past</a>
+      <a href="#list">List</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. Hero -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__inner">
+        <!--
+          Logo. Replace this inline SVG with the contents of
+          mirage-ig-velvet-wordmark.svg. Keep fill="currentColor" on the
+          bars so the mark takes its colour from CSS. The .bar and
+          .reflection class names drive the shimmer animation.
+        -->
+        <svg class="wordmark" viewBox="0 0 313 180" role="img" aria-labelledby="wordmark-title" focusable="false">
+          <title id="wordmark-title">MIRAGE waveform mark</title>
+          <defs>
+            <linearGradient id="reflection-fade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fff" stop-opacity="0.55"/>
+              <stop offset="0.7" stop-color="#fff" stop-opacity="0.08"/>
+              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+            </linearGradient>
+            <mask id="reflection-mask" maskUnits="userSpaceOnUse" x="0" y="100" width="313" height="80">
+              <rect x="0" y="100" width="313" height="80" fill="url(#reflection-fade)"/>
+            </mask>
+          </defs>
+          <g class="wave" fill="currentColor">
+      <rect class="bar" style="--i:0" x="4" y="56" width="6" height="8" rx="3"/>
+      <rect class="bar" style="--i:1" x="17" y="53" width="6" height="14" rx="3"/>
+      <rect class="bar" style="--i:2" x="30" y="48" width="6" height="24" rx="3"/>
+      <rect class="bar" style="--i:3" x="43" y="41" width="6" height="38" rx="3"/>
+      <rect class="bar" style="--i:4" x="56" y="34" width="6" height="52" rx="3"/>
+      <rect class="bar" style="--i:5" x="69" y="39" width="6" height="42" rx="3"/>
+      <rect class="bar" style="--i:6" x="82" y="45" width="6" height="30" rx="3"/>
+      <rect class="bar" style="--i:7" x="95" y="36" width="6" height="48" rx="3"/>
+      <rect class="bar" style="--i:8" x="108" y="28" width="6" height="64" rx="3"/>
+      <rect class="bar" style="--i:9" x="121" y="35" width="6" height="50" rx="3"/>
+      <rect class="bar" style="--i:10" x="134" y="42" width="6" height="36" rx="3"/>
+      <rect class="bar" style="--i:11" x="147" y="48" width="6" height="24" rx="3"/>
+      <rect class="bar" style="--i:12" x="160" y="44" width="6" height="32" rx="3"/>
+      <rect class="bar" style="--i:13" x="173" y="37" width="6" height="46" rx="3"/>
+      <rect class="bar" style="--i:14" x="186" y="30" width="6" height="60" rx="3"/>
+      <rect class="bar" style="--i:15" x="199" y="25" width="6" height="70" rx="3"/>
+      <rect class="bar" style="--i:16" x="212" y="33" width="6" height="54" rx="3"/>
+      <rect class="bar" style="--i:17" x="225" y="40" width="6" height="40" rx="3"/>
+      <rect class="bar" style="--i:18" x="238" y="46" width="6" height="28" rx="3"/>
+      <rect class="bar" style="--i:19" x="251" y="39" width="6" height="42" rx="3"/>
+      <rect class="bar" style="--i:20" x="264" y="44" width="6" height="32" rx="3"/>
+      <rect class="bar" style="--i:21" x="277" y="50" width="6" height="20" rx="3"/>
+      <rect class="bar" style="--i:22" x="290" y="54" width="6" height="12" rx="3"/>
+      <rect class="bar" style="--i:23" x="303" y="56" width="6" height="8" rx="3"/>
+          </g>
+          <g class="reflection" fill="currentColor" mask="url(#reflection-mask)" transform="translate(0 200) scale(1 -1)" aria-hidden="true">
+      <rect class="bar" style="--i:0" x="4" y="56" width="6" height="8" rx="3"/>
+      <rect class="bar" style="--i:1" x="17" y="53" width="6" height="14" rx="3"/>
+      <rect class="bar" style="--i:2" x="30" y="48" width="6" height="24" rx="3"/>
+      <rect class="bar" style="--i:3" x="43" y="41" width="6" height="38" rx="3"/>
+      <rect class="bar" style="--i:4" x="56" y="34" width="6" height="52" rx="3"/>
+      <rect class="bar" style="--i:5" x="69" y="39" width="6" height="42" rx="3"/>
+      <rect class="bar" style="--i:6" x="82" y="45" width="6" height="30" rx="3"/>
+      <rect class="bar" style="--i:7" x="95" y="36" width="6" height="48" rx="3"/>
+      <rect class="bar" style="--i:8" x="108" y="28" width="6" height="64" rx="3"/>
+      <rect class="bar" style="--i:9" x="121" y="35" width="6" height="50" rx="3"/>
+      <rect class="bar" style="--i:10" x="134" y="42" width="6" height="36" rx="3"/>
+      <rect class="bar" style="--i:11" x="147" y="48" width="6" height="24" rx="3"/>
+      <rect class="bar" style="--i:12" x="160" y="44" width="6" height="32" rx="3"/>
+      <rect class="bar" style="--i:13" x="173" y="37" width="6" height="46" rx="3"/>
+      <rect class="bar" style="--i:14" x="186" y="30" width="6" height="60" rx="3"/>
+      <rect class="bar" style="--i:15" x="199" y="25" width="6" height="70" rx="3"/>
+      <rect class="bar" style="--i:16" x="212" y="33" width="6" height="54" rx="3"/>
+      <rect class="bar" style="--i:17" x="225" y="40" width="6" height="40" rx="3"/>
+      <rect class="bar" style="--i:18" x="238" y="46" width="6" height="28" rx="3"/>
+      <rect class="bar" style="--i:19" x="251" y="39" width="6" height="42" rx="3"/>
+      <rect class="bar" style="--i:20" x="264" y="44" width="6" height="32" rx="3"/>
+      <rect class="bar" style="--i:21" x="277" y="50" width="6" height="20" rx="3"/>
+      <rect class="bar" style="--i:22" x="290" y="54" width="6" height="12" rx="3"/>
+      <rect class="bar" style="--i:23" x="303" y="56" width="6" height="8" rx="3"/>
+          </g>
+        </svg>
+
+        <h1 class="hero__title" id="hero-title">MIRAGE</h1>
+        <p class="hero__lede">Melodic techno and progressive house in Seattle.</p>
+        <p class="hero__cta">
+          <a class="button" id="hero-cta" href="#next">Next event</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. Next event (rendered from data/events.js) -->
+    <section class="next" id="next" aria-labelledby="next-title">
+      <div class="next__inner">
+        <p class="label" id="next-title">Next event</p>
+        <div id="next-event" class="event">
+          <noscript><p class="muted">Enable JavaScript to see the next event, or find us on Resident Advisor.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. The two series -->
+    <section class="series" id="series" aria-labelledby="series-title">
+      <div class="series__inner">
+        <p class="label" id="series-title">Two series</p>
+        <div class="series__grid">
+
+          <article class="card card--velvet" aria-labelledby="velvet-name">
+            <p class="card__parent label">MIRAGE presents</p>
+            <h2 class="card__name" id="velvet-name">VELVET</h2>
+            <p class="card__tagline">Come in closer.</p>
+            <dl class="card__meta">
+              <div><dt class="label">Venue</dt><dd>The Speakeasy</dd></div>
+              <div><dt class="label">Hours</dt><dd>9pm to 1am</dd></div>
+              <div><dt class="label">Sound</dt><dd>Trip hop into progressive.</dd></div>
+            </dl>
+          </article>
+
+          <article class="card card--nocturne" aria-labelledby="nocturne-name">
+            <p class="card__parent label">MIRAGE presents</p>
+            <h2 class="card__name" id="nocturne-name">NOCTURNE</h2>
+            <p class="card__tagline">Into the night.</p>
+            <dl class="card__meta">
+              <div><dt class="label">Venue</dt><dd>Monkey Loft</dd></div>
+              <div><dt class="label">Hours</dt><dd>10pm to 4am</dd></div>
+              <div><dt class="label">Sound</dt><dd>Progressive into techno.</dd></div>
+            </dl>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Past events (rendered from data/events.js) -->
+    <section class="past" id="past" aria-labelledby="past-title">
+      <div class="past__inner">
+        <p class="label" id="past-title">Past</p>
+        <ul class="flyers" id="past-events"></ul>
+      </div>
+    </section>
+
+    <!-- 5. Mailing list -->
+    <section class="list" id="list" aria-labelledby="list-title">
+      <div class="list__inner">
+        <p class="label" id="list-title">Mailing list</p>
+        <p class="list__copy">Dates first. Nothing else.</p>
+        <!--
+          Buttondown: action="https://buttondown.com/api/emails/embed-subscribe/YOUR_USERNAME"
+          Mailchimp:  paste the form action from Audience → Signup forms → Embedded,
+                      and change the input name from "email" to "EMAIL".
+        -->
+        <form class="signup" action="https://buttondown.com/api/emails/embed-subscribe/YOUR_USERNAME" method="post" target="_blank">
+          <label class="label" for="signup-email">Email</label>
+          <div class="signup__row">
+            <input id="signup-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="you@example.com">
+            <button class="button" type="submit">Join</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 6. Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__brand">MIRAGE</p>
+      <ul class="site-footer__links">
+        <li><a href="https://instagram.com/YOUR_HANDLE" rel="noopener">Instagram</a></li>
+        <li><a href="https://ra.co/promoters/YOUR_ID" rel="noopener">Resident Advisor</a></li>
+        <li><a href="https://soundcloud.com/YOUR_HANDLE" rel="noopener">SoundCloud</a></li>
+        <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+      </ul>
+      <p class="site-footer__fine">Seattle. 21+.</p>
+    </div>
+  </footer>
+
+  <script src="data/events.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
