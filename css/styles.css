@@ -180,9 +180,9 @@ img { max-width: 100%; height: auto; display: block; }
   right: 0;
   z-index: 10;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
   padding: 1.5rem var(--gutter);
   font-family: var(--font-brand);
   font-size: 0.625rem;
@@ -194,7 +194,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 .site-header__nav {
   display: flex;
-  gap: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
 }
 .site-header__nav a { color: var(--text-dim); }
 .site-header__nav a:hover { color: var(--text); text-decoration: none; }
@@ -286,17 +287,18 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---- Section frame ------------------------------------------------------- */
 
-.next, .series, .past, .list {
+.next, .series, .listen, .past, .list {
   padding: var(--space-section) var(--gutter);
 }
 
-.next__inner, .series__inner, .past__inner, .list__inner, .site-footer__inner {
+.next__inner, .series__inner, .listen__inner, .past__inner, .list__inner, .site-footer__inner {
   max-width: var(--wrap);
   margin-inline: auto;
 }
 
 .next__inner > .label,
 .series__inner > .label,
+.listen__inner > .label,
 .past__inner > .label,
 .list__inner > .label {
   display: block;
@@ -528,6 +530,36 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .card__meta dt { margin-bottom: 0.35rem; }
 
+/* ---- Listen -------------------------------------------------------------- */
+
+.listen {
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(50% 40% at 100% 0%, rgba(106, 90, 224, 0.10), transparent 70%),
+    var(--bg);
+}
+
+.listen__inner > * { max-width: var(--measure); }
+
+.listen__copy {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: var(--text-dim);
+}
+
+.listen__embed {
+  border-radius: 12px;          /* matches the player's own corners */
+  overflow: hidden;
+  color-scheme: dark;
+}
+.listen__embed iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.listen__link { margin-top: 1.5rem; }
+
 /* ---- Past events --------------------------------------------------------- */
 
 .flyers {
@@ -699,6 +731,14 @@ img { max-width: 100%; height: auto; display: block; }
   .flyers { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
 
   .signup__row { grid-template-columns: 1fr auto; align-items: end; }
+
+  .site-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .site-header__nav { gap: 1.25rem; }
 
   .site-footer__inner {
     grid-template-columns: auto 1fr auto;

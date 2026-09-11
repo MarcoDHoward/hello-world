@@ -80,9 +80,17 @@ hrefs to swap:
 | Instagram       | `https://instagram.com/YOUR_HANDLE`      |
 | Resident Advisor| `https://ra.co/promoters/YOUR_ID`        |
 | SoundCloud      | `https://soundcloud.com/YOUR_HANDLE`     |
+| Spotify         | already set to the MIRAGE playlist       |
 | Email           | `mailto:hello@example.com`               |
 
 The footer also has a "Seattle. 21+." line. Change or remove it as needed.
+
+## Spotify playlist
+
+The Listen section in `index.html` embeds a playlist with Spotify's dark
+player. To change it, replace the playlist id (the part after
+`/playlist/`) in three places: the iframe `src`, the "Open in Spotify"
+button, and the Spotify link in the footer. The embed needs no API key.
 
 ## Mailing list
 

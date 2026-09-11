@@ -27,8 +27,9 @@
     <nav class="site-header__nav" aria-label="Sections">
       <a href="#next">Next</a>
       <a href="#series">Series</a>
+      <a href="#listen">Listen</a>
       <a href="#past">Past</a>
-      <a href="#list">List</a>
+      <a href="#list">Mail</a>
     </nav>
   </header>
 
@@ -169,6 +170,27 @@
       </div>
     </section>
 
+    <!-- Listen. Swap the playlist id in both the iframe src and the link. -->
+    <section class="listen" id="listen" aria-labelledby="listen-title">
+      <div class="listen__inner">
+        <p class="label" id="listen-title">Listen</p>
+        <p class="listen__copy">What we play.</p>
+        <div class="listen__embed">
+          <iframe
+            src="https://open.spotify.com/embed/playlist/05E3aW2udS3IXicE0ZTia8?theme=0"
+            title="MIRAGE playlist on Spotify"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
+        <p class="listen__link">
+          <a class="button" href="https://open.spotify.com/playlist/05E3aW2udS3IXicE0ZTia8" rel="noopener">Open in Spotify</a>
+        </p>
+      </div>
+    </section>
+
     <!-- 4. Past events (rendered from data/events.js) -->
     <section class="past" id="past" aria-labelledby="past-title">
       <div class="past__inner">
@@ -207,6 +229,7 @@
         <li><a href="https://instagram.com/YOUR_HANDLE" rel="noopener">Instagram</a></li>
         <li><a href="https://ra.co/promoters/YOUR_ID" rel="noopener">Resident Advisor</a></li>
         <li><a href="https://soundcloud.com/YOUR_HANDLE" rel="noopener">SoundCloud</a></li>
+        <li><a href="https://open.spotify.com/playlist/05E3aW2udS3IXicE0ZTia8" rel="noopener">Spotify</a></li>
         <li><a href="mailto:hello@example.com">hello@example.com</a></li>
       </ul>
       <p class="site-footer__fine">Seattle. 21+.</p>
