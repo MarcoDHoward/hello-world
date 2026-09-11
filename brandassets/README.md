@@ -1,6 +1,7 @@
 # MIRAGE brand assets
 
-Everything visual for MIRAGE lives here. Rules and rationale are in
+Everything visual for MIRAGE lives here. Design rules are in
+[`../DESIGN.md`](../DESIGN.md) and brand facts in
 [`../brand.md`](../brand.md). This folder holds the files.
 
 ```

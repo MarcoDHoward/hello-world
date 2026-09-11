@@ -1,6 +1,6 @@
 /*
  * MIRAGE design tokens.
- * Source of truth for colour and type. Mirrors brand.md.
+ * Mirrors the tokens in DESIGN.md, section 1.
  * css/styles.css in the site carries the same values; change them here
  * first, then there.
  */
@@ -15,6 +15,7 @@
 
   /* Velvet */
   --velvet-bg: #0E070B;
+  --velvet-deep: #22101A;
   --velvet-wine: #4A1A28;
   --velvet-rose: #C98B7A;
   --velvet-amber: #E3A45A;      /* accent */

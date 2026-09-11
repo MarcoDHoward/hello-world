@@ -2,7 +2,9 @@
 
 Seattle electronic music event brand. Parent brand with two series.
 
-**Files live in [`brandassets/`](brandassets/README.md).** Logos, flyer
+**Design rules live in [`DESIGN.md`](DESIGN.md)** (tokens, type,
+layout, backgrounds, logo usage, motion). **Files live in
+[`brandassets/`](brandassets/README.md).** Logos, flyer
 templates, `tokens.css` and a `manifest.json` that lists every asset with
 its size, colourway and use. Look there for anything visual; this file
 holds the rules.

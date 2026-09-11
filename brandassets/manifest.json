@@ -2,6 +2,7 @@
   "brand": "MIRAGE",
   "oneLiner": "Melodic techno and progressive house in Seattle.",
   "reference": "../brand.md",
+  "designGuide": "../DESIGN.md",
   "tokens": "tokens.css",
   "rules": [
     "Dark backgrounds only.",
@@ -22,7 +23,7 @@
       "soundTags": ["Trip hop", "Progressive"],
       "seriesNameFont": "Cormorant Garamond italic",
       "palette": {
-        "bg": "#0E070B", "wine": "#4A1A28", "rose": "#C98B7A",
+        "bg": "#0E070B", "deep": "#22101A", "wine": "#4A1A28", "rose": "#C98B7A",
         "amber": "#E3A45A", "cream": "#EDE3D6", "reflect": "#7A4C4A"
       },
       "accent": "#E3A45A",
