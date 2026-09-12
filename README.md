@@ -77,7 +77,7 @@ hrefs to swap:
 
 | Link            | Placeholder                              |
 | --------------- | ---------------------------------------- |
-| Instagram       | `https://instagram.com/YOUR_HANDLE`      |
+| Instagram       | set to `https://www.instagram.com/mirage.seattle/` |
 | Resident Advisor| `https://ra.co/promoters/YOUR_ID`        |
 | SoundCloud      | `https://soundcloud.com/YOUR_HANDLE`     |
 | Spotify         | already set to the MIRAGE playlist       |
