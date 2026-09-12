@@ -3,7 +3,8 @@
 Seattle electronic music event brand. Parent brand with two series.
 
 **Design rules live in [`DESIGN.md`](DESIGN.md)** (tokens, type,
-layout, backgrounds, logo usage, motion). **Files live in
+layout, backgrounds, logo usage, motion). **Writing rules live in
+[`COPY.md`](COPY.md)** (voice, naming, templates per channel). **Files live in
 [`brandassets/`](brandassets/README.md).** Logos, flyer
 templates, `tokens.css` and a `manifest.json` that lists every asset with
 its size, colourway and use. Look there for anything visual; this file
@@ -98,5 +99,5 @@ spaced Michroma caps. Large empty fields above and below the block.
 ## Voice
 
 Few words. No hype, no exclamation points, no emoji. Invite, don't
-advertise. "Mirage 004. Monkey Loft. Doors at 10." not "Don't miss
-out!!"
+advertise. "Nocturne 004. Monkey Loft. Doors at 10." not "Don't miss
+out!!" The full rules and templates are in `COPY.md`.

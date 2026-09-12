@@ -14,6 +14,9 @@ Read these, in this order. Do not duplicate their contents here.
 
 - [`DESIGN.md`](DESIGN.md): tokens, type, layout system, backgrounds,
   logo usage, motion, and the pre-ship checklist.
+- [`COPY.md`](COPY.md): voice rules, naming and formats, templates
+  per channel, word list, and the copy checklist. Any words a person
+  will read go through it.
 - [`brand.md`](brand.md): brand facts, series details, voice.
 - [`brandassets/`](brandassets/README.md): logos, flyer templates,
   `tokens.css`, `manifest.json`.
@@ -30,6 +33,7 @@ js/main.js        fills "Next event" and "Past" from the data file
 data/events.js    all event data (MIRAGE_EVENTS, MIRAGE_SERIES)
 brandassets/      logos, flyers, tokens.css, manifest.json (see its README)
 DESIGN.md         design guide
+COPY.md           copy guide
 brand.md          brand facts and voice
 README.md         how to add events, links, flyers and the logo
 ```
@@ -52,4 +56,4 @@ Serve the folder and view at a phone width (~390px) and a desktop
 width. The page body must never scroll horizontally. Google Fonts may
 be blocked in a sandbox, so fallback fonts in screenshots are expected.
 Run the checklist at the end of `DESIGN.md` before shipping anything
-visual.
+visual, and the one at the end of `COPY.md` before shipping any words.

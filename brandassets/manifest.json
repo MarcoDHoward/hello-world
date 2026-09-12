@@ -3,6 +3,7 @@
   "oneLiner": "Melodic techno and progressive house in Seattle.",
   "reference": "../brand.md",
   "designGuide": "../DESIGN.md",
+  "copyGuide": "../COPY.md",
   "tokens": "tokens.css",
   "rules": [
     "Dark backgrounds only.",
