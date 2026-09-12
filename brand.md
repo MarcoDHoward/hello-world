@@ -12,6 +12,26 @@ holds the rules.
 
 One-liner: **Melodic techno and progressive house in Seattle.**
 
+## Positioning
+
+Mirage is deep, melodic and fun, for people who listen. Two rooms, one
+arc: the night moves from trip hop and ambient toward the dance floor,
+then locks in.
+
+Internal reference, never public copy: think of a two-disc mix.
+
+- **Velvet is disc one.** Trip hop, ambient, downtempo into progressive.
+  It takes you right up to the edge of the dance floor and holds you
+  there. Warm, close, unhurried.
+- **Nocturne is disc two.** Progressive into techno, deep. The floor is
+  locked in. Darker, longer, no way out until 4.
+
+Both are deep and dark, and both must feel sexy and alluring. Never
+cold, never clinical, never aggressive. The darkness is an invitation,
+not a threat. Allure comes from restraint and closeness, from low light
+and a good sound system, from being let in. It never comes from saying
+the word.
+
 ## Series
 
 | | VELVET | NOCTURNE |

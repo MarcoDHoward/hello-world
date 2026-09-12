@@ -16,6 +16,20 @@ host at the door, not a promoter on a megaphone: it tells you what,
 where and when, then steps back. Confidence comes from restraint. If
 a line would work on any club's feed, cut it.
 
+Underneath the restraint the voice is warm and a little playful. Mirage
+is deep, melodic and fun, for people who listen. The rooms are dark and
+the sound is deep, and the words have to make that feel sexy and
+alluring rather than cold. The trick is the same one a good host uses:
+closeness, not adjectives. "The room is small and the lights are low"
+is alluring. "Sexy vibes" is not. The reader should feel let in, never
+sold to.
+
+The night has an arc, and the copy follows it. Velvet is the first half
+of the record: trip hop and ambient into progressive, right up to the
+edge of the dance floor. Nocturne is the second half: progressive into
+techno, the floor locked in until 4. Write Velvet as an approach and
+Nocturne as an arrival.
+
 **Say:** "Velvet 005. The Revelry Room. Doors at 9."
 **Never:** "Don't miss out!! Biggest night of the year 🔥"
 
@@ -42,6 +56,11 @@ produce text that breaks them.
   typographic treatment applied by design, not by the writer).
 - No "we're excited", "we're thrilled", "we can't wait". State the
   thing. The excitement is implied by the fact that we're doing it.
+- Never use the words "sexy", "sultry", "seductive" or "steamy". The
+  copy earns those; it doesn't claim them.
+- Never name other brands, mixes or compilations as a comparison in
+  public copy. "Like disc one of a mix" is an internal note, not a
+  caption.
 - Never invent facts. A missing date, price or name is written as a
   bracketed placeholder, `[DATE]`, for a person to fill.
 
@@ -162,9 +181,10 @@ With {{ support, joined by " and " }}. {{ opener }} opens.
 ```
 
 Series descriptions for the first line:
-- Velvet: "Mirage's speakeasy series. Trip hop into progressive, in a
-  small room."
-- Nocturne: "Mirage's late series. Progressive into techno, until 4."
+- Velvet: "Mirage's speakeasy series. Trip hop and ambient into
+  progressive, in a small room, right up to the edge of the floor."
+- Nocturne: "Mirage's late series. Progressive into techno, deep,
+  until 4. The floor stays locked in."
 
 ### 4.6 Mailing list email
 
@@ -343,8 +363,19 @@ close, first Seattle date, all night, open to close.
 **Preferred verbs:** doors at, tickets are up, opens, plays, from
 (for set times), see you there.
 
-**Words that carry the brand:** closer, night, room, late, reflection,
-shimmer, water, still. Use them where they are true, not as garnish.
+**Words that carry the brand:** closer, night, room, late, low, deep,
+warm, slow, locked in, reflection, shimmer, water, still. Use them
+where they are true, not as garnish.
+
+**Velvet words:** close, warm, slow, low light, the edge of the floor,
+listen, lean in.
+**Nocturne words:** deep, dark, locked in, until 4, long, the floor,
+no clocks.
+
+**Warmth without hype.** The draft can read cold if every line is a
+timetable. Let one line per piece be human: "the record you'll ask
+about", "stay for the last hour", "the lights go down at 9". One is
+enough. Two is a mood board.
 
 ---
 
