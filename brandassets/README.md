@@ -11,6 +11,7 @@ brandassets/
   tokens.css       colours and type as CSS custom properties
   logos/           lockups and icons
   flyers/          flyer templates, one per series
+  tent-cards/      Revelry Room table tent cards, print files and design source
 ```
 
 For a design tool or an agent: read `manifest.json` first. It lists every
@@ -49,6 +50,22 @@ reference for new flyers. The grid is described in `brand.md` and in the
 Finished flyers for real events also go in `flyers/`, named
 `<series>-<yyyy-mm-dd>.jpg`, and are referenced from the site's
 `data/events.js`.
+
+## Tent cards
+
+Foldable table tents for The Revelry Room, in the Velvet colourway. Each
+face reads MIRAGE, Velvet, "Come in closer." and a QR code to
+instagram.com/mirage.seattle.
+
+| File | Use |
+|---|---|
+| `tent-cards/revelry-room-tent-sheet.pdf` | Print this. 4×12 in, fold in half at the dashed line. |
+| `tent-cards/revelry-room-tent-sheet.png` | Same sheet as a 300 dpi image, 1200×3600. |
+| `tent-cards/revelry-room-tent-face.png` | One face, 4×6 in at 300 dpi, for previews or a single-sided card. |
+| `tent-cards/source/` | Editable design source for the Claude Design canvas. |
+
+Print on heavy stock. The QR sits on cream so it scans in low light. To
+change the handle, edit the canvas and re-export, or ask for a rebuild.
 
 ## Colour and type
 
