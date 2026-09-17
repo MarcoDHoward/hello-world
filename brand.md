@@ -36,7 +36,7 @@ the word.
 
 | | VELVET | NOCTURNE |
 |---|---|---|
-| Venue | The Speakeasy | Monkey Loft |
+| Venue | The Revelry Room | Monkey Loft |
 | Time | 9:00PM – 1:00AM | 10:00PM – 4:00AM |
 | Sound | Trip hop into progressive | Progressive into techno |
 | Tagline | Come in closer. | Into the night. |

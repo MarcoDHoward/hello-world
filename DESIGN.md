@@ -79,7 +79,10 @@ Sizes below are in `cqw` (percent of width) so the layout scales.
 - Left, at `left: 6.5cqw`: month in Michroma 1.75cqw / 0.30em
   tracking, over the day in Archivo Black 9cqw.
 - Center: venue in Michroma 3.1cqw / 0.06em, then the time in
-  Michroma 1.9cqw / 0.08em with `margin-top: 1.4cqw`.
+  Michroma 1.9cqw / 0.08em with `margin-top: 1.4cqw`. The venue line
+  must clear the date block on the left and the logo on the right, so
+  a long name (The Revelry Room) drops to 2.7cqw / 0.04em to fit the
+  same slot. Never wrap it.
 - Right, at `right: 6.5cqw`: logo mark at 11cqw wide, then MIRAGE in
   Michroma 1.75cqw / 0.30em, `margin-top: -0.1cqw` so it tucks into
   the mark's reflection.
