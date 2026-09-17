@@ -85,9 +85,11 @@ All in `brandassets/logos/`. Full index with sizes in
 | `mirage-logo-horizontal.png` | nav bars, headers, banners |
 | `mirage-icon-neutral.png` | Instagram profile, favicon |
 | `mirage-icon-velvet.png` | Velvet colorway, square |
+| `mirage-icon-nocturne.png` | Nocturne colorway, square |
 
-Still to add: SVG versions of each, `mirage-mark.svg` (mark alone, no
-wordmark) and `mirage-icon-nocturne.png/.svg`.
+Animated versions of the icon, SVG and MP4 per colorway, are in
+`brandassets/motion/`. Still to add: SVG versions of the static logos
+and `mirage-mark.svg` (mark alone, no wordmark).
 
 The mark is an **audio waveform with a shimmering reflection below** —
 a mirage of sound on water. The center bar is the accent color.

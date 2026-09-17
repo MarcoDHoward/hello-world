@@ -12,6 +12,7 @@ brandassets/
   logos/           lockups and icons
   flyers/          flyer templates, one per series
   tent-cards/      Revelry Room table tent cards, print files and design source
+  motion/          animated icon, as SVG for the web and MP4 for social
 ```
 
 For a design tool or an agent: read `manifest.json` first. It lists every
@@ -27,12 +28,13 @@ carries the same colours as variables, ready to paste into a stylesheet.
 | `logos/mirage-logo-horizontal.png` | 1200×269, transparent | Nav bars, headers, banners. |
 | `logos/mirage-icon-neutral.png` | 1080×1080 | Instagram profile, favicon. |
 | `logos/mirage-icon-velvet.png` | 1080×1080 | Velvet colourway square. |
+| `logos/mirage-icon-nocturne.png` | 1080×1080 | Nocturne colourway square. |
 
 The mark is a waveform with a reflection of dashes below. The centre bar
 is the accent colour. Below about 32px the reflection merges, so use the
 mark without it. The wordmark is illegible below about 90px.
 
-Not here yet: the SVG versions and the Nocturne icon. `manifest.json`
+Not here yet: the SVG versions of the static logos. `manifest.json`
 lists them under `missing`. When they arrive, drop them in `logos/` and
 add a row to the manifest.
 
@@ -66,6 +68,22 @@ instagram.com/mirage.seattle.
 
 Print on heavy stock. The QR sits on cream so it scans in low light. To
 change the handle, edit the canvas and re-export, or ask for a rebuild.
+
+## Motion
+
+The animated icon. The bars rise from the waterline, centre first, the
+reflection settles a beat later, the wordmark fades in, then the whole
+mark shimmers slowly for as long as it is on screen. Timings follow
+section 6 of `DESIGN.md`.
+
+| File | Use |
+|---|---|
+| `motion/mirage-icon-animated-{neutral,velvet,nocturne}.svg` | Web. One file each, nothing external: the animation is CSS inside the SVG and the wordmark is outlined, so it plays from an `<img>` tag or inline. Sits still when the viewer has reduced motion on. |
+| `motion/mirage-icon-animated-{neutral,velvet,nocturne}.mp4` | Instagram posts, reels, stories, or anywhere that takes video. 1080×1080, 8 seconds, H.264, 30 fps. |
+
+The static icons in `logos/` are the rest frame of the same file. To
+change the animation, edit `motion/source/gen-icon.js` and re-render;
+`motion/source/README.md` has the steps.
 
 ## Colour and type
 

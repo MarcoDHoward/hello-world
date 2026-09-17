@@ -199,6 +199,21 @@ and recolor when inlined:
 - Duration 600–900ms, ease-out. Nothing loops faster than 4s.
 - Always honor `prefers-reduced-motion: reduce`.
 
+The reference build is `brandassets/motion/`: the animated icon as SVG
+(web) and MP4 (social), one per colourway. Its timings, for any other
+animated asset:
+
+| Part | Starts | Lasts | Easing |
+|---|---|---|---|
+| Each bar rises from the waterline, centre bar first | 60ms per step out from the centre | 700ms | ease-out |
+| Reflection rows settle, top row first | 520ms, then 90ms per row | 900ms | ease-out |
+| Wordmark fades in | 950ms | 800ms | ease-out |
+| Shimmer: bars breathe to 96.5% height and 78% opacity | 1.4s, staggered 150ms per bar | 8s loop | ease-in-out |
+| Reflection drifts 5px and dims | 1.8s, staggered 400ms per row | 6s loop | ease-in-out |
+
+Loops start and end at rest so there is no seam. Under reduced motion
+the icon shows the rest frame and nothing moves.
+
 ---
 
 ## 7. Checklist before shipping an asset

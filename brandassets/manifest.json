@@ -200,6 +200,95 @@
       "type": "design-source",
       "series": "velvet",
       "use": "Claude Design canvas artboards (Main.dc.html face, Flat.dc.html print sheet) and canvas.json."
+    },
+    {
+      "path": "logos/mirage-icon-nocturne.png",
+      "type": "icon",
+      "lockup": "stacked",
+      "colorway": "nocturne",
+      "width": 1080,
+      "height": 1080,
+      "alpha": false,
+      "background": "#05080E",
+      "use": "Nocturne colourway square. Rest frame of the animated icon."
+    },
+    {
+      "path": "motion/mirage-icon-animated-neutral.svg",
+      "type": "animated-icon",
+      "format": "svg",
+      "lockup": "stacked",
+      "colorway": "neutral",
+      "width": 1080,
+      "height": 1080,
+      "background": "#0A0D12",
+      "intro": "1.9s",
+      "loop": "8s shimmer",
+      "use": "Web. Self-contained: CSS animation inside the file, wordmark outlined, no fonts needed. Honours prefers-reduced-motion."
+    },
+    {
+      "path": "motion/mirage-icon-animated-neutral.mp4",
+      "type": "animated-icon",
+      "format": "mp4",
+      "codec": "h264",
+      "lockup": "stacked",
+      "colorway": "neutral",
+      "width": 1080,
+      "height": 1080,
+      "duration": "8s",
+      "fps": 30,
+      "use": "Instagram post or reel, stories, anywhere that takes video."
+    },
+    {
+      "path": "motion/mirage-icon-animated-velvet.svg",
+      "type": "animated-icon",
+      "format": "svg",
+      "lockup": "stacked",
+      "colorway": "velvet",
+      "width": 1080,
+      "height": 1080,
+      "background": "#0E070B",
+      "intro": "1.9s",
+      "loop": "8s shimmer",
+      "use": "Web. Self-contained: CSS animation inside the file, wordmark outlined, no fonts needed. Honours prefers-reduced-motion."
+    },
+    {
+      "path": "motion/mirage-icon-animated-velvet.mp4",
+      "type": "animated-icon",
+      "format": "mp4",
+      "codec": "h264",
+      "lockup": "stacked",
+      "colorway": "velvet",
+      "width": 1080,
+      "height": 1080,
+      "duration": "8s",
+      "fps": 30,
+      "use": "Instagram post or reel, stories, anywhere that takes video."
+    },
+    {
+      "path": "motion/mirage-icon-animated-nocturne.svg",
+      "type": "animated-icon",
+      "format": "svg",
+      "lockup": "stacked",
+      "colorway": "nocturne",
+      "width": 1080,
+      "height": 1080,
+      "background": "#05080E",
+      "intro": "1.9s",
+      "loop": "8s shimmer",
+      "use": "Web. Self-contained: CSS animation inside the file, wordmark outlined, no fonts needed. Honours prefers-reduced-motion."
+    },
+    {
+      "path": "motion/mirage-icon-animated-nocturne.mp4",
+      "type": "animated-icon",
+      "format": "mp4",
+      "codec": "h264",
+      "lockup": "stacked",
+      "colorway": "nocturne",
+      "width": 1080,
+      "height": 1080,
+      "duration": "8s",
+      "fps": 30,
+      "use": "Instagram post or reel, stories, anywhere that takes video."
     }
   ],
   "missing": [
@@ -208,7 +297,6 @@
     "mirage-mark.svg",
     "mirage-icon-neutral.svg",
     "mirage-icon-velvet.svg",
-    "mirage-icon-nocturne.png",
     "mirage-icon-nocturne.svg"
   ],
   "flyerLayout": {
