@@ -289,6 +289,44 @@
       "duration": "8s",
       "fps": 30,
       "use": "Instagram post or reel, stories, anywhere that takes video."
+    },
+    {
+      "path": "door-hangers/velvet-door-hanger-print.pdf",
+      "type": "print",
+      "series": "velvet",
+      "trim": "3.5x8.5in",
+      "bleed": "0.125in",
+      "pages": "front, back",
+      "use": "Print this. Door hanger with a 10% off line and a QR code to the Spotify playlist. Send to the printer as is; the hole and slit are on the dieline."
+    },
+    {
+      "path": "door-hangers/velvet-door-hanger-dieline.pdf",
+      "type": "dieline",
+      "series": "velvet",
+      "trim": "3.5x8.5in",
+      "hole": "1.25in, centre 0.875in from the top trim, slit to the top edge",
+      "use": "Cut guide for the printer. Magenta is the cut, blue dashed is the safe area."
+    },
+    {
+      "path": "door-hangers/velvet-door-hanger-front.png",
+      "type": "preview",
+      "series": "velvet",
+      "width": 1050,
+      "height": 2550,
+      "use": "Front at 300 dpi, trimmed."
+    },
+    {
+      "path": "door-hangers/velvet-door-hanger-back.png",
+      "type": "preview",
+      "series": "velvet",
+      "width": 1050,
+      "height": 2550,
+      "use": "Back at 300 dpi, trimmed."
+    },
+    {
+      "path": "door-hangers/source/",
+      "type": "design-source",
+      "use": "build.js and the HTML template. See its README."
     }
   ],
   "missing": [

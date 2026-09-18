@@ -261,6 +261,19 @@ Come in closer.
 @mirage.seattle
 ```
 
+Pieces that leave the venue (door hangers, cards left on a bar) may
+add one way to listen, and one offer if there is one. An offer is the
+number and how to use it, nothing else:
+
+```
+10% off
+At the door. Bring this.
+```
+
+Never "exclusive", "VIP", "limited", or an expiry in the copy. If an
+offer needs conditions, they go on the back, in one line, in the label
+size.
+
 ### 4.10 Replies and messages
 
 Reply like a person, briefly, without the brand voice getting stiff.

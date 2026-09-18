@@ -13,6 +13,7 @@ brandassets/
   flyers/          flyer templates, one per series
   tent-cards/      Revelry Room table tent cards, print files and design source
   motion/          animated icon, as SVG for the web and MP4 for social
+  door-hangers/    Velvet door hangers, print files, dieline and source
 ```
 
 For a design tool or an agent: read `manifest.json` first. It lists every
@@ -68,6 +69,23 @@ instagram.com/mirage.seattle.
 
 Print on heavy stock. The QR sits on cream so it scans in low light. To
 change the handle, edit the canvas and re-export, or ask for a rebuild.
+
+## Door hangers
+
+Velvet door hangers, 3.5×8.5 in. The front carries the brand, the series,
+the tagline, a 10% off line and a QR code to the MIRAGE playlist on
+Spotify. The back is the brand, the series, the tagline, the venue and
+the handle, so the hanger reads either way round.
+
+| File | Use |
+|---|---|
+| `door-hangers/velvet-door-hanger-print.pdf` | Print this. Two pages, front and back, 0.125 in bleed included. |
+| `door-hangers/velvet-door-hanger-dieline.pdf` | The cut guide. 1.25 in hole with a slit to the top edge. Send it with the print file. |
+| `door-hangers/velvet-door-hanger-front.png`, `-back.png` | 300 dpi previews, trimmed. |
+| `door-hangers/source/` | `build.js` and the HTML template. Change the offer, the handle or the playlist there and rebuild. |
+
+Heavy stock, 14pt or up. The QR sits on cream so it scans in low
+light; keep it at least 1.25 in wide if the layout changes.
 
 ## Motion
 
