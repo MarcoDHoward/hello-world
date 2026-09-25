@@ -1,0 +1,34 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Tent face",
+      "x": 0,
+      "y": 0,
+      "w": 384,
+      "h": 576,
+      "print": "fixed"
+    },
+    {
+      "file": "Flat.dc.html",
+      "title": "Print sheet, folds at the line",
+      "x": 480,
+      "y": 0,
+      "w": 384,
+      "h": 1152,
+      "print": "fixed"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "print-notes",
+      "x": 0,
+      "y": -190,
+      "w": 600,
+      "text": "Revelry Room tent cards. Each face is 4 x 6 in. The print sheet is 4 x 12 in, folded in half at the dashed line, so both faces read upright on the table.\nThe QR code links to instagram.com/mirage.seattle. Change the handle in the control above either card and it redraws. Print on heavy stock. The QR sits on cream so it scans in low light."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
