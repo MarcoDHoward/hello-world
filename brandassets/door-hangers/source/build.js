@@ -55,7 +55,7 @@ function page(side, opts) {
     </div>
     <div class="offer">
       <div class="offer__big">10% off</div>
-      <div class="offer__how">At the door. Bring this.</div>
+      <div class="offer__how">Drinks at the bar on Velvet nights.<br>Show this.</div>
     </div>
     <div class="listen">
       <div class="label">Listen</div>
@@ -102,7 +102,7 @@ function html(opts) {
     .tagline { margin-top: 0.14in; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 0.27in; line-height: 1; color: var(--cream); opacity: 0.78; }
     .offer { margin-top: 0.38in; }
     .offer__big { font-family: Archivo, sans-serif; font-weight: 300; font-size: 0.5in; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; }
-    .offer__how { margin-top: 0.12in; font-family: Archivo, sans-serif; font-weight: 400; font-size: 0.14in; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.78; padding-left: 0.16em; }
+    .offer__how { margin-top: 0.12in; line-height: 1.7; font-family: Archivo, sans-serif; font-weight: 400; font-size: 0.122in; letter-spacing: 0.14em; white-space: nowrap; text-transform: uppercase; opacity: 0.78; padding-left: 0.16em; }
     .listen { margin-top: auto; padding-top: 0.3in; display: flex; flex-direction: column; align-items: center; }
     .label { font-family: Michroma, sans-serif; font-size: 0.11in; letter-spacing: 0.34em; padding-left: 0.34em; text-transform: uppercase; }
     .label--dim { opacity: 0.6; margin-top: 0.1in; }

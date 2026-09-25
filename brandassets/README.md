@@ -73,8 +73,8 @@ change the handle, edit the canvas and re-export, or ask for a rebuild.
 ## Door hangers
 
 Velvet door hangers, 3.5×8.5 in. The front carries the brand, the series,
-the tagline, a 10% off line and a QR code to the MIRAGE playlist on
-Spotify. The back is the brand, the series, the tagline, the venue and
+the tagline, 10% off drinks at the bar on Velvet nights, and a QR code
+to the MIRAGE playlist on Spotify. The back is the brand, the series, the tagline, the venue and
 the handle, so the hanger reads either way round.
 
 | File | Use |
