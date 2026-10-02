@@ -57,3 +57,11 @@ width. The page body must never scroll horizontally. Google Fonts may
 be blocked in a sandbox, so fallback fonts in screenshots are expected.
 Run the checklist at the end of `DESIGN.md` before shipping anything
 visual, and the one at the end of `COPY.md` before shipping any words.
+
+## Personal reference
+
+Not part of the site. Read only when the task needs it.
+
+- [`dj-bio.md`](dj-bio.md): Marco Valencia's DJ bio (IG profile bios,
+  long caption, key facts, vibe). Use for DJ bios, promo copy, flyers
+  and press kits.
