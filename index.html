@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIRAGE — Seattle</title>
+  <meta name="description" content="MIRAGE. Melodic techno and progressive house in Seattle. Two series: VELVET and NOCTURNE.">
+  <meta name="theme-color" content="#0A0D12">
+  <meta property="og:title" content="MIRAGE">
+  <meta property="og:description" content="Melodic techno and progressive house in Seattle.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="brandassets/logos/mirage-logo-stacked.png">
+  <link rel="icon" type="image/png" href="brandassets/logos/mirage-icon-neutral.png">
+  <link rel="apple-touch-icon" href="brandassets/logos/mirage-icon-neutral.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@300;400&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Michroma&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="site-header__brand" href="#top">MIRAGE</a>
+    <nav class="site-header__nav" aria-label="Sections">
+      <a href="#next">Next</a>
+      <a href="#series">Series</a>
+      <a href="#listen">Listen</a>
+      <a href="#past">Past</a>
+      <a href="#list">Mail</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. Hero -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__inner">
+        <!--
+          Logo mark. Inline so CSS can recolour it per series.
+          Class contract (see brand.md): .bar, .reflect, .accent, .word.
+          The centre bar and its reflection carry the accent colour.
+          To swap in mirage-mark.svg, paste it here and keep class="mark"
+          on the root element plus those class names on the shapes.
+        -->
+        <svg class="mark" viewBox="0 0 1230 720" role="img" aria-labelledby="mark-title" focusable="false">
+          <title id="mark-title">MIRAGE mark. A waveform with its reflection.</title>
+          <g class="mark__wave">
+            <rect class="bar" style="--i:0" x="95" y="370" width="46" height="80" rx="23"/>
+            <rect class="bar" style="--i:1" x="178" y="330" width="46" height="120" rx="23"/>
+            <rect class="bar" style="--i:2" x="261" y="275" width="46" height="175" rx="23"/>
+            <rect class="bar" style="--i:3" x="344" y="190" width="46" height="260" rx="23"/>
+            <rect class="bar" style="--i:4" x="427" y="235" width="46" height="215" rx="23"/>
+            <rect class="bar" style="--i:5" x="510" y="120" width="46" height="330" rx="23"/>
+            <rect class="bar accent" style="--i:6" x="593" y="25" width="46" height="425" rx="23"/>
+            <rect class="bar" style="--i:7" x="676" y="120" width="46" height="330" rx="23"/>
+            <rect class="bar" style="--i:8" x="759" y="215" width="46" height="235" rx="23"/>
+            <rect class="bar" style="--i:9" x="842" y="160" width="46" height="290" rx="23"/>
+            <rect class="bar" style="--i:10" x="925" y="265" width="46" height="185" rx="23"/>
+            <rect class="bar" style="--i:11" x="1008" y="325" width="46" height="125" rx="23"/>
+            <rect class="bar" style="--i:12" x="1091" y="370" width="46" height="80" rx="23"/>
+          </g>
+          <g class="mark__reflection" aria-hidden="true">
+            <g class="reflect-row" style="--r:0" opacity="1">
+              <rect class="reflect" x="95" y="481" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="178" y="481" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="261" y="481" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="344" y="481" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="427" y="481" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="510" y="481" width="46" height="18" rx="9"/>
+              <rect class="reflect reflect--accent" x="593" y="481" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="676" y="481" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="759" y="481" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="842" y="481" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="925" y="481" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="1008" y="481" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="1091" y="481" width="46" height="18" rx="9"/>
+            </g>
+            <g class="reflect-row" style="--r:1" opacity="0.78">
+              <rect class="reflect" x="178" y="521" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="261" y="521" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="344" y="521" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="427" y="521" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="510" y="521" width="46" height="18" rx="9"/>
+              <rect class="reflect reflect--accent" x="593" y="521" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="676" y="521" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="759" y="521" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="842" y="521" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="925" y="521" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="1008" y="521" width="46" height="18" rx="9"/>
+            </g>
+            <g class="reflect-row" style="--r:2" opacity="0.58">
+              <rect class="reflect" x="261" y="561" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="344" y="561" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="427" y="561" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="510" y="561" width="46" height="18" rx="9"/>
+              <rect class="reflect reflect--accent" x="593" y="561" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="676" y="561" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="759" y="561" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="842" y="561" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="925" y="561" width="46" height="18" rx="9"/>
+            </g>
+            <g class="reflect-row" style="--r:3" opacity="0.42">
+              <rect class="reflect" x="344" y="598" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="510" y="598" width="46" height="18" rx="9"/>
+              <rect class="reflect reflect--accent" x="593" y="598" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="676" y="598" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="842" y="598" width="46" height="18" rx="9"/>
+            </g>
+            <g class="reflect-row" style="--r:4" opacity="0.28">
+              <rect class="reflect" x="510" y="636" width="46" height="18" rx="9"/>
+              <rect class="reflect reflect--accent" x="593" y="636" width="46" height="18" rx="9"/>
+              <rect class="reflect" x="676" y="636" width="46" height="18" rx="9"/>
+            </g>
+            <g class="reflect-row" style="--r:5" opacity="0.18">
+              <rect class="reflect reflect--accent" x="593" y="676" width="46" height="18" rx="9"/>
+            </g>
+          </g>
+        </svg>
+
+        <h1 class="hero__title word" id="hero-title">MIRAGE</h1>
+        <p class="hero__lede">Melodic techno and progressive house in Seattle.</p>
+        <p class="hero__cta">
+          <a class="button" id="hero-cta" href="#next">Next event</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. Next event (rendered from data/events.js) -->
+    <section class="next" id="next" aria-labelledby="next-title">
+      <div class="next__inner">
+        <p class="label" id="next-title">Next event</p>
+        <div id="next-event" class="event">
+          <noscript><p class="muted">Enable JavaScript to see the next event, or find us on Resident Advisor.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. The two series -->
+    <section class="series" id="series" aria-labelledby="series-title">
+      <div class="series__inner">
+        <p class="label" id="series-title">Two series</p>
+        <div class="series__grid">
+
+          <article class="card card--velvet" aria-labelledby="velvet-name">
+            <p class="card__parent label">MIRAGE presents</p>
+            <h2 class="card__name" id="velvet-name">VELVET</h2>
+            <p class="card__tagline">Come in closer.</p>
+            <dl class="card__meta">
+              <div><dt class="label">Venue</dt><dd>The Revelry Room</dd></div>
+              <div><dt class="label">Hours</dt><dd class="time">9:00PM – 1:00AM</dd></div>
+              <div><dt class="label">Sound</dt><dd>Trip hop into progressive.</dd></div>
+            </dl>
+          </article>
+
+          <article class="card card--nocturne" aria-labelledby="nocturne-name">
+            <p class="card__parent label">MIRAGE presents</p>
+            <h2 class="card__name" id="nocturne-name">NOCTURNE</h2>
+            <p class="card__tagline">Into the night.</p>
+            <dl class="card__meta">
+              <div><dt class="label">Venue</dt><dd>Monkey Loft</dd></div>
+              <div><dt class="label">Hours</dt><dd class="time">10:00PM – 4:00AM</dd></div>
+              <div><dt class="label">Sound</dt><dd>Progressive into techno.</dd></div>
+            </dl>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Listen. Swap the playlist id in both the iframe src and the link. -->
+    <section class="listen" id="listen" aria-labelledby="listen-title">
+      <div class="listen__inner">
+        <p class="label" id="listen-title">Listen</p>
+        <p class="listen__copy">What we play.</p>
+        <div class="listen__embed">
+          <iframe
+            src="https://open.spotify.com/embed/playlist/05E3aW2udS3IXicE0ZTia8?theme=0"
+            title="MIRAGE playlist on Spotify"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
+        <p class="listen__link">
+          <a class="button" href="https://open.spotify.com/playlist/05E3aW2udS3IXicE0ZTia8" rel="noopener">Open in Spotify</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. Past events (rendered from data/events.js) -->
+    <section class="past" id="past" aria-labelledby="past-title">
+      <div class="past__inner">
+        <p class="label" id="past-title">Past</p>
+        <ul class="flyers" id="past-events"></ul>
+      </div>
+    </section>
+
+    <!-- 5. Mailing list -->
+    <section class="list" id="list" aria-labelledby="list-title">
+      <div class="list__inner">
+        <p class="label" id="list-title">Mailing list</p>
+        <p class="list__copy">Dates first. Nothing else.</p>
+        <!--
+          Buttondown: action="https://buttondown.com/api/emails/embed-subscribe/YOUR_USERNAME"
+          Mailchimp:  paste the form action from Audience → Signup forms → Embedded,
+                      and change the input name from "email" to "EMAIL".
+        -->
+        <form class="signup" action="https://buttondown.com/api/emails/embed-subscribe/YOUR_USERNAME" method="post" target="_blank">
+          <label class="label" for="signup-email">Email</label>
+          <div class="signup__row">
+            <input id="signup-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="you@example.com">
+            <button class="button" type="submit">Join</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 6. Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__brand">MIRAGE</p>
+      <ul class="site-footer__links">
+        <li><a href="https://www.instagram.com/mirage.seattle/" rel="noopener">Instagram</a></li>
+        <li><a href="https://ra.co/promoters/YOUR_ID" rel="noopener">Resident Advisor</a></li>
+        <li><a href="https://soundcloud.com/YOUR_HANDLE" rel="noopener">SoundCloud</a></li>
+        <li><a href="https://open.spotify.com/playlist/05E3aW2udS3IXicE0ZTia8" rel="noopener">Spotify</a></li>
+        <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+      </ul>
+      <p class="site-footer__fine">Seattle. 21+.</p>
+    </div>
+  </footer>
+
+  <script src="data/events.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
