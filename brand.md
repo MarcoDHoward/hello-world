@@ -23,7 +23,7 @@ Internal reference, never public copy: think of a two-disc mix.
 - **Velvet is disc one.** Trip hop, ambient, downtempo into progressive.
   It takes you right up to the edge of the dance floor and holds you
   there. Warm, close, unhurried.
-- **Nocturne is disc two.** Progressive into techno, deep. The floor is
+- **Oasis is disc two.** Progressive into techno, deep. The floor is
   locked in. Darker, longer, no way out until 4.
 
 Both are deep and dark, and both must feel sexy and alluring. Never
@@ -34,7 +34,7 @@ the word.
 
 ## Series
 
-| | VELVET | NOCTURNE |
+| | VELVET | OASIS |
 |---|---|---|
 | Venue | The Revelry Room | Monkey Loft |
 | Time | 9:00PM – 1:00AM | 10:00PM – 4:00AM |
@@ -55,7 +55,7 @@ the word.
 - amber `#E3A45A` (accent)
 - cream `#EDE3D6` (text)
 
-**Nocturne**
+**Oasis**
 - bg `#05080E`
 - navy `#15304A`
 - violet `#6A5AE0`
@@ -67,7 +67,7 @@ Rule: dark backgrounds only. One accent color per piece.
 ## Type (all Google Fonts)
 
 - **Michroma** — brand wordmark, nav, labels, times, series name
-  (Nocturne). Single weight only — never synthesize bold.
+  (Oasis). Single weight only — never synthesize bold.
   Wide letter-spacing (0.28–0.40em) on all caps labels.
 - **Archivo Black** — headliner names and the date numeral. Nothing else.
 - **Archivo 300** — support acts and openers. **Archivo 400** — body,
@@ -85,7 +85,7 @@ All in `brandassets/logos/`. Full index with sizes in
 | `mirage-logo-horizontal.png` | nav bars, headers, banners |
 | `mirage-icon-neutral.png` | Instagram profile, favicon |
 | `mirage-icon-velvet.png` | Velvet colorway, square |
-| `mirage-icon-nocturne.png` | Nocturne colorway, square |
+| `mirage-icon-oasis.png` | Oasis colorway, square |
 
 Animated versions of the icon, SVG and MP4 per colorway, are in
 `brandassets/motion/`. Still to add: SVG versions of the static logos
@@ -121,5 +121,5 @@ spaced Michroma caps. Large empty fields above and below the block.
 ## Voice
 
 Few words. No hype, no exclamation points, no emoji. Invite, don't
-advertise. "Nocturne 004. Monkey Loft. Doors at 10." not "Don't miss
+advertise. "Oasis 004. Monkey Loft. Doors at 10." not "Don't miss
 out!!" The full rules and templates are in `COPY.md`.

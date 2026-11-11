@@ -22,16 +22,16 @@
   --velvet-cream: #EDE3D6;      /* text and bars */
   --velvet-reflect: #7A4C4A;
 
-  /* Nocturne */
-  --nocturne-bg: #05080E;
-  --nocturne-navy: #15304A;
-  --nocturne-violet: #6A5AE0;
-  --nocturne-cyan: #4FD8DC;     /* accent */
-  --nocturne-ice: #E4EAF0;      /* text and bars */
-  --nocturne-reflect: #3E5B78;
+  /* Oasis */
+  --oasis-bg: #05080E;
+  --oasis-navy: #15304A;
+  --oasis-violet: #6A5AE0;
+  --oasis-cyan: #4FD8DC;     /* accent */
+  --oasis-ice: #E4EAF0;      /* text and bars */
+  --oasis-reflect: #3E5B78;
 
   /* Type. All Google Fonts. */
-  --font-brand: "Michroma", sans-serif;            /* wordmark, nav, labels, times, NOCTURNE */
+  --font-brand: "Michroma", sans-serif;            /* wordmark, nav, labels, times, OASIS */
   --font-heavy: "Archivo Black", sans-serif;       /* headliner names, date numeral */
   --font-body: "Archivo", sans-serif;              /* 400 body and label credits, 300 support and openers */
   --font-velvet: "Cormorant Garamond", serif;      /* italic. Velvet series name and accents only */

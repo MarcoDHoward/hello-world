@@ -42,7 +42,7 @@ README.md         how to add events, links, flyers and the logo
 
 - Event data goes in `data/events.js` only. Never hard-code an event
   in markup.
-- Palettes are switched by adding `theme-velvet` or `theme-nocturne`
+- Palettes are switched by adding `theme-velvet` or `theme-oasis`
   to an element. Colours are custom properties, never literals.
 - Mobile-first CSS. Most traffic arrives from an Instagram bio link.
 - Semantic HTML, keyboard reachable, visible focus.

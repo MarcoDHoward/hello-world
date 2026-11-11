@@ -1,7 +1,7 @@
 /* ==========================================================================
    MIRAGE — styles
    Mobile-first. Dark throughout. Palettes live in CSS custom properties so
-   any block can be re-skinned by adding .theme-velvet or .theme-nocturne.
+   any block can be re-skinned by adding .theme-velvet or .theme-oasis.
    ========================================================================== */
 
 /* ---- Tokens -------------------------------------------------------------- */
@@ -45,7 +45,7 @@
   --word: #EDE3D6;
 }
 
-.theme-nocturne {
+.theme-oasis {
   --bg: #05080E;
   --bg-deep: #15304A;
   --text: #E4EAF0;
@@ -435,7 +435,7 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: 0.01em;
 }
 
-/* Velvet series name is Cormorant italic; Nocturne stays Michroma. */
+/* Velvet series name is Cormorant italic; Oasis stays Michroma. */
 .card--velvet .card__name,
 .theme-velvet .event__edition,
 .flyer__tile.theme-velvet > .label {
@@ -492,7 +492,7 @@ img { max-width: 100%; height: auto; display: block; }
   --word: #EDE3D6;
 }
 
-.card--nocturne {
+.card--oasis {
   --bg: #05080E;
   --bg-deep: #15304A;
   --text: #E4EAF0;

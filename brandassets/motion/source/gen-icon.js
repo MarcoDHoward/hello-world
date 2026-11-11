@@ -25,7 +25,7 @@ const r = n => Math.round(n * 100) / 100;
 const COLOURWAYS = {
   neutral:  { bg: '#0A0D12', bar: '#E4EAF0', reflect: '#6F8698', accent: '#9FB4C4', word: '#E4EAF0' },
   velvet:   { bg: '#0E070B', bar: '#EDE3D6', reflect: '#7A4C4A', accent: '#E3A45A', word: '#EDE3D6' },
-  nocturne: { bg: '#05080E', bar: '#E4EAF0', reflect: '#3E5B78', accent: '#4FD8DC', word: '#E4EAF0' },
+  oasis: { bg: '#05080E', bar: '#E4EAF0', reflect: '#3E5B78', accent: '#4FD8DC', word: '#E4EAF0' },
 };
 
 // Wordmark: MIRAGE in Michroma, outlined, tracked, centred on x=540.

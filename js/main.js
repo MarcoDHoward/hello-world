@@ -88,7 +88,7 @@
 
   if (nextRoot) {
     if (!next) {
-      nextSection.classList.remove("theme-velvet", "theme-nocturne");
+      nextSection.classList.remove("theme-velvet", "theme-oasis");
       nextRoot.className = "event event--empty";
       nextRoot.replaceChildren(
         el("p", { text: "Nothing on the calendar yet. Join the list and you will hear first." })

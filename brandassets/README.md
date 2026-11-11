@@ -29,7 +29,7 @@ carries the same colours as variables, ready to paste into a stylesheet.
 | `logos/mirage-logo-horizontal.png` | 1200×269, transparent | Nav bars, headers, banners. |
 | `logos/mirage-icon-neutral.png` | 1080×1080 | Instagram profile, favicon. |
 | `logos/mirage-icon-velvet.png` | 1080×1080 | Velvet colourway square. |
-| `logos/mirage-icon-nocturne.png` | 1080×1080 | Nocturne colourway square. |
+| `logos/mirage-icon-oasis.png` | 1080×1080 | Oasis colourway square. |
 
 The mark is a waveform with a reflection of dashes below. The centre bar
 is the accent colour. Below about 32px the reflection merges, so use the
@@ -44,7 +44,7 @@ add a row to the manifest.
 | File | Series | Notes |
 |---|---|---|
 | `flyers/velvet-flyer-template.jpg` | Velvet | Amber shimmer column. Series name in Cormorant italic. |
-| `flyers/nocturne-flyer-template.jpg` | Nocturne | Navy light trails. Series name in Michroma. |
+| `flyers/oasis-flyer-template.jpg` | Oasis | Navy light trails. Series name in Michroma. |
 
 Both are 1080×1350 with placeholder names. Use them as the layout
 reference for new flyers. The grid is described in `brand.md` and in the
@@ -96,8 +96,8 @@ section 6 of `DESIGN.md`.
 
 | File | Use |
 |---|---|
-| `motion/mirage-icon-animated-{neutral,velvet,nocturne}.svg` | Web. One file each, nothing external: the animation is CSS inside the SVG and the wordmark is outlined, so it plays from an `<img>` tag or inline. Sits still when the viewer has reduced motion on. |
-| `motion/mirage-icon-animated-{neutral,velvet,nocturne}.mp4` | Instagram posts, reels, stories, or anywhere that takes video. 1080×1080, 8 seconds, H.264, 30 fps. |
+| `motion/mirage-icon-animated-{neutral,velvet,oasis}.svg` | Web. One file each, nothing external: the animation is CSS inside the SVG and the wordmark is outlined, so it plays from an `<img>` tag or inline. Sits still when the viewer has reduced motion on. |
+| `motion/mirage-icon-animated-{neutral,velvet,oasis}.mp4` | Instagram posts, reels, stories, or anywhere that takes video. 1080×1080, 8 seconds, H.264, 30 fps. |
 
 The static icons in `logos/` are the rest frame of the same file. To
 change the animation, edit `motion/source/gen-icon.js` and re-render;

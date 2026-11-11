@@ -26,9 +26,9 @@ sold to.
 
 The night has an arc, and the copy follows it. Velvet is the first half
 of the record: trip hop and ambient into progressive, right up to the
-edge of the dance floor. Nocturne is the second half: progressive into
+edge of the dance floor. Oasis is the second half: progressive into
 techno, the floor locked in until 4. Write Velvet as an approach and
-Nocturne as an arrival.
+Oasis as an arrival.
 
 **Say:** "Velvet 005. The Revelry Room. Doors at 9."
 **Never:** "Don't miss out!! Biggest night of the year 🔥"
@@ -71,15 +71,15 @@ produce text that breaks them.
 | Thing | Write it as | Notes |
 |---|---|---|
 | The brand | Mirage | Title case in prose. MIRAGE only as the wordmark or a label, set by design. |
-| The series | Velvet, Nocturne | Title case in prose. Never "Velvet night" or "Nocturne party". |
-| An edition | Velvet 005, Nocturne 004 | Series name, space, three digits. Numbering is per series. |
+| The series | Velvet, Oasis | Title case in prose. Never "Velvet night" or "Oasis party". |
+| An edition | Velvet 005, Oasis 004 | Series name, space, three digits. Numbering is per series. |
 | The parent + series | Mirage presents Velvet | Only when the parent needs naming. Usually just "Velvet". |
 | Velvet venue | The Revelry Room | Always with "The". |
-| Nocturne venue | Monkey Loft | No "The". |
+| Oasis venue | Monkey Loft | No "The". |
 | City | Seattle | Never "the PNW", "the 206", "Sea-town". |
 | Sound | Melodic techno and progressive house | The one-liner. See below for per-series sound lines. |
 | Velvet sound | Trip hop into progressive | "into" describes the arc of the night. |
-| Nocturne sound | Progressive into techno | Same. |
+| Oasis sound | Progressive into techno | Same. |
 | Sound tags | Trip hop · Progressive | Middle dot, Title case, for flyers and footers. |
 | Taglines | Come in closer. / Into the night. | Always with the full stop. Never altered, never merged. |
 | Hours, display | 9:00PM – 1:00AM | En dash with spaces, no space before AM/PM. |
@@ -94,7 +94,7 @@ produce text that breaks them.
 Line structure. Mirage's signature sentence is a run of short
 fragments separated by full stops, in this order: what, where, when.
 
-> Nocturne 004. Monkey Loft. Doors at 10.
+> Oasis 004. Monkey Loft. Doors at 10.
 
 Everything else follows that line, never precedes it.
 
@@ -183,7 +183,7 @@ With {{ support, joined by " and " }}. {{ opener }} opens.
 Series descriptions for the first line:
 - Velvet: "Mirage's speakeasy series. Trip hop and ambient into
   progressive, in a small room, right up to the edge of the floor."
-- Nocturne: "Mirage's late series. Progressive into techno, deep,
+- Oasis: "Mirage's late series. Progressive into techno, deep,
   until 4. The floor stays locked in."
 
 ### 4.6 Mailing list email
@@ -316,10 +316,10 @@ Tickets are up. Link in bio.
 21+
 ```
 
-**Announcement, Nocturne**
+**Announcement, Oasis**
 
 ```
-Nocturne 004. Monkey Loft. Doors at 10.
+Oasis 004. Monkey Loft. Doors at 10.
 
 Headliner Name
 Support One
@@ -382,7 +382,7 @@ where they are true, not as garnish.
 
 **Velvet words:** close, warm, slow, low light, the edge of the floor,
 listen, lean in.
-**Nocturne words:** deep, dark, locked in, until 4, long, the floor,
+**Oasis words:** deep, dark, locked in, until 4, long, the floor,
 no clocks.
 
 **Warmth without hype.** The draft can read cold if every line is a
