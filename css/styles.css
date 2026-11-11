@@ -409,7 +409,6 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.7rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  white-space: nowrap;
 }
 
 .event__flyer {
@@ -705,6 +704,7 @@ img { max-width: 100%; height: auto; display: block; }
     padding-left: 2.5rem;
   }
   .event__meta > div:last-child { grid-column: 1 / -1; }
+  .event__sound { white-space: nowrap; }
 
   /* With a flyer: text left, meta beneath it, flyer down the right. */
   .event--has-flyer {
