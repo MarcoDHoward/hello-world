@@ -24,6 +24,17 @@ Read these, in this order. Do not duplicate their contents here.
 If a design decision changes, change `DESIGN.md` first, then
 `brandassets/tokens.css`, then bring the code in line.
 
+## Venue work (booking forms, advances, riders, event copy)
+
+Read [`Clubs/INDEX.md`](Clubs/INDEX.md) first. It says which club file
+to open and which section of it the task needs. Open only that club's
+file, never the whole `Clubs/` folder.
+
+For booking forms and offers, also read `marcoprofile.md`: promoter and
+company details, contacts, hotels, and default answers. Fill from it
+instead of asking again, and ask only for what it lists as per-show.
+It's kept local only, so it may be missing on another machine.
+
 ## Layout
 
 ```
@@ -32,6 +43,7 @@ css/styles.css    styles; palettes as custom properties at the top
 js/main.js        fills "Next event" and "Past" from the data file
 data/events.js    all event data (MIRAGE_EVENTS, MIRAGE_SERIES)
 brandassets/      logos, flyers, tokens.css, manifest.json (see its README)
+Clubs/            one handbook per venue; start at Clubs/INDEX.md
 DESIGN.md         design guide
 COPY.md           copy guide
 brand.md          brand facts and voice
@@ -42,7 +54,7 @@ README.md         how to add events, links, flyers and the logo
 
 - Event data goes in `data/events.js` only. Never hard-code an event
   in markup.
-- Palettes are switched by adding `theme-velvet` or `theme-nocturne`
+- Palettes are switched by adding `theme-velvet` or `theme-oasis`
   to an element. Colours are custom properties, never literals.
 - Mobile-first CSS. Most traffic arrives from an Instagram bio link.
 - Semantic HTML, keyboard reachable, visible focus.

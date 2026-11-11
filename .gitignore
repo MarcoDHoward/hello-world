@@ -1,0 +1,5 @@
+# Private venue and booking files. They hold contacts, addresses and
+# deal terms, and this repo is public, so they stay on this machine only.
+Clubs/*-handbook.md
+DJBooking/
+marcoprofile.md

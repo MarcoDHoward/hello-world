@@ -4,7 +4,7 @@ const FF = require('@ffmpeg-installer/ffmpeg').path;
 const FPS = 30, SECONDS = 8;
 (async () => {
   const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
-  for (const name of ['neutral', 'velvet', 'nocturne']) {
+  for (const name of ['neutral', 'velvet', 'oasis']) {
     const svg = fs.readFileSync(`mirage-icon-animated-${name}.svg`, 'utf8');
     const p = await b.newPage({ viewport: { width: 1080, height: 1080 } });
     await p.setContent(`<body style="margin:0"><div style="width:1080px;height:1080px">${svg}</div></body>`);

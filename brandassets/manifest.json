@@ -38,9 +38,9 @@
       "accent": "#E3A45A",
       "text": "#EDE3D6"
     },
-    "nocturne": {
-      "name": "NOCTURNE",
-      "displayName": "NOCTURNE",
+    "oasis": {
+      "name": "OASIS",
+      "displayName": "OASIS",
       "tagline": "Into the night.",
       "venue": "Monkey Loft",
       "hours": "10:00PM \u2013 4:00AM",
@@ -80,7 +80,7 @@
       "weights": [
         400
       ],
-      "use": "wordmark, nav, labels, times, Nocturne series name",
+      "use": "wordmark, nav, labels, times, Oasis series name",
       "tracking": "0.28\u20130.40em on all caps"
     },
     {
@@ -162,13 +162,13 @@
       "use": "Layout reference for Velvet flyers. Placeholder names. Amber shimmer column on the right."
     },
     {
-      "path": "flyers/nocturne-flyer-template.jpg",
+      "path": "flyers/oasis-flyer-template.jpg",
       "type": "flyer-template",
-      "series": "nocturne",
+      "series": "oasis",
       "width": 1080,
       "height": 1350,
       "ratio": "4:5",
-      "use": "Layout reference for Nocturne flyers. Placeholder names. Navy light-trail background."
+      "use": "Layout reference for Oasis flyers. Placeholder names. Navy light-trail background."
     },
     {
       "path": "tent-cards/revelry-room-tent-sheet.pdf",
@@ -202,15 +202,15 @@
       "use": "Claude Design canvas artboards (Main.dc.html face, Flat.dc.html print sheet) and canvas.json."
     },
     {
-      "path": "logos/mirage-icon-nocturne.png",
+      "path": "logos/mirage-icon-oasis.png",
       "type": "icon",
       "lockup": "stacked",
-      "colorway": "nocturne",
+      "colorway": "oasis",
       "width": 1080,
       "height": 1080,
       "alpha": false,
       "background": "#05080E",
-      "use": "Nocturne colourway square. Rest frame of the animated icon."
+      "use": "Oasis colourway square. Rest frame of the animated icon."
     },
     {
       "path": "motion/mirage-icon-animated-neutral.svg",
@@ -265,11 +265,11 @@
       "use": "Instagram post or reel, stories, anywhere that takes video."
     },
     {
-      "path": "motion/mirage-icon-animated-nocturne.svg",
+      "path": "motion/mirage-icon-animated-oasis.svg",
       "type": "animated-icon",
       "format": "svg",
       "lockup": "stacked",
-      "colorway": "nocturne",
+      "colorway": "oasis",
       "width": 1080,
       "height": 1080,
       "background": "#05080E",
@@ -278,12 +278,12 @@
       "use": "Web. Self-contained: CSS animation inside the file, wordmark outlined, no fonts needed. Honours prefers-reduced-motion."
     },
     {
-      "path": "motion/mirage-icon-animated-nocturne.mp4",
+      "path": "motion/mirage-icon-animated-oasis.mp4",
       "type": "animated-icon",
       "format": "mp4",
       "codec": "h264",
       "lockup": "stacked",
-      "colorway": "nocturne",
+      "colorway": "oasis",
       "width": 1080,
       "height": 1080,
       "duration": "8s",
@@ -335,13 +335,13 @@
     "mirage-mark.svg",
     "mirage-icon-neutral.svg",
     "mirage-icon-velvet.svg",
-    "mirage-icon-nocturne.svg"
+    "mirage-icon-oasis.svg"
   ],
   "flyerLayout": {
     "canvas": "1080x1350, 4:5 portrait",
     "header": "Three items on one top edge: date top-left (month in spaced Michroma caps over an Archivo Black two-digit numeral), venue centred (Michroma caps, time in Michroma beneath), logo lockup top-right (mark over MIRAGE wordmark).",
     "lineup": "Starts about 30% down, left-aligned at an 11% margin. Series name, headliner in Archivo Black caps, label credits in parentheses tucked tight beneath in spaced Michroma caps, a large gap, support pair in Archivo 300 caps, a gap, opener.",
     "footer": "Sound tags centred in spaced Michroma caps, joined with a middle dot.",
-    "background": "Series bg with a subtle textured field. Velvet: amber shimmer column. Nocturne: navy light trails. Large empty fields above and below the lineup block."
+    "background": "Series bg with a subtle textured field. Velvet: amber shimmer column. Oasis: navy light trails. Large empty fields above and below the lineup block."
   }
 }

@@ -6,7 +6,7 @@
  * becomes "Next event" and anything in the past goes to the flyer grid.
  *
  * Field guide (see README.md for the full explanation):
- *   series    "velvet" | "nocturne"       picks the palette
+ *   series    "velvet" | "oasis"       picks the palette
  *   edition   "VELVET 004"                short edition name
  *   date      "YYYY-MM-DD"                local Seattle date
  *   doors     "9:00PM"  close "1:00AM"    display strings, no parsing
@@ -30,8 +30,8 @@ const MIRAGE_SERIES = {
     sound: "Trip hop into progressive.",
     soundTags: ["Trip hop", "Progressive"],
   },
-  nocturne: {
-    name: "NOCTURNE",
+  oasis: {
+    name: "OASIS",
     tagline: "Into the night.",
     venue: "Monkey Loft",
     hours: "10:00PM – 4:00AM",
@@ -58,8 +58,8 @@ const MIRAGE_EVENTS = [
     flyerAlt: "VELVET flyer. November 7 at The Revelry Room, 9:00PM to 1:00AM. Headliner Name, Support One, Marco Valencia, Opener. Trip hop and progressive.",
   },
   {
-    series: "nocturne",
-    edition: "NOCTURNE 004",
+    series: "oasis",
+    edition: "OASIS 004",
     date: "2026-11-21",
     doors: "10:00PM",
     close: "4:00AM",
@@ -70,8 +70,8 @@ const MIRAGE_EVENTS = [
     support: ["Support One", "Marco Valencia"],
     opener: "Opener",
     tickets: "",
-    flyer: "brandassets/flyers/nocturne-flyer-template.jpg",
-    flyerAlt: "NOCTURNE flyer. November 21 at Monkey Loft, 10:00PM to 4:00AM. Headliner Name, Support One, Marco Valencia, Opener. Progressive and techno.",
+    flyer: "brandassets/flyers/oasis-flyer-template.jpg",
+    flyerAlt: "OASIS flyer. November 21 at Monkey Loft, 10:00PM to 4:00AM. Headliner Name, Support One, Marco Valencia, Opener. Progressive and techno.",
   },
   {
     series: "velvet",
@@ -85,8 +85,8 @@ const MIRAGE_EVENTS = [
     flyer: "",
   },
   {
-    series: "nocturne",
-    edition: "NOCTURNE 003",
+    series: "oasis",
+    edition: "OASIS 003",
     date: "2026-07-25",
     doors: "10:00PM",
     close: "4:00AM",
@@ -106,8 +106,8 @@ const MIRAGE_EVENTS = [
     flyer: "",
   },
   {
-    series: "nocturne",
-    edition: "NOCTURNE 002",
+    series: "oasis",
+    edition: "OASIS 002",
     date: "2026-05-23",
     doors: "10:00PM",
     close: "4:00AM",
@@ -126,8 +126,8 @@ const MIRAGE_EVENTS = [
     flyer: "",
   },
   {
-    series: "nocturne",
-    edition: "NOCTURNE 001",
+    series: "oasis",
+    edition: "OASIS 001",
     date: "2026-03-21",
     doors: "10:00PM",
     close: "4:00AM",

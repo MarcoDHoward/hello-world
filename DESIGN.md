@@ -27,12 +27,12 @@ Files: `brandassets/` (logos, flyer templates, `tokens.css`, `manifest.json`).
   --velvet-amber:     #E3A45A;   /* accent */
   --velvet-cream:     #EDE3D6;   /* text */
 
-  /* nocturne — the loft */
-  --nocturne-bg:      #05080E;
-  --nocturne-navy:    #15304A;
-  --nocturne-violet:  #6A5AE0;
-  --nocturne-cyan:    #4FD8DC;   /* accent */
-  --nocturne-ice:     #E4EAF0;   /* text */
+  /* oasis — the loft */
+  --oasis-bg:      #05080E;
+  --oasis-navy:    #15304A;
+  --oasis-violet:  #6A5AE0;
+  --oasis-cyan:    #4FD8DC;   /* accent */
+  --oasis-ice:     #E4EAF0;   /* text */
 }
 ```
 
@@ -40,7 +40,7 @@ Files: `brandassets/` (logos, flyer templates, `tokens.css`, `manifest.json`).
 - Backgrounds are always dark. There is no light mode.
 - One accent per piece. The accent appears on the series name, the
   logo's center bar, and at most one other element.
-- Never mix the Velvet and Nocturne accents in the same asset.
+- Never mix the Velvet and Oasis accents in the same asset.
 - Mid-tones (wine, navy, violet) are for backgrounds only, never type.
 - Body text sits at 70–80% opacity of the text color; never below.
 
@@ -64,7 +64,7 @@ All four are free on Google Fonts.
   Nothing else on a flyer gets that weight.
 - Every all-caps Michroma line needs `padding-left` equal to its
   letter-spacing, to re-center it after the trailing space.
-- Only Velvet uses the serif. Nocturne is Michroma throughout.
+- Only Velvet uses the serif. Oasis is Michroma throughout.
 - Three type sizes maximum per asset, plus the label-credit size.
 
 ---
@@ -92,7 +92,7 @@ corners align top and bottom. Left and right margins are equal.
 
 **Lineup block** — `top: 30.5%`, `left: 11cqw`, `right: 7cqw`,
 left-aligned:
-1. Series name (Velvet: serif italic 6.4cqw; Nocturne: Michroma
+1. Series name (Velvet: serif italic 6.4cqw; Oasis: Michroma
    2.9cqw / 0.30em, in the accent color)
 2. Headliner, Archivo Black 11.6cqw, `line-height: 1.02`
 3. Label credits, Archivo 400 1.9cqw / 0.16em, tucked tight
@@ -132,7 +132,7 @@ the upper right, horizontal ripple lines across the full frame, then
 (Gaussian spread that widens toward the bottom), like a flame's
 reflection. Finish with a warm radial glow at the column's top.
 
-**Nocturne — moonlit currents.** Broad radial pools of navy and
+**Oasis — moonlit currents.** Broad radial pools of navy and
 violet, then a flow field: ~2700 curved strokes following
 `sin/cos` noise, in navy, violet, and pale steel, with ~110
 cyan strokes in one region as the single bright thread. A
@@ -168,8 +168,8 @@ g2.addColorStop(0, 'rgba(BG,.6)'); g2.addColorStop(1, 'rgba(BG,0)');
 | `mirage-logo-stacked.svg` | primary; hero, flyer corner, posters |
 | `mirage-logo-horizontal.svg` | nav, headers, banners, email |
 | `mirage-mark.svg` | mark alone; small sizes, favicon, merch |
-| `mirage-icon-{neutral,velvet,nocturne}.png` | square, on-background |
-| `mirage-logo-{stacked,horizontal}-{velvet,nocturne}.svg` | series colorways |
+| `mirage-icon-{neutral,velvet,oasis}.png` | square, on-background |
+| `mirage-logo-{stacked,horizontal}-{velvet,oasis}.svg` | series colorways |
 
 The mark is an audio waveform with a shimmering reflection beneath —
 sound as a mirage on water. The center bar is the accent color.
