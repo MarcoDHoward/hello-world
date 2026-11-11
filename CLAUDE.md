@@ -24,6 +24,12 @@ Read these, in this order. Do not duplicate their contents here.
 If a design decision changes, change `DESIGN.md` first, then
 `brandassets/tokens.css`, then bring the code in line.
 
+## Venue work (booking forms, advances, riders, event copy)
+
+Read [`Clubs/INDEX.md`](Clubs/INDEX.md) first. It says which club file
+to open and which section of it the task needs. Open only that club's
+file, never the whole `Clubs/` folder.
+
 ## Layout
 
 ```
@@ -32,6 +38,7 @@ css/styles.css    styles; palettes as custom properties at the top
 js/main.js        fills "Next event" and "Past" from the data file
 data/events.js    all event data (MIRAGE_EVENTS, MIRAGE_SERIES)
 brandassets/      logos, flyers, tokens.css, manifest.json (see its README)
+Clubs/            one handbook per venue; start at Clubs/INDEX.md
 DESIGN.md         design guide
 COPY.md           copy guide
 brand.md          brand facts and voice
