@@ -30,6 +30,11 @@ Read [`Clubs/INDEX.md`](Clubs/INDEX.md) first. It says which club file
 to open and which section of it the task needs. Open only that club's
 file, never the whole `Clubs/` folder.
 
+For booking forms and offers, also read `marcoprofile.md`: promoter and
+company details, contacts, hotels, and default answers. Fill from it
+instead of asking again, and ask only for what it lists as per-show.
+It's kept local only, so it may be missing on another machine.
+
 ## Layout
 
 ```
